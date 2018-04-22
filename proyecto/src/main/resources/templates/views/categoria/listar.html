@@ -1,0 +1,8 @@
+<table border="1" class="table table-striped">
+	<tr>
+		<th>Nombre</th>
+	</tr>
+	<tr th:each="cate:${categorias}">
+		<td th:text="${cate.nombreCategoria}"></td>
+	</tr>
+</table>
