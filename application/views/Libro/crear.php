@@ -4,20 +4,22 @@
 			<legend>
 				<label for="idlibro"> introducir los datos del libro</label>
 			</legend>
-			<label for="nombre">Nombre</label> <input type="text" name="idnombre"
-				id="idnombre"></input>
-			<fieldset>
-				<legend>nivel de ingles</legend>
- <input type="radio" name="opcion" value="nulo" id="nulo"> <label
-					for="nulo">nulo</label> <br> <input type="radio" name="opcion"
-					value="bajo"> <label for="bajo">bajo</label><br> <input
-					type="radio" name="opcion" value="medio" checked="checked"> <label
-					for="medio">medio</label><br> <input type="radio" name="opcion"
-					value="alto"> <label for="alto">alto</label><br> <input
-					type="radio" name="opcion" value="bilingue"> <label for="bilingue">bilingue</label><br>
-			</fieldset>
-			<input type="submit" value="registrar">
-		</fieldset>
+			<label for="isbn">ISBN</label> <input type="text" name="isbn"
+				id="isbn"></input><br><br>
+				<label for="idioma">Idioma</label> <input type="text" name="idioma"
+				id="idioma"></input><br><br>
+				<label for="npalabras">Nº Palabras</label> <input type="text" name="npalabras"
+				id="npalabras"></input><br><br>
+				<label for="sinopsis">Sinopsis</label> <input type="text" name="sinopsis"
+				id="sinopsis"></input><br><br>
+				<label for="edicion">Edicion</label> <input type="text" name="edicion"
+				id="edicion"></input><br><br>
+				<label for="edadminima">Edad Minima Recomendada</label> <input type="text" name="edadminima"
+				id="edadminima"></input><br><br>
+			
+			
+			<input type="submit" value="registrar libro">
+		
 	</form>
-	<div id="mensaje" class="row"> hola</div>
+	
 </div>
