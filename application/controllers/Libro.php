@@ -9,3 +9,4 @@ class Libro extends CI_Controller{
 	
 	}
 }
+?>
