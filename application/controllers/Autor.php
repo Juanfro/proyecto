@@ -1,4 +1,3 @@
-
 <?php
 class Autor extends CI_Controller{
 	public function index()
@@ -6,8 +5,15 @@ class Autor extends CI_Controller{
 	enmarcar($this,'Autores/crear' );
 	}
 	public function crear(){
-		$this->load->view('Autores/crear');
-
+		enmarcar($this,'Autores/crear');
+	
+	}
+	public function crearpost(){
+		$nombre=$_POST['nombre'];
+		$pseudonimo=$_POST['pseudonimo'];
+		$this->load->model('autores_model');
+		$this->autores_model->crear($nombre,$pseudonimo);
+		enmarcar($this,'Autores/crear' );
 	}
 }
 ?>

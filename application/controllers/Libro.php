@@ -5,8 +5,8 @@ class Libro extends CI_Controller{
 	enmarcar($this,'Libro/crear' );
 	}
 	public function crear(){
-		$this->load->view('Libro/crear');
-	
+		//$this->load->view('Libro/crear');
+	     enmarcar($this, 'Libro/crear');
 	}
 }
 ?>
