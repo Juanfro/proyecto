@@ -8,5 +8,11 @@ class autores_model extends CI_model{
 		R::store($autores);
 		R::close();
 	}
+	
+	public  function getAll($filtro){
+		return R::find('autores',"nombre like ?", ['%' . $filtro . '%']);
+		
+	
+	}
 }
 ?>

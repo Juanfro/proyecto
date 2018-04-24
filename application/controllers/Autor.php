@@ -15,5 +15,17 @@ class Autor extends CI_Controller{
 		$this->autores_model->crear($nombre,$pseudonimo);
 		enmarcar($this,'Autores/crear' );
 	}
+	
+	
+	public function listar() {
+		$this->listarPost ();
+	}
+	public function listarPost($f = '') {
+		$filtro = isset ( $_POST ['filtro'] ) ? $_POST ['filtro'] : $f;
+		$this->load->model('autores_model');
+		$datos['autores']= $this->autores_model->getAll($filtro);
+		$datos['filtro'] =$filtro;
+		enmarcar($this, 'Autores/listar', $datos);
+	}
 }
 ?>
