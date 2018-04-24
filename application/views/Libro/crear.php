@@ -1,11 +1,13 @@
 <div class="container">
-	<form class="form" id="idForm" action="<?=base_url()?>/" method="post">
+	<form class="form" id="idForm" action="<?=base_url()?>Libro/crearpost" method="post">
 		<fieldset>
 			<legend>
 				<label for="idlibro"> introducir los datos del libro</label>
 			</legend>
 			<label for="isbn">ISBN</label> <input type="text" name="isbn"
 				id="isbn"></input><br><br>
+				<label for="autor">autor</label> <input type="text" name="autor"
+				id="autor"></input><br><br>
 				<label for="idioma">Idioma</label> <input type="text" name="idioma"
 				id="idioma"></input><br><br>
 				<label for="npalabras">Nº Palabras</label> <input type="text" name="npalabras"
