@@ -11,7 +11,7 @@
 				
 			
 			
-			<input type="submit" value="registrar libro">
+			<input type="submit" value="registrar Autor">
 		
 	</form>
 	
