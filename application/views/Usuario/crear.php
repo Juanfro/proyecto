@@ -1,5 +1,5 @@
 <div class="container">
-	<form class="form" id="idForm" action="<?=base_url()?>/" method="post">
+	<form class="form" id="idForm" action="<?=base_url()?>usuario/crearPost" method="post">
 		<fieldset>
 			<legend>
 				<label for="idusuario"> Usuario</label>
@@ -26,7 +26,7 @@
 				id="edad"></input><br><br>			
 			
 			<input type="submit" value="registrar usuario">
-		
+		</fieldset>
 	</form>
 	
 </div>
