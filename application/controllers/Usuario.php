@@ -39,7 +39,7 @@ class Usuario extends CI_Controller{
 	}
 	
 	
-	//DEBUG Crear Usuarios dummy.
+	//DEBUG Crear Usuarios dummy. Activar con http://localhost/proyecto/usuario/dummyusuario
 	public function dummyusuario(){
 	    $this->load->model('usuario_model');
 	    
