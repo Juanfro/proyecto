@@ -37,5 +37,24 @@ class Usuario extends CI_Controller{
 	    $datos['body']['usuario']= $_GET['usuario'];
 	    enmarcar($this, 'usuario/crearPOSTerror', $datos);
 	}
+	
+	
+	//DEBUG Crear Usuarios dummy. Activar con http://localhost/proyecto/usuario/dummyusuario
+	public function dummyusuario(){
+	    $this->load->model('usuario_model');
+	    
+	    try{
+	        $this -> usuario_model -> create_usuario('NombreUsu1', 'ApellidoUsu1', 'Usu1', 'pwdUsu1', 'usuario', 'usu1@usuario.usu', '23');
+    	    $this -> usuario_model -> create_usuario('NombreUsu2', 'ApellidoUsu2', 'Usu2', 'pwdUsu2', 'usuario', 'usu2@usuario.usu', '23');
+    	    $this -> usuario_model -> create_usuario('NombreUsu3', 'ApellidoUsu3', 'Usu3', 'pwdUsu3', 'usuario', 'usu3@usuario.usu', '23');
+    	    $this -> usuario_model -> create_usuario('NombreUsu4', 'ApellidoUsu4', 'Usu4', 'pwdUsu4', 'editor', 'usu4@usuario.usu', '23');
+    	    $this -> usuario_model -> create_usuario('NombreUsu5', 'ApellidoUsu5', 'Usu5', 'pwdUsu5', 'editor', 'usu5@usuario.usu', '23');
+    	    $this -> usuario_model -> create_usuario('NombreUsu6', 'ApellidoUsu6', 'Usu6', 'pwdUsu6', 'editor', 'usu6@usuario.usu', '23');
+	    }catch(Exception $e){
+	        
+	    }
+	    
+	    
+	}
 }
 ?>
