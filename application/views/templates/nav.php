@@ -1,4 +1,4 @@
-<nav class="container navbar navbar-inverse">
+<nav class="container-fluid navbar navbar-inverse">
 	<div class="navbar-header">
 		<a class="navbar-brand" href="<?=base_url()?>">Proyecto Libros</a>
 	</div>
@@ -102,7 +102,33 @@
 					</li>
 				</ul>
 			</li>
+			
+			<!-- LOGIN -->
+			
+			<li>
+				
+			</li>
 
 		</ul>
+		
+		<ul class="nav navbar-nav navbar-right"> <!-- Hay que mandarle de alguna forma la informacion sobre si el usuario ha hecho login  -->
+			<li><a>Registrarse</a></li><!-- Popup? Nueva pagina? -->
+			<li class="dropdown">
+    			<a class="dropdown-toggle" data-toggle="dropdown">Login<span class="caret"></span></a>
+    			<ul class="dropdown-menu">
+    				<li>
+    					<form><!-- Recarga la pagina? Recarga la seccion? -->
+    						<input type="text" placeholder="Alias">
+    						<input type="password" placeholder="contraseña">
+    					</form>
+    				</li>
+    			</ul>
+    						
+			</li>
+		</ul>
 	</div>
+	
+	
+	
+	
 </nav>
