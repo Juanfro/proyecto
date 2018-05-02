@@ -16,6 +16,43 @@ class Autor extends CI_Controller{
 		enmarcar($this,'Autores/crear' );
 	}
 	
+	public function modificar(){
+		
+		
+		$this->load->model('autores_model');
+		$id_autores=$_POST['id_autores'];
+	    $datos['autores']= $this->autores_model->getAutoresPorId($id_autores);
+	
+		enmarcar($this, 'Autores/modificar',$datos);
+		
+	}
+	
+	public function modificarpost(){
+		
+		
+		$nombre=$_POST['nombre'];
+		$pseudonimo=$_POST['pseudonimo'];
+		
+		$id_autores=$_POST['id_autores'];
+		
+		$this->load->model('autores_model');
+		$this->autores_model->modificar($id_autores,$nombre,$pseudonimo);
+		
+		
+		
+	}
+	
+	public  function borrar (){
+		
+		
+		$id_autores =$_POST['id_autores'];
+		$this->load->model('autores_model');
+		$this->autores_model->borrar($id_autores);
+		$this->listar();
+		
+	}
+	
+		
 	
 	public function listar() {
 		$this->listarPost ();

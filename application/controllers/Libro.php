@@ -32,5 +32,41 @@ class Libro extends CI_Controller{
 		$datos['filtro'] =$filtro;
 		enmarcar($this, 'Libro/listar', $datos);
 	}
+	
+	public  function modificar(){
+		
+		$id_libros=$_POST['id_libros'];
+		$this ->load -> model ('libros_model');
+		$datos['libros']=$this->libros_model->getLibrosPorId($id_libros);
+		enmarcar($this, 'Libro/modificar',$datos);
+		
+	}
+	
+	public function modificarpost(){
+		$isbn=$_POST['isbn'];
+		$autor=$_POST['autor'];
+		$idioma=$_POST['idioma'];
+		$npalabras=$_POST['npalabras'];
+		$sinopsis=$_POST['sinopsis'];
+		$edicion=$_POST['edicion'];
+		$edadminima=$_POST['edadminima'];
+		
+		$id_libros=$_POST['id_libros'];
+		$this ->load -> model ('libros_model');
+		$this->libros_model->modificar($id_libros,$isbn,$autor,$idioma,$npalabras,$sinopsis,$edicion,$edadminima);
+		
+		
+	}
+	
+	 public function borrar(){
+	 	
+	 	$id_libros=$_POST['id_libros'];
+	 	$this ->load -> model ('libros_model');
+	 	$this->libros_model->borrar($id_libros);
+	 	$this->listar();
+	 	
+	 	
+	 } 
+	
 }
 ?>
