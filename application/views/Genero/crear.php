@@ -1,6 +1,6 @@
 <div class="container">
-	<form class="form" id="idForm" action="<?=base_url()?>/" method="post">
-		<fieldset>
+	<form class="form" id="idForm" action="<?=base_url()?>Genero/crearpost" method="post">
+		
 			<legend>
 				<label for="idgenero"> Genero</label>
 			</legend>

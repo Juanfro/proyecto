@@ -2,7 +2,7 @@
 class Autor extends CI_Controller{
 	public function index()
 	{   $this->crear();
-	enmarcar($this,'Autores/crear' );
+	
 	}
 	public function crear(){
 		enmarcar($this,'Autores/crear');
@@ -13,7 +13,7 @@ class Autor extends CI_Controller{
 		$pseudonimo=$_POST['pseudonimo'];
 		$this->load->model('autores_model');
 		$this->autores_model->crear($nombre,$pseudonimo);
-		enmarcar($this,'Autores/crear' );
+		enmarcar($this,'Autores/crearOK' );
 	}
 	
 	public function modificar(){

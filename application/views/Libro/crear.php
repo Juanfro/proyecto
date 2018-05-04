@@ -1,6 +1,6 @@
 <div class="container">
 	<form class="form" id="idForm" action="<?=base_url()?>Libro/crearpost" method="post">
-		<fieldset>
+	
 			<legend>
 				<label for="idlibro"> introducir los datos del libro</label>
 			</legend>
