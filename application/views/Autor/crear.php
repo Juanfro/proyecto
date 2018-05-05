@@ -10,6 +10,8 @@
 			<label for="pseudonimo">Pseudonimo</label>
 			<input type="text" name="pseudonimo" id="pseudonimo"></input><br>
 			<br> <input type="submit" value="registrar Autor">
+			
+			<!-- Fecha nacimiento, Imagen -->
 	
 	</form>
 

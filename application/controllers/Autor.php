@@ -54,5 +54,22 @@ class Autor extends CI_Controller {
 		$datos['filtro'] = $filtro;
 		enmarcar($this, 'autor/listar', $datos);
 	}
+	
+	//Script crear Autores
+	
+	public function dummyAutor(){
+		$this->load->model('autor_model');
+		
+		try{
+			$this->autor_model->crear('Herbert Frank','Herbert Frank');
+			$this->autor_model->crear('Terry Pratchett','Terry Pratchett');
+			$this->autor_model->crear('J.K. Rowling','J.K. Rowling');
+			$this->autor_model->crear('J.R.R Tolkien','');
+			$this->autor_model->crear('Douglas Adams','Douglas Adams');
+			$this->autor_model->crear('George R.R. Martin','George R.R. Martin');
+		}catch (Exception $e){
+			
+		}
+	}
 }
 ?>
