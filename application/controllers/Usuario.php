@@ -2,7 +2,7 @@
 class Usuario extends CI_Controller{
 	public function index()
 	{   $this->crear();
-	enmarcar($this,'Usuario/crear' );//TODO Esto crea un duplicado del formulario. A lo mejor habría que dejar como función por defecto la vista del perfil y si no hay usuario logueado que aparezca el formulario
+	//enmarcar($this,'Usuario/crear' );//TODO Esto crea un duplicado del formulario. A lo mejor habría que dejar como función por defecto la vista del perfil y si no hay usuario logueado que aparezca el formulario
 	}
 	
 	public function crear(){

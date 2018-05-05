@@ -11,7 +11,8 @@
 			<label for="contenido">Contenido</label> 
 			<textarea name="contenido" id="contenido" placeholder="<?=$articulo->contenido ?>"></textarea><br><br>				
 			
-			<input type="hidden" name="id_articulo" value="<?= $articulo->id?>">
+			
+			<input type="hidden" name="id_autores" value="<?= $articulo->id?>">
 			
 			<input type="submit" value="realiza artículo">
 		</fieldset>
