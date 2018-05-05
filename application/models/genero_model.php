@@ -3,9 +3,9 @@
 class genero_model extends CI_Model{
 	
 	public function crear($nombre){
-		$generos=R::dispense('generos');
-		$generos->nombre=$nombre;
-		R::store($generos);
+		$genero=R::dispense('generos');
+		$genero->nombre=$nombre;
+		R::store($genero);
 		R::close();
 		
 	}
