@@ -11,16 +11,16 @@
 				id="apellido"></input><br><br>
 				
 			<label for="alias">Alias</label> <input type="text" name="alias"
-				id="alias"></input><br><br>
+				id="alias" required="required"></input><br><br>
 			
 			<label for="contrasena">Contraseña</label> <input type="text" name="contrasena"
-				id="contrasena"></input><br><br>
+				id="contrasena" required="required"></input><br><br>
 				
 			<label for="rol">Rol</label> <input type="text" name="rol"
-				id="rol"></input><br><br>
+				id="rol" required="required"></input><br><br><!-- La etiqueta required Sólo debe aparecer en la vista del administrador -->
 				
 			<label for="email">Email</label> <input type="text" name="email"
-				id="email"></input><br><br>
+				id="email" required="required"></input><br><br>
 			
 			<label for="edad">Edad</label> <input type="text" name="edad"
 				id="edad"></input><br><br>			
