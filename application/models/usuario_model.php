@@ -22,6 +22,14 @@ class Usuario_model extends CI_Model
             $usuario->email = $email;
             $usuario->edad = $edad;
             
+            //Blog Personal
+            
+            $blog = R::dispense('blog');
+            $blog->nombre ='Blog de ' . $alias;
+            R::store($blog);
+            
+            $usuario->blog = $blog;
+            
             R::store($usuario);
         } else {
             throw new Exception("usuario duplicado");
