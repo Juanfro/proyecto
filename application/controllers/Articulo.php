@@ -38,5 +38,47 @@ class Articulo extends CI_Controller
     }
     
     //TODO Crear Articulos de muestra
+    
+    
+    
+    //si pongo ['body']  me miestra errores
+    public function listar(){
+    	$this->load->model('articulo_model');
+    	$datos['articulos']=$this->articulo_model->getAll();
+    	enmarcar($this, 'Articulo/listar',$datos);
+    }
+    
+    public function modificar(){
+    	
+    	$this->load->model('articulo_model');
+    	$id_articulo=$_POST['id_articulo'];
+    	$datos['articulo']=$this->articulo_model->getArticuloPorId($id_articulo);
+     
+    	enmarcar($this, 'Articulo/modificar',$datos);
+    }
+    
+    public function modificarPost(){
+    	
+    	$titulo=$_POST['titulo'];
+    	$contenido=$_POST['contenido'];
+    	
+    	$id_articulo=$_POST['id_articulo'];
+    	$this->load->model('articulo_model');
+    	
+    	$this->articulo_model->modificar($id_articulo,$titulo,$contenido);
+    	
+    	
+    	enmarcar($this, 'Articulo/modificarOK');
+    }
+   
+    public function borrar(){
+    	
+    	$id_articulo=$_POST['id_articulo'];
+    	$this->load->model('articulo_model');
+    	$this->articulo_model->borrar($id_articulo);
+    	
+    	enmarcar($this, 'Articulo/borrarOK');
+    	
+    }
 }
 ?>

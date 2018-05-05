@@ -212,4 +212,14 @@ class Pais extends CI_Controller{
             
         }
     }
+    
+    
+    public function listar(){
+    	$this->load->model('pais_model');
+    	$datos['paises']=$this->pais_model->getAll();
+    	enmarcar($this, 'Pais/listar',$datos);
+    }
+    
+    
+    
 }
