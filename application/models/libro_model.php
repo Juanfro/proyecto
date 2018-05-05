@@ -1,5 +1,5 @@
 <?php
-class libros_model extends CI_model{
+class libro_model extends CI_model{
 	
 	public function crear($isbn,$autor,$idioma,$npalabras,$sinopsis,$edicion,$edadminima){
 		$libros=R::dispense('libros');
