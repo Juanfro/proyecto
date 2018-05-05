@@ -120,6 +120,7 @@
     					<form><!-- Recarga la pagina? Recarga la seccion? -->
     						<input type="text" placeholder="Alias">
     						<input type="password" placeholder="contraseña">
+    						<input type="submit" value="Entrar">
     					</form>
     				</li>
     			</ul>
