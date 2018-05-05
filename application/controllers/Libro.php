@@ -32,7 +32,7 @@ class Libro extends CI_Controller {
 	public function listarPost($f = '') {
 		$filtro = isset($_POST['filtro']) ? $_POST['filtro'] : $f;
 		$this->load->model('libro_model');
-		$datos['libro'] = $this->libro_model->getAll($filtro);
+		$datos['libros'] = $this->libro_model->getAll($filtro);
 		$datos['filtro'] = $filtro;
 		enmarcar($this, 'Libro/listar', $datos);
 	}
