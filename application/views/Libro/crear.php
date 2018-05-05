@@ -6,6 +6,9 @@
 		</legend>
 		<label for="isbn">ISBN</label>
 		<input type="text" name="isbn" id="isbn" required="required"></input><br> <br>
+		
+		<label for="titulo">Título</label>
+		<input type="text" name="titulo" id="titulo" required="required"></input><br> <br>
 
 		<label for="autor">autor</label>
 		<input type="text" name="autor" id="autor"></input><br> <br><!-- TODO: Obtener autores de bases de datos -->
