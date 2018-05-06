@@ -12,7 +12,7 @@
 			<br> <input type="submit" value="registrar Autor">
 			
 			<!-- Fecha nacimiento, Imagen -->
-	
+		</fieldset>
 	</form>
 
 </div>
