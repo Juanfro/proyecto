@@ -13,14 +13,14 @@
 			 <td><?=$autor->pseudonimo ?></td>
 			  <td>
 			 <form action="<?=base_url()?>Autor/modificar" method ="post">
-			 <input type="hidden" name="id_autores" id="id_autores" value="<?=$autor->id?>"/>
+			 <input type="hidden" name="id_autor" id="id_autor" value="<?=$autor->id?>"/>
 			 <input type="hidden" name="filtro" value="<?=$filtro ?>" />
 			 <button class=" glyphicon glyphicon-edit" type="submit"/>
 			 </form>
 			 </td> 
 			 <td>
 			 <form action="<?=base_url()?>Autor/borrar" method ="post">
-			 <input type="hidden" name="id_autores" value="<?=$autor->id?>"/>
+			 <input type="hidden" name="id_autor" value="<?=$autor->id?>"/>
 			 <button class="glyphicon glyphicon-remove" type="submit"></button>
 			 </form>
 			</td>

@@ -20,14 +20,14 @@
 			 <td><?=$libro->edadminima ?></td>
 			 <td>
 			 <form action="<?=base_url()?>Libro/modificar" method ="post">
-			 <input type="hidden" name="id_libros" value="<?=$libro->id?>"/>
+			 <input type="hidden" name="id_libro" value="<?=$libro->id?>"/>
 			 <input type="hidden" name="filtro" value="<?=$filtro ?>" />
 			 <button class=" glyphicon glyphicon-edit" type="submit"/>
 			 </form>
 			 </td>
 			 <td>
 			 <form action="<?=base_url()?>Libro/borrar" method ="post">
-			 <input type="hidden" name="id_libros" value="<?=$libro->id?>"/>
+			 <input type="hidden" name="id_libro" value="<?=$libro->id?>"/>
 			 <button class="glyphicon glyphicon-remove" type="submit"></button>
 			 </form>
 			</td>

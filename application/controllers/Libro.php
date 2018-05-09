@@ -38,8 +38,9 @@ class Libro extends CI_Controller {
 	}
 
 	public function modificar() {
-		$id_libro = $_POST['id_libro'];
 		$this->load->model('libro_model');
+		$id_libro = $_POST['id_libro'];
+	
 		$datos['libro'] = $this->libro_model->getlibroPorId($id_libro);
 		enmarcar($this, 'Libro/modificar', $datos);
 	}

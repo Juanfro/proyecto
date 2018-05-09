@@ -9,6 +9,22 @@ class Usuario extends CI_Controller{
 		enmarcar($this,'Usuario/crear');
 
 	}
+	public function loginPost(){
+		$nombre = isset($_POST['nombre']) ? $_POST['nombre']: null;
+		$pwd = isset($_POST['contrasena']) ? $_POST['contrasena']: null;
+		
+		$this->load->model('usuario_model');
+		$ok->$this->usuario_model->verificar($nombre,$pwd);
+		
+		if($ok){
+			session_start();
+			$usuario=$this_model->getUsuarioPorNombre($nombre);
+			$_SESSION['usuario']['id']=$usuario->id;
+			$_SESSION['usuario']['nombre']=$usuario->nombre;
+			$_SESSION['usuario']['apellido']=$usuario->apellido;
+			
+		}
+	}
 	
 	public function crearPost(){
 	    $this->load->model('usuario_model');
