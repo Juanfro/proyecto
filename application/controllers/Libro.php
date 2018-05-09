@@ -8,7 +8,12 @@ class Libro extends CI_Controller {
 	}
 
 	public function crear() {
-		enmarcar($this, 'Libro/crear');
+		//Cargar modelo autor
+		$this->load->model('autor_model');
+	
+		$datos['body']['autores'] = $this->autor_model->getAll();
+	
+		enmarcar($this, 'Libro/crear', $datos);
 	}
 
 	public function crearpost() {

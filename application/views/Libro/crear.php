@@ -10,8 +10,16 @@
 		<label for="titulo">Título</label>
 		<input type="text" name="titulo" id="titulo" required="required"></input><br> <br>
 
+<!-- 
 		<label for="autor">autor</label>
 		<input type="text" name="autor" id="autor"></input><br> <br><!-- TODO: Obtener autores de bases de datos -->
+ -->		
+		<label for="autorSelect">autor</label>
+		<select name="autor" id="autor">
+			<?php foreach ($body['autores'] as $autor): ?>
+				<option value="<?= $autor['id']?>"><?=$autor['nombre']?></option>
+			<?php endforeach;?>
+		</select><br> <br>
 		
 		<label for="idioma">Idioma</label>
 		<input type="text" name="idioma" id="idioma"></input><br> <br>
