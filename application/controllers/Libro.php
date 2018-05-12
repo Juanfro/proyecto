@@ -17,6 +17,11 @@ class Libro extends CI_Controller {
 	}
 
 	public function crearpost() {
+		
+		//Cargar Modelo Libro
+		$this->load->model('libro_model');
+		
+		//Datos
 		$isbn = $_POST['isbn'];
 		$titulo = $_POST['titulo'];
 		$autor = $_POST['autor'];
@@ -25,7 +30,7 @@ class Libro extends CI_Controller {
 		$sinopsis = $_POST['sinopsis'];
 		$edicion = $_POST['edicion'];
 		$edadminima = $_POST['edadminima'];
-		$this->load->model('libro_model');
+		
 		$this->libro_model->crear($isbn, $titulo, $autor, $idioma, $npalabras, $sinopsis, $edicion, $edadminima);
 		enmarcar($this, 'Libro/crear');
 	}
@@ -69,6 +74,16 @@ class Libro extends CI_Controller {
 		$this->load->model('libro_model');
 		$this->libro_model->borrar($id_libro);
 		$this->listar();
+	}
+	
+	public function dummylibros(){
+		$this->load->model('libro_model');
+		
+		try{
+			//$this->libro_model->crear('978-0441172719', 'Dune' );
+		}catch(Exception $e){
+			
+		}
 	}
 }
 ?>

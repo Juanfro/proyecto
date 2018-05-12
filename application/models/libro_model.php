@@ -1,16 +1,24 @@
 <?php
 class libro_model extends CI_model{
 	
-	public function crear($isbn,$titulo, $autor,$idioma,$npalabras,$sinopsis,$edicion,$edadminima){
+	public function crear($isbn,$titulo,$ids_autor,$idioma,$npalabras,$sinopsis,$edicion,$edadminima){
+		
+		//Datos
 		$libro=R::dispense('libro');
 		$libro->isbn=$isbn;
 		$libro->titulo=$titulo;
-		$libro->autor=$autor;
+		//$libro->autor=$ids_autor; TODO  Cómo listar El autor en libros?
 		$libro->idioma=$idioma;
 		$libro->npalabras=$npalabras;
 		$libro->sinopsis=$sinopsis;
 		$libro->edicion=$edicion;
 		$libro->edadminima=$edadminima;
+		
+		foreach($ids_autor as $id_autor){
+			$autor= R::load('autor', $id_autor);
+			$libro->sharedAutorList[] = $autor;
+		}		
+		
 		R::store($libro);
 		R::close();
 	}
