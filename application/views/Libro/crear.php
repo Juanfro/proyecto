@@ -13,9 +13,10 @@
 <!-- 
 		<label for="autor">autor</label>
 		<input type="text" name="autor" id="autor"></input><br> <br><!-- TODO: Obtener autores de bases de datos -->
- -->		
+	
 		<label for="autorSelect">autor</label>
-		<select name="autor" id="autor">
+		<select name="autor" id="autor" required="required">
+			<option value="">Elige un Autor</option>
 			<?php foreach ($body['autores'] as $autor): ?>
 				<option value="<?= $autor['id']?>"><?=$autor['nombre']?></option>
 			<?php endforeach;?>
