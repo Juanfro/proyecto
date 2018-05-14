@@ -215,9 +215,17 @@ class Pais extends CI_Controller{
     
     
     public function listar(){
+    	$this->listarPost();
+    }
+    public function listarPost($f=''){
+    	$filtro = isset($_POST['filtro']) ? $_POST['filtro'] : $f;
+    	
     	$this->load->model('pais_model');
-    	$datos['paises']=$this->pais_model->getAll();
+    	$datos['paises']=$this->pais_model->getAll($filtro);
+    	$datos['filtro'] = $filtro;
     	enmarcar($this, 'Pais/listar',$datos);
+    	
+    	
     }
     
     

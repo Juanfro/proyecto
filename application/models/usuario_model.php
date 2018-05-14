@@ -36,5 +36,17 @@ class Usuario_model extends CI_Model
         }
         R::close();
     }
+    public function getUsuarioPorNombre($nombre){
+    	return R::findOne('usuario','nombre  =?',[$nombre]);
+    }
+    
+    public function verificar($nombre,$pwd){
+    	$ok= false;
+    	$usuario= R::findOne('usuario','nombre  = ?',[$nombre]);
+    	if ($usuario != null && $usuario->pwd == $pwd){
+    		$ok=true;
+    	}
+    	return $ok;
+    }
 }
 ?>

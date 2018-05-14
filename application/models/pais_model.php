@@ -18,7 +18,7 @@ class pais_model extends CI_Model{
         R::close();
     }
     
-    public function getAll(){
-    	return R::findAll('pais');
+    public function getAll($filtro){
+    	return R::find('pais',"nombre like ?",[$filtro.'%']);
     }
 }

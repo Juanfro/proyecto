@@ -10,7 +10,7 @@ class genero_model extends CI_Model{
 		
 	}
 	public function getAll($filtro){
-		return R::find('generos',"nombre like ?",['%'.$filtro.'%']);
+		return R::find('generos',"nombre like ?",[$filtro.'%']);
 	}
 	
 	

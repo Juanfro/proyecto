@@ -117,9 +117,9 @@
     			<a class="dropdown-toggle" data-toggle="dropdown">Login<span class="caret"></span></a>
     			<ul class="dropdown-menu">
     				<li>
-    					<form action="<?=base_url()?>Usuario/loginPost"  action="post" ><!-- Recarga la pagina? Recarga la seccion? -->
-    						<input type="text"  name ="nombre" placeholder="nombre/usuario">
-    						<input type="contasena" placeholder="contraseña">
+    					<form action="<?=base_url()?>usuario/loginPost"  method="post"><!-- Recarga la pagina? Recarga la seccion? -->
+    						<input type="text"  name="nombre" id="nombre" placeholder="nombre/usuario">
+    						<input type="password"  name ="pwd" id="contrasena" placeholder="contraseña">
     						<input type="submit" value="Entrar">
     					</form>
     				</li>

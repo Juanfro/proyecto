@@ -26,8 +26,12 @@ class Libro extends CI_Controller {
 		$edicion = $_POST['edicion'];
 		$edadminima = $_POST['edadminima'];
 		$this->load->model('libro_model');
-		$this->libro_model->crear($isbn, $titulo, $autor, $idioma, $npalabras, $sinopsis, $edicion, $edadminima);
-		enmarcar($this, 'Libro/crear');
+		$status=$this->libro_model->crear($isbn, $titulo, $autor, $idioma, $npalabras, $sinopsis, $edicion, $edadminima);
+		if($status == 0){
+			enmarcar($this, 'Libro/crearOK');}
+		else{
+			enmarcar($this, 'Libro/crearError');
+		}
 	}
 
 	public function listar() {
@@ -37,7 +41,9 @@ class Libro extends CI_Controller {
 	public function listarPost($f = '') {
 		$filtro = isset($_POST['filtro']) ? $_POST['filtro'] : $f;
 		$this->load->model('libro_model');
+		$this->load->model('autor_model');
 		$datos['libros'] = $this->libro_model->getAll($filtro);
+		$datos['autores']=$this->autor_model->getAll();
 		$datos['filtro'] = $filtro;
 		enmarcar($this, 'Libro/listar', $datos);
 	}

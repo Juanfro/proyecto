@@ -1,7 +1,12 @@
 <?php
 class libro_model extends CI_model{
 	
+	private function existeLibro($titulo){
+		return R::findOne('libro','titulo=?',[$titulo]) !=null ? true : false;
+	}
 	public function crear($isbn,$titulo, $autor,$idioma,$npalabras,$sinopsis,$edicion,$edadminima){
+		$status=0;
+		if(!$this->existeLibro($titulo)){
 		$libro=R::dispense('libro');
 		$libro->isbn=$isbn;
 		$libro->titulo=$titulo;
@@ -13,6 +18,11 @@ class libro_model extends CI_model{
 		$libro->edadminima=$edadminima;
 		R::store($libro);
 		R::close();
+		}
+		else {
+			$status = -1;
+		}
+		return $status;
 	}
 	
 	public  function getAll($filtro){
