@@ -6,12 +6,13 @@
  <input type="submit" value="filtrar">	
  </form>
  <table class="table table-bordered">
-	   <tr><th>ISBN</th><th>autor</th><th>Idioma</th><th> nº palabras</th><th>Sinopsis</th>
+	   <tr><th>ISBN</th><th>Título</th><th>autor</th><th>Idioma</th><th> nº palabras</th><th>Sinopsis</th>
 	     <th>Edicion</th><th>Edad Minima</th><th>Editar</th><th>Borrar</th> </tr>
 	  
 		<?php foreach ($libros as $libro): ?>
 			<tr>
 			 <td><?=$libro->isbn ?></td>
+			 <td><?=$libro->titulo?></td>
 			 <td><?=$libro->autor ?></td>
 			 <td><?=$libro->idioma ?></td>
 			 <td><?=$libro->npalabras ?></td>

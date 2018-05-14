@@ -1,7 +1,7 @@
 <div class="container">
 	<form class="form" id="idForm" action="<?=base_url()?>Libro/crearpost" method="post">
 
-		<legend>
+		<legend> <!-- OJO falta el fieldset -->
 			<label for="idlibro"> introducir los datos del libro</label>
 		</legend>
 		<label for="isbn">ISBN</label>
@@ -13,9 +13,10 @@
 <!-- 
 		<label for="autor">autor</label>
 		<input type="text" name="autor" id="autor"></input><br> <br><!-- TODO: Obtener autores de bases de datos -->
- -->		
+	
 		<label for="autorSelect">autor</label>
-		<select name="autor" id="autor">
+		<select name="autor[]" id="autor" required="required" multiple="multiple">
+			<option value="">Elige un Autor</option>
 			<?php foreach ($body['autores'] as $autor): ?>
 				<option value="<?= $autor['id']?>"><?=$autor['nombre']?></option>
 			<?php endforeach;?>
