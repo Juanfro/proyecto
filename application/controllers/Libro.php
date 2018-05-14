@@ -30,7 +30,7 @@ class Libro extends CI_Controller {
 		$sinopsis = $_POST['sinopsis'];
 		$edicion = $_POST['edicion'];
 		$edadminima = $_POST['edadminima'];
-<<<<<<< HEAD
+
 		$this->load->model('libro_model');
 		$status=$this->libro_model->crear($isbn, $titulo, $autor, $idioma, $npalabras, $sinopsis, $edicion, $edadminima);
 		if($status == 0){
@@ -38,11 +38,7 @@ class Libro extends CI_Controller {
 		else{
 			enmarcar($this, 'Libro/crearError');
 		}
-=======
-		
-		$this->libro_model->crear($isbn, $titulo, $autor, $idioma, $npalabras, $sinopsis, $edicion, $edadminima);
-		enmarcar($this, 'Libro/crear');
->>>>>>> 2459f2ccfc291f2d03ce359bb40bce9dde38edbc
+
 	}
 
 	public function listar() {
