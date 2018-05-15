@@ -22,14 +22,14 @@ class Libro extends CI_Controller {
 		$this->load->model('libro_model');
 		
 		//Datos
-		$isbn = $_POST['isbn'];
-		$titulo = $_POST['titulo'];
-		$autor = $_POST['autor'];
-		$idioma = $_POST['idioma'];
-		$npalabras = $_POST['npalabras'];
-		$sinopsis = $_POST['sinopsis'];
-		$edicion = $_POST['edicion'];
-		$edadminima = $_POST['edadminima'];
+		$isbn =isset($_POST['isbn']) ?$_POST['isbn']:null ;
+		$titulo = isset($_POST['titulo']) ?$_POST['titulo']:null;
+		$autor = isset($_POST['autor']) ?$_POST['autor']:null;
+		$idioma = isset($_POST['idioma'])? $_POST['idioma']:null;
+		$npalabras = isset($_POST['npalabras'])? $_POST['npalabras']:null;
+		$sinopsis = isset($_POST['sinopsis'])? $_POST['sinopsis']:null;
+		$edicion = isset($_POST['edicion'])? $_POST['edicion']:null;
+		$edadminima = isset($_POST['edadminima'])?$_POST['edadminima']:null;
 
 		$this->load->model('libro_model');
 		$status=$this->libro_model->crear($isbn, $titulo,
@@ -75,10 +75,11 @@ class Libro extends CI_Controller {
 	}
 
 	public function modificarpost() {
-		$isbn = $_POST['isbn'];
-		$autor = $_POST['autor'];
-		$idioma = $_POST['idioma'];
-		$npalabras = $_POST['npalabras'];
+		$isbn = $_POST['isbn'] ;
+		$titulo = $_POST['titulo'];
+		$autor = $_POST['autor'] ;
+		$idioma =  $_POST['idioma'];
+		$npalabras =  $_POST['npalabras'];
 		$sinopsis = $_POST['sinopsis'];
 		$edicion = $_POST['edicion'];
 		$edadminima = $_POST['edadminima'];
