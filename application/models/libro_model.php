@@ -5,10 +5,9 @@ class libro_model extends CI_model{
 	private function existeLibro($titulo){
 		return R::findOne('libro','titulo=?',[$titulo]) !=null ? true : false;
 	}
-	public function crear($isbn,$titulo, $autor,$idioma,$npalabras,$sinopsis,$edicion,$edadminima){
+	public function crear($isbn,$titulo, $ids_autor,$idioma,$npalabras,$sinopsis,$edicion,$edadminima){
 		$status=0;
 		if(!$this->existeLibro($titulo)){
-
 	
 		//Datos
 
