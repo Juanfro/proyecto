@@ -63,7 +63,7 @@ class Usuario extends CI_Controller {
 	}
 
 	public function listar() {
-		$this->listarPost($f = '');
+		$this->listarPost();
 	}
 
 	public function listarPost($f = '') {

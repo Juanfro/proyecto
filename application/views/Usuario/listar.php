@@ -2,7 +2,7 @@
 
 <form action="<?=base_url()?>usuario/listarPost" method ="post">
 	  <label for='idfiltro'>filtro</label>
- <input  id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'>
+ <input  id='idfiltro' type="text" name='filtro' value=''>
  <input type="submit" value="filtrar usuario">	
  </form> 
  

@@ -5,9 +5,11 @@
 				<label for="idlibro"> introducir los datos del libro</label>
 			</legend>
 			<label for="isbn">ISBN</label> <input type="text" name="isbn"
-				id="isbn" placeholder="<?= $libro->nombre?>"></input><br><br>
+				id="isbn" placeholder="<?= $libro->isbn?>"></input><br><br>
+				<label for="autor">Titulo</label> <input type="text" name="titulo"
+				id="autor" placeholder="<?= $libro->titulo?>"></input><br><br>
 				<label for="autor">autor</label> <input type="text" name="autor"
-				id="autor" placeholder="<?= $libro->nutor?>"></input><br><br>
+				id="autor" placeholder="<?= $libro->autor?>"></input><br><br>
 				<label for="idioma">Idioma</label> <input type="text" name="idioma"
 				id="idioma" placeholder="<?= $libro->idioma?>"></input><br><br>
 				<label for="npalabras">Nº Palabras</label> <input type="text" name="npalabras"
