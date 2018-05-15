@@ -5,9 +5,7 @@ class Usuario_model extends CI_Model
 
     public function create_usuario($nombre, $apellido, $alias, $pwd, $rol, $email, $edad)
     {
-        $usuario = R::findOne('usuario', 'alias=?', [
-            $alias
-        ]);
+        $usuario = R::findOne('usuario', 'alias=?', [$alias]);
         
         if ($usuario == null) { // Comprobar que no existe un usuario con le mismo Alias
             
@@ -37,13 +35,25 @@ class Usuario_model extends CI_Model
         R::close();
     }
     public function getUsuarioPorNombre($nombre){
-    	return R::findOne('usuario','nombre  =?',[$nombre]);
+    	
+    	$usuario = R::findOne('usuario', 'alias =?', [$nombre]);
+    	$usuarioId = $usuario->id;
+    	return $usuarioId;
+    	//RETORNA EL ID DEL USUARIO
+    	
+    	//return R::findOne('usuario','nombre  =?',[$nombre]);
+    }
+    
+    public function getRolUsuario($alias){
+    	$usuario = R::findOne('usuario', 'alias =?', [$alias]);
+    	$usuarioRol = $usuario->rol;
+    	return $usuarioRol;
     }
     
     public function verificar($nombre,$pwd){
     	$ok= false;
-    	$usuario= R::findOne('usuario','nombre  = ?',[$nombre]);
-    	if ($usuario != null && $usuario->pwd == $pwd){
+    	$usuario= R::findOne('usuario','alias  = ?',[$nombre]);
+    	if ($usuario != null && $usuario->password == $pwd){
     		$ok=true;
     	}
     	return $ok;
