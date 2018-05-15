@@ -48,5 +48,8 @@ class Usuario_model extends CI_Model
     	}
     	return $ok;
     }
+    public  function getAll($filtro){
+    	return R::find('usuario',"nombre like ?",[$filtro.'%']);
+    }
 }
 ?>

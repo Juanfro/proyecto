@@ -11,7 +11,7 @@ class Libro extends CI_Controller {
 		//Cargar modelo autor
 		$this->load->model('autor_model');
 	
-		$datos['body']['autores'] = $this->autor_model->getAll();
+		$datos['body']['autores'] = $this->autor_model->getAll($filtro='');
 	
 		enmarcar($this, 'Libro/crear', $datos);
 	}
@@ -32,7 +32,9 @@ class Libro extends CI_Controller {
 		$edadminima = $_POST['edadminima'];
 
 		$this->load->model('libro_model');
-		$status=$this->libro_model->crear($isbn, $titulo, $autor, $idioma, $npalabras, $sinopsis, $edicion, $edadminima);
+		$status=$this->libro_model->crear($isbn, $titulo,
+				$autor, 
+				$idioma, $npalabras, $sinopsis, $edicion, $edadminima);
 		if($status == 0){
 			enmarcar($this, 'Libro/crearOK');}
 		else{
@@ -48,9 +50,18 @@ class Libro extends CI_Controller {
 	public function listarPost($f = '') {
 		$filtro = isset($_POST['filtro']) ? $_POST['filtro'] : $f;
 		$this->load->model('libro_model');
-		$this->load->model('autor_model');
+		
 		$datos['libros'] = $this->libro_model->getAll($filtro);
-		$datos['autores']=$this->autor_model->getAll();
+		
+		$datos['filtro'] = $filtro;
+		enmarcar($this, 'Libro/listar', $datos);
+	}
+	
+	public function listarPostAutor($f=''){
+		$filtro = isset($_POST['filtro']) ? $_POST['filtro'] : $f;
+		$this->load->model('autor_model');
+		
+		$datos['libros']=$this->autor_model->getAll($filtro);
 		$datos['filtro'] = $filtro;
 		enmarcar($this, 'Libro/listar', $datos);
 	}
@@ -75,6 +86,7 @@ class Libro extends CI_Controller {
 		$id_libro = $_POST['id_libro'];
 		$this->load->model('libro_model');
 		$this->libro_model->modificar($id_libro, $isbn, $autor, $idioma, $npalabras, $sinopsis, $edicion, $edadminima);
+	 enmarcar($this, 'Libro/modificadoOK');
 	}
 
 	public function borrar() {

@@ -1,18 +1,17 @@
 <?php
 class libro_model extends CI_model{
 	
-<<<<<<< HEAD
+
 	private function existeLibro($titulo){
 		return R::findOne('libro','titulo=?',[$titulo]) !=null ? true : false;
 	}
 	public function crear($isbn,$titulo, $autor,$idioma,$npalabras,$sinopsis,$edicion,$edadminima){
 		$status=0;
 		if(!$this->existeLibro($titulo)){
-=======
-	public function crear($isbn,$titulo,$ids_autor,$idioma,$npalabras,$sinopsis,$edicion,$edadminima){
-		
+
+	
 		//Datos
->>>>>>> 2459f2ccfc291f2d03ce359bb40bce9dde38edbc
+
 		$libro=R::dispense('libro');
 		$libro->isbn=$isbn;
 		$libro->titulo=$titulo;
@@ -23,6 +22,7 @@ class libro_model extends CI_model{
 		$libro->edicion=$edicion;
 		$libro->edadminima=$edadminima;
 		
+		//el ids_autor falla
 		foreach($ids_autor as $id_autor){
 			$autor= R::load('autor', $id_autor);
 			$libro->sharedAutorList[] = $autor;
@@ -38,7 +38,7 @@ class libro_model extends CI_model{
 	}
 	
 	public  function getAll($filtro){
-		return R::find('libro',"autor like ?", ['%' . $filtro . '%']);	//TODO Filtrar Por título. Según está busca un autor y no está en esta tabla.
+		return R::find('libro',"titulo like ?", [$filtro . '%']);	//TODO Filtrar Por título. Según está busca un autor y no está en esta tabla.
 	}
 	
 	public function getlibroPorId($id_libro){

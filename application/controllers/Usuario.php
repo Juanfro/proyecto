@@ -57,7 +57,19 @@ class Usuario extends CI_Controller{
 	    enmarcar($this, 'usuario/crearPOSTerror', $datos);
 	}
 	
+	public function listar(){
+		$this->listarPost($f='');
+	}
 	
+	public function listarPost($f=''){
+		$filtro = isset($_POST['filtro']) ? $_POST['filtro'] : $f;
+		
+		$this->load->model('usuario_model');
+		$datos['usuario']=$this->usuario_model->getAll($filtro);
+		enmarcar($this,'Usuario/listar',$datos);
+		
+		
+	}
 	//DEBUG Crear Usuarios dummy. Activar con http://localhost/proyecto/usuario/dummyusuario
 	public function dummyusuario(){
 	    $this->load->model('usuario_model');

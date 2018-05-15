@@ -12,7 +12,7 @@ class autor_model extends CI_model {
 
 	public function getAll($filtro='') {
 		return R::find('autor', "nombre like ?", [
-			'%' . $filtro . '%'
+			 $filtro . '%'
 		]);
 	}
 
