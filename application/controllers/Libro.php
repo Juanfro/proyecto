@@ -99,8 +99,8 @@ class Libro extends CI_Controller {
 		$this->load->model('libro_model');
 		
 		try{
-			//$this->libro_model->crear('978-0441172719', 'Dune', );
-			$this->libro_model->crear('974-0441172719','Harry Potter y la piedra filosofal',[4],'español',321,'un niño se entera que es mago','papel','12');
+			
+			$this->libro_model->crear('974-0441172719','Harry Potter y la piedra filosofal',[4,3],'español',321,'un niño se entera que es mago','papel','12');
 			$this->libro_model->crear('875-0441172719','Harry Potter y la camara secreta',[4],'español',321,'un niño se entera que es mago','papel','12');
 			$this->libro_model->crear('776-0441172719','Harry Potter y el prisionero de azcaban',[4],'español',321,'un niño se entera que es mago','bolsillo','12');
 			$this->libro_model->crear('677-0441172719','Harry Potter y el caliz de fuego',[4],'español',321,'un niño se entera que es mago','bolsillo','12');

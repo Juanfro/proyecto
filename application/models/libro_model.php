@@ -20,8 +20,7 @@ class libro_model extends CI_model{
 		$libro->sinopsis=$sinopsis;
 		$libro->edicion=$edicion;
 		$libro->edadminima=$edadminima;
-		
-		//el ids_autor falla
+				
 		foreach($ids_autor as $id_autor){
 			$autor= R::load('autor', $id_autor);
 			$libro->sharedAutorList[] = $autor;
