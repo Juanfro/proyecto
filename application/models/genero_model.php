@@ -9,11 +9,8 @@ class genero_model extends CI_Model{
 		R::close();
 		
 	}
-	public function getAll($filtro = ''){
-		return R::find('genero',"nombre like ?",[$filtro.'%']);
-	}
-	
-	
-	
+	public function getAll($filtro = '') {
+		return R::find('genero', "nombre like ?", [$filtro . '%']);
+	}	
 	
 }

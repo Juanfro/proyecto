@@ -10,8 +10,11 @@ class Libro extends CI_Controller {
 	public function crear() {
 		//Cargar modelo autor
 		$this->load->model('autor_model');
-	
-		$datos['body']['autores'] = $this->autor_model->getAll($filtro='');
+		$datos['body']['autores'] = $this->autor_model->getAll($filtro='');//Obtener Autores
+		
+		//Cargar Modelo Genero
+		$this->load->model('genero_model');
+		$datos['body']['generos'] = $this->genero_model->getAll($filtro='');//Obtener Generos
 	
 		enmarcar($this, 'Libro/crear', $datos);
 	}
@@ -25,6 +28,7 @@ class Libro extends CI_Controller {
 		$isbn =isset($_POST['isbn']) ?$_POST['isbn']:null ;
 		$titulo = isset($_POST['titulo']) ?$_POST['titulo']:null;
 		$autor = isset($_POST['autor']) ?$_POST['autor']:null;
+		$genero = isset($_POST['genero']) ?$_POST['genero']:null;
 		$idioma = isset($_POST['idioma'])? $_POST['idioma']:null;
 		$npalabras = isset($_POST['npalabras'])? $_POST['npalabras']:null;
 		$sinopsis = isset($_POST['sinopsis'])? $_POST['sinopsis']:null;
@@ -32,7 +36,7 @@ class Libro extends CI_Controller {
 		$edadminima = isset($_POST['edadminima'])?$_POST['edadminima']:null;
 
 		$this->load->model('libro_model');
-		$status=$this->libro_model->crear($isbn, $titulo,$autor,$idioma, $npalabras, $sinopsis, $edicion, $edadminima);
+		$status=$this->libro_model->crear($isbn, $titulo,$autor,$genero,$idioma, $npalabras, $sinopsis, $edicion, $edadminima);
 		if($status == 0){
 			enmarcar($this, 'Libro/crearOK');}
 		else{

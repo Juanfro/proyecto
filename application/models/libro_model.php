@@ -5,7 +5,7 @@ class libro_model extends CI_model{
 	private function existeLibro($titulo){
 		return R::findOne('libro','titulo=?',[$titulo]) !=null ? true : false;
 	}
-	public function crear($isbn,$titulo, $ids_autor,$idioma,$npalabras,$sinopsis,$edicion,$edadminima){
+	public function crear($isbn,$titulo, $ids_autor, $ids_genero,$idioma,$npalabras,$sinopsis,$edicion,$edadminima){
 		$status=0;
 		if(!$this->existeLibro($titulo)){
 	
@@ -24,7 +24,12 @@ class libro_model extends CI_model{
 		foreach($ids_autor as $id_autor){
 			$autor= R::load('autor', $id_autor);
 			$libro->sharedAutorList[] = $autor;
-		}		
+		}
+		
+		foreach ($ids_genero as $id_genero){
+			$genero= R::load('genero', $id_genero);
+			$libro->sharedGeneroList[]= $genero;
+		}
 		
 		R::store($libro);
 		R::close();
