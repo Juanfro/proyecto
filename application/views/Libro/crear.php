@@ -1,6 +1,6 @@
 <div class="container">
 	<form class="form" id="idForm" action="<?=base_url()?>Libro/crearpost" method="post">
-
+<fieldset>
 		<legend> <!-- OJO falta el fieldset -->
 			<label for="idlibro"> introducir los datos del libro</label>
 		</legend>
@@ -39,5 +39,6 @@
 			value="registrar libro">
 
 	</form>
+</fieldset>	
 
 </div>

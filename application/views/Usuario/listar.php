@@ -1,6 +1,6 @@
 <div class="container">
 
-<form action="<?=base_url()?>Usuario/listarPost" method ="post">
+<form action="<?=base_url()?>usuario/listarPost" method ="post">
 	  <label for='idfiltro'>filtro</label>
  <input  id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'>
  <input type="submit" value="filtrar usuario">	
