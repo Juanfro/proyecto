@@ -101,7 +101,21 @@ class Libro extends CI_Controller {
 		$this->load->model('libro_model');
 		
 		try{
-			//$this->libro_model->crear('978-0441172719', 'Dune' );
+			//$this->libro_model->crear('978-0441172719', 'Dune', );
+			$this->libro_model->crear('974-0441172719','Harry Potter y la piedra filosofal','J.K Rowling','español',321,'un niño se entera que es mago','papel','12');
+			$this->libro_model->crear('875-0441172719','Harry Potter y la camara secreta','J.K Rowling','español',321,'un niño se entera que es mago','papel','12');
+			$this->libro_model->crear('776-0441172719','Harry Potter y el prisionero de azcaban','J.K Rowling','español',321,'un niño se entera que es mago','bolsillo','12');
+			$this->libro_model->crear('677-0441172719','Harry Potter y el caliz de fuego','J.K Rowling','español',321,'un niño se entera que es mago','bolsillo','12');
+			$this->libro_model->crear('578-0441172719','Harry Potter y la orden del fenix','J.K Rowling','español',321,'un niño se entera que es mago','bolsillo','12');
+			$this->libro_model->crear('479-0441172719','Harry Potter y el principe mestizo','J.K Rowling','español',321,'un niño se entera que es mago','bolsillo','12');
+			$this->libro_model->crear('371-0441172719','Harry Potter y las reliquias de la muerte','J.K Rowling','español',321,'un niño se entera que es mago','bolsillo','12');
+		
+			$this->libro_model->crear('322-0441172718','El señor de los anillos la comunidad del anillo','J.R.R Tolkien','español',1222,'un hoobit sa le de la comarca','papel',15);
+			$this->libro_model->crear('365-0441172717','El señor de los anillos y las dos torres','J.R.R Tolkien','español',1222,'un hoobit sa le de la comarca','papel',15);
+			$this->libro_model->crear('390-0441172716','El señor de los anillos y el retorno del rey','J.R.R Tolkien','español',1222,'un hoobit sa le de la comarca','papel',15);
+			
+			$this->libro_model->crear('0-330-32312-1','the Salon of Doubt','Douglas Adams','ingles',744,'It consists largely of essays about technology and life experiences, but its major selling point is the inclusion of the incomplete novel on which Adams was working at the time of his death, The Salmon of Doubt (from which the collection gets its title, a reference to the Irish myth of the Salmon of Knowledge','electronico',16 );
+		    $this->libro_model->crear('0-671-74251-5','The Long Dark Tea-Time of the Soul','Douglas Adams','ingles',832,'It is the second book by Adams featuring private detective Dirk Gently, the first being Dirk Gently`s Holistic Detective Agency.','electronico',18);
 		}catch(Exception $e){
 			
 		}
