@@ -25,6 +25,7 @@ class Usuario extends CI_Controller {
 			$_SESSION['usuario']['id'] = $usuarioId;
 			$usuarioRol = $this->usuario_model->getRolUsuario($nombre);
 			$_SESSION['usuario']['rol'] = $usuarioRol;
+			$_SESSION['usuario']['nombre'] = $nombre;
 			//$_SESSION['usuario']['nombre'] = $usuario->nombre;
 			//$_SESSION['usuario']['apellido'] = $usuario->apellido;
 			//header('Location:' . base_url() . 'usuario/loginOk');

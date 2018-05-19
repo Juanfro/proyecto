@@ -112,6 +112,10 @@
 		</ul>
 		
 		<ul class="nav navbar-nav navbar-right"> <!-- Hay que mandarle de alguna forma la informacion sobre si el usuario ha hecho login  -->
+			<li><a>DEBUG NombreUsuario: <?= $_SESSION['usuario']['nombre']//DEBUG ?></a></li>
+			<li><a>DEBUG RolUsuario: <?= $_SESSION['usuario']['rol'] ?></a></li>
+			<li><a>DEBUG IdUsuario: <?= $_SESSION['usuario']['id'] ?></a></li>			
+			
 			<li><a href="<?=base_url()?>Usuario/crear">Registrarse</a></li><!-- Popup? Nueva pagina? -->
 			<li class="dropdown">
     			<a class="dropdown-toggle" data-toggle="dropdown">Login<span class="caret"></span></a>
