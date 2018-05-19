@@ -20,6 +20,7 @@
 			<input type="text" name="contrasena" id="contrasena" required="required"></input><br>
 			<br>
 
+			<?php if($_SESSION['usuario']['rol']=='administrador'):?>
 			<label for="rol">Rol</label>
 			<!-- <input type="text" name="rol" id="rol" required="required"></input> -->
 			<select name="rol" id="rol">
@@ -29,7 +30,7 @@
 			</select>
 			<br>
 			<br>
-			<!-- La etiqueta required Sólo debe aparecer en la vista del administrador -->
+			<?php endif;?>
 
 			<label for="email">Email</label>
 			<input type="text" name="email" id="email" required="required"></input><br>
