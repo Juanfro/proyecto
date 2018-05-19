@@ -19,7 +19,7 @@ class Usuario extends CI_Controller {
 		$ok = $this->usuario_model->verificar($nombre, $pwd);
 		
 		if ($ok) {
-			session_start();
+			session_start();//Al princpio?
 			$usuarioId = $this->usuario_model->getUsuarioPorNombre($nombre);
 
 			$_SESSION['usuario']['id'] = $usuarioId;

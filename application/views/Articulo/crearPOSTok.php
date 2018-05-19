@@ -8,4 +8,5 @@
 	<div>
 		<?= $body['contenido']?>
 	</div>
+	<p><?= 'DEBUG: ' . $_SESSION['usuario']['id']?></p>
 </div>
