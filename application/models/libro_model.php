@@ -60,6 +60,7 @@ class libro_model extends CI_model{
 		$libro->edadminima=$edadminima;
 		
 		R::store($libro);
+		R::close();
 		
 	}
 	
@@ -71,6 +72,15 @@ class libro_model extends CI_model{
 		}
 		R::close();
 		
+	}
+	
+	public function seguir($id_libro, $id_usuario){
+		$libro = R::load('libro', $id_libro);
+		$usuario = R::load('usuario', $id_usuario);
+		
+		$libro->sharedUsuarioList[]=$usuario;
+		R::store($libro);
+		R::close();
 	}
 }
 ?>
