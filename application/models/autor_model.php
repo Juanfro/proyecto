@@ -2,10 +2,15 @@
 
 class autor_model extends CI_model {
 
-	public function crear($nombre, $pseudonimo) {
+	public function crear($nombre, $pseudonimo, $pais) {
 		$autor = R::dispense('autor');
 		$autor->nombre = $nombre;
 		$autor->pseudonimo = $pseudonimo;
+		
+		$pais=R::findOne('pais', 'id =?', [$pais]);
+		
+		$autor->pais=$pais;
+		
 		R::store($autor);
 		R::close();
 	}
