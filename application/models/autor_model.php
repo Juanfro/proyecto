@@ -21,7 +21,9 @@ class autor_model extends CI_model {
 	public function getautorPorId($id_autor) {
 		return R::load('autor', $id_autor);
 	}
-
+	
+	
+	
 	public function modificar($id_autor, $nombre, $pseudonimo) {
 		$autor = R::load('autor', $id_autor);
 		$autor->nombre = $nombre;

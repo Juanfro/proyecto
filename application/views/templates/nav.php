@@ -117,6 +117,7 @@
 			<li><a>DEBUG IdUsuario: <?= $_SESSION['usuario']['id'] ?></a></li>			
 			
 			<li><a href="<?=base_url()?>Usuario/crear">Registrarse</a></li><!-- Popup? Nueva pagina? -->
+			
 			<li class="dropdown">
     			<a class="dropdown-toggle" data-toggle="dropdown">Login<span class="caret"></span></a>
     			<ul class="dropdown-menu">

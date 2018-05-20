@@ -11,6 +11,8 @@
 			<label for="contenido">Contenido</label> 
 			<textarea name="contenido" id="contenido" required="required"></textarea><br><br>				
 			
+			
+			
 			<input type="submit" value="realiza artículo">
 		</fieldset>
 		

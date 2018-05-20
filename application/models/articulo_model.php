@@ -18,6 +18,7 @@
      }
      
      public function getAll(){
+     	
      	return R::findAll('articulo');
      }
      
@@ -25,6 +26,10 @@
      	return R::load('articulo',$id_articulo);
      }
      
+     public function  getAutor($id_autor){
+     	$autor=R::load('autor',1);
+     	return $autor->nombre;
+     }
      public function modificar($id_articulo,$titulo,$contenido){
      	$articulo=R::load('articulo',$id_articulo);
      	

@@ -56,6 +56,7 @@ class Articulo extends CI_Controller {
 	public function listar() {
 		$this->load->model('articulo_model');
 		$datos['articulos'] = $this->articulo_model->getAll();
+	    $datos['autor']=$this->articulo_model->getAutor();
 		enmarcar($this, 'Articulo/listar', $datos);
 	}
 
