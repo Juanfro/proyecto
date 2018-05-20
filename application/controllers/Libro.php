@@ -100,6 +100,15 @@ class Libro extends CI_Controller {
 		$this->listar();
 	}
 	
+	public function seguir(){
+		session_start();
+		$this->load->model('libro_model');
+		
+		$id_libro= isset($_POST['id_libro']) ? $_POST['id_libro'] : null;
+		$id_usuario = isset($_SESSION['usuario']['id']) ? $_SESSION['usuario']['id'] : null;
+		$this->libro_model->seguir($id_libro, $id_usuario);
+	}
+	
 	public function dummylibros(){
 		$this->load->model('libro_model');
 		

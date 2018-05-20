@@ -1,16 +1,20 @@
 <?php
  class articulo_model extends CI_Model{
-     public function create_articulo($titulo, $contenido){
-         $articulo = R::dispense('articulo');
+     public function create_articulo($titulo, $contenido, $idUsuario){
          
-         //Datos
+		$articulo = R::dispense('articulo');		
+	
+		//Datos
+		$articulo->titulo=$titulo;
+		$articulo->contenido=$contenido; //TODO formato WYSIWYG	
+		
+		//Autor: El usuario que escribe el artículo
+		$autor = R::findOne('usuario', 'id =?', [$idUsuario]);
+		$articulo->usuarioautor = $autor;
          
-         $articulo->titulo=$titulo;
-         $articulo->contenido=$contenido; //TODO formato
-         
-         R::store($articulo);
-         
-         R::close();
+		R::store($articulo);
+		         
+		R::close();
      }
      
      public function getAll(){

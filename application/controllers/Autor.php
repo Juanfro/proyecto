@@ -7,14 +7,20 @@ class Autor extends CI_Controller {
 	}
 
 	public function crear() {
-		enmarcar($this, 'autor/crear');
+		
+		//Cargar lista de paises
+		$this->load->model('pais_model');
+		$datos['body']['paises'] = $this->pais_model-> getAll($filtro="");
+		
+		enmarcar($this, 'autor/crear', $datos);
 	}
 
 	public function crearpost() {
 		$nombre = $_POST['nombre'];
 		$pseudonimo = $_POST['pseudonimo'];
+		$pais = $_POST['pais'];
 		$this->load->model('autor_model');
-		$this->autor_model->crear($nombre, $pseudonimo);
+		$this->autor_model->crear($nombre, $pseudonimo, $pais);
 		enmarcar($this, 'autor/crearOK');
 	}
 

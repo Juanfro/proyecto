@@ -9,6 +9,13 @@
 			<br>
 			<label for="pseudonimo">Pseudonimo</label>
 			<input type="text" name="pseudonimo" id="pseudonimo"></input><br>
+			<label for="pais">País</label>
+			<select id="pais" name="pais">
+				<option value="">Elige un pais</option>
+				<?php foreach($body['paises'] as $pais):?>
+					<option value="<?= $pais['id']?>"> <?= $pais['nombre']?> </option>
+				<?php endforeach;?>
+			</select>
 			<br> <input type="submit" value="registrar Autor">
 			
 			<!-- Fecha nacimiento, Imagen -->
