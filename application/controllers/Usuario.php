@@ -98,6 +98,14 @@ class Usuario extends CI_Controller {
 	
 		$this->load->model('usuario_model');
 		$this->usuario_model->modificar($id_usuario,$nombre,$apellido,$alias,$pwd,$rol,$email,$edad);
+	    $this->listar();
+	}
+	
+	public function borrar(){
+		$id_usuario=$_POST['id_usuario'];
+		$this->load->model('usuario_model');
+		$this->usuario_model->borrar($id_usuario);
+		$this->listar();
 	}
 
 	// DEBUG Crear Usuarios dummy. Activar con http://localhost/proyecto/usuario/dummyusuario

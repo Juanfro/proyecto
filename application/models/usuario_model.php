@@ -59,6 +59,13 @@ class Usuario_model extends CI_Model
     	R::store($usuario);
     }
     
+    public function borrar($id_usuario) {
+    	$usuario = R::load("usuario", $id_usuario);
+    	if ($usuario->id != 0) {
+    		R::trash($usuario);
+    	}
+    	R::close();
+    }
     public function getRolUsuario($alias){
     	$usuario = R::findOne('usuario', 'alias =?', [$alias]);
     	$usuarioRol = $usuario->rol;
