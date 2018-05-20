@@ -6,10 +6,10 @@
 			</legend>
 			
 			<label for="nota">nota</label>
-		 	<input type="text" name="nota" id="nota" required="required"></input><br><br>
+		 	<input type="text" name="nota" id="nota" ></input><br><br>
 				
 			<label for="contenido">Contenido</label> 
-			<textarea name="contenido" id="contenido" required="required"></textarea><br><br>				
+			<textarea name="contenido" id="contenido" ></textarea><br><br>				
 			
 			<input type="submit" value="valoracion">
 		</fieldset>

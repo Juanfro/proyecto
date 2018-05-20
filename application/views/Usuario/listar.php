@@ -24,7 +24,8 @@
 			 <td>
 			 <form action="<?=base_url()?>Usuario/modificar" method ="post">
 			 <input type="hidden" name="id_usuario" value="<?=$usuarios->id?>"/>
-			 
+			 <!-- envia el tipo de rol que tiene -->
+			 <input type="hidden" name="id_rol" value="<?=$usuarios->rol?>"/>
 			 <button class=" glyphicon glyphicon-edit" type="submit"/>
 			 </form>
 			 </td>

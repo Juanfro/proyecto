@@ -43,6 +43,21 @@ class Usuario_model extends CI_Model
     	
     	//return R::findOne('usuario','nombre  =?',[$nombre]);
     }
+    public function getusuarioPorId($id_usuario) {
+    	return R::load('usuario', $id_usuario);
+    }
+    
+    public function modificar($id_usuario, $nombre,$apellido,$alias,$pwd,$rol,$email,$edad) {
+    	$usuario = R::load('usuario', $id_usuario);
+    	$usuario->nombre = $nombre;
+    	$usuario->apellido = $apellido;
+    	$usuario->contrasena = $pwd;
+    	$usuario->rol = $rol;
+    	$usuario->emaiol = $nombre;
+    	$usuario->edad = $edad;
+    	
+    	R::store($usuario);
+    }
     
     public function getRolUsuario($alias){
     	$usuario = R::findOne('usuario', 'alias =?', [$alias]);

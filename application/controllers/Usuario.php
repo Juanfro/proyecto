@@ -35,15 +35,17 @@ class Usuario extends CI_Controller {
 		}
 	}
 
+	
+	
 	public function crearPost() {
 		$this->load->model('usuario_model');
 		$nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
 		$apellido = isset($_POST['apellido']) ? $_POST['apellido'] : null;
 		$alias = isset($_POST['alias']) ? $_POST['alias'] : null;
 		$pwd = isset($_POST['contrasena']) ? $_POST['contrasena'] : null;
-		$rol = isset($_POST['nombre']) ? $_POST['rol'] : null;
-		$email = isset($_POST['nombre']) ? $_POST['email'] : null;
-		$edad = isset($_POST['nombre']) ? $_POST['edad'] : null;
+		$rol = isset($_POST['rol']) ? $_POST['rol'] : null;
+		$email = isset($_POST['email']) ? $_POST['email'] : null;
+		$edad = isset($_POST['edad']) ? $_POST['edad'] : null;
 		
 		try {
 			$this->usuario_model->create_usuario($nombre, $apellido, $alias, $pwd, $rol, $email, $edad);
@@ -73,6 +75,29 @@ class Usuario extends CI_Controller {
 		$this->load->model('usuario_model');
 		$datos['usuario'] = $this->usuario_model->getAll($filtro);
 		enmarcar($this, 'Usuario/listar', $datos);
+	}
+	
+	
+	public function modificar(){
+		$this->load->model('usuario_model');
+		$id_usuario = $_POST['id_usuario'];
+		$datos['usuario'] = $this->usuario_model->getusuarioPorId($id_usuario);
+	
+		enmarcar($this, 'usuario/modificar', $datos);
+	}
+	public function modificarPost(){
+		$nombre =  $_POST['nombre'];
+		$apellido =  $_POST['apellido'] ;
+		$alias = $_POST['alias'] ;
+		$pwd =  $_POST['contrasena'] ;
+		$rol =  $_POST['rol'] ;
+		$email =  $_POST['email'] ;
+		$edad =  $_POST['edad'] ;
+	
+		$id_usuario=$_POST['id_usuario'];
+	
+		$this->load->model('usuario_model');
+		$this->usuario_model->modificar($id_usuario,$nombre,$apellido,$alias,$pwd,$rol,$email,$edad);
 	}
 
 	// DEBUG Crear Usuarios dummy. Activar con http://localhost/proyecto/usuario/dummyusuario
