@@ -14,7 +14,6 @@
 			
 			<input type="submit" value="entrada blog">
 		</fieldset>
-	</form>
-	
+	</form>	
 </div>
 

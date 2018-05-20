@@ -12,13 +12,15 @@ class EntradaBlog extends CI_Controller {
 	}
 	
 	public function crearPost(){
+		session_start();
 		$this->load->model('entradablog_model');
 		
 		$titulo = isset($_POST['titulo'])? $_POST['titulo']: null;
 		$contenido = isset($_POST['contenido'])? $_POST['contenido']: null;
+		$id_usuario = isset($_SESSION['usuario']['id']) ? $_SESSION['usuario']['id'] : null;
 		
 		try{
-			$this->entradablog_model->crear($titulo, $contenido);
+			$this->entradablog_model->crear($titulo, $contenido, $id_usuario);
 			header('Location:'. base_url().'entradablog/crearPOSTok?titulo='.$titulo.'&contenido='.$contenido);
 		}catch(Exception $e){
 			
