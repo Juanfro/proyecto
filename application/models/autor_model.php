@@ -36,5 +36,14 @@ class autor_model extends CI_model {
 		}
 		R::close();
 	}
+	
+	public function seguir($id_autor, $id_usuario){
+		$autor = R::load('autor', $id_autor);
+		$usuario = R::load('usuario', $id_usuario);
+		
+		$autor->sharedUsuarioList[]=$usuario;
+		R::store($autor);
+		R::close();
+	}
 }
 ?>

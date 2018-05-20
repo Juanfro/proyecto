@@ -61,6 +61,17 @@ class Autor extends CI_Controller {
 		enmarcar($this, 'autor/listar', $datos);
 	}
 	
+	public function seguir(){
+		session_start();
+		
+		$this->load->model('autor_model');
+		
+		$id_autor= isset($_POST['id_autor']) ? $_POST['id_autor'] : null;
+		$id_usuario = isset ($_SESSION['usuario']['id']) ? $_SESSION['usuario']['id'] : null;
+		$this->autor_model->seguir($id_autor, $id_usuario);
+		
+	}
+	
 	//Script crear Autores
 	
 	public function dummyAutor(){
