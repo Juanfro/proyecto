@@ -1,5 +1,5 @@
 <div class="container">
-	<form class="form" id="idForm" action="<?=base_url()?>ListarLibros/crearPost" method="post">
+	<form class="form" id="idForm" action="<?=base_url()?>ListaLibros/crearPost" method="post">
 		<fieldset>
 			<legend>
 				<label for="idlistalibros"> Lista de libros</label>
