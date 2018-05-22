@@ -7,7 +7,7 @@
 		//Datos
 		$articulo->titulo=$titulo;
 		$articulo->contenido=$contenido; //TODO formato WYSIWYG	
-		
+		$articulo->fecha=date("Y-m-d H:i:s");
 		//Autor: El usuario que escribe el artículo
 		$autor = R::findOne('usuario', 'id =?', [$idUsuario]);
 		$articulo->usuarioautor = $autor;
@@ -26,10 +26,7 @@
      	return R::load('articulo',$id_articulo);
      }
      
-     public function  getAutor($id_autor){
-     	$autor=R::load('autor',1);
-     	return $autor->nombre;
-     }
+     
      public function modificar($id_articulo,$titulo,$contenido){
      	$articulo=R::load('articulo',$id_articulo);
      	
