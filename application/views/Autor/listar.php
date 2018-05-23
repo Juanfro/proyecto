@@ -5,7 +5,7 @@
 		<input id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'> <input type="submit"
 			value="filtrar">
 	</form>
-	<table class="table table-bordered">
+	<table class="table table-bordered sortable">
 		<tr>
 			<th>nombre</th>
 			<th>Pseudonimo</th>

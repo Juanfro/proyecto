@@ -8,7 +8,7 @@
  
  
 
- <table class="table table-bordered">
+ <table class="table table-bordered sortable">
 	   <tr><th>Nombre</th><th>Apellido</th><th>Alias</th><th>Rol</th><th>Email</th>
 
 	     <th>Edad</th><th>Editar</th><th>Borrar</th> </tr>
