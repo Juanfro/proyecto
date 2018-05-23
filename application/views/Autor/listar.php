@@ -9,6 +9,7 @@
 		<tr>
 			<th>nombre</th>
 			<th>Pseudonimo</th>
+			<th>Pais</th>
 			<th>Modificar</th>
 			<th>Eliminar</th>
 			<th>Listar</th>
@@ -17,6 +18,7 @@
 			<tr>
 			<td><?=$autor->nombre ?></td>
 			<td><?=$autor->pseudonimo ?></td>
+			<td><?= $autor->pais->nombre ?>
 			<td>
 				<form action="<?=base_url()?>Autor/modificar" method="post">
 					<input type="hidden" name="id_autor" id="id_autor" value="<?=$autor->id?>" /> 
