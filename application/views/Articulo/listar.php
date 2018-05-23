@@ -1,7 +1,7 @@
 <div class="container">
 
 
- 	<table class="table table-bordered">
+ 	<table cellspacing="1" class="tablesorter">
 	   <tr><th>Titulo</th><th>Contenido</th><th>autor</th><th>Modificar</th><th>Borrar</th></tr>
 		<?php foreach ($articulos as $articulo): ?>
 			<tr>

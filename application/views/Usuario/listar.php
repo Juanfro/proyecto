@@ -7,10 +7,12 @@
  </form> 
  
  
- <table class="table table-bordered">
+ <table  id="usuario" class="tablesorter">
+ <thead>
 	   <tr><th>Nombre</th><th>Apellido</th><th>Alias</th><th>Contraseña</th><th>Rol</th><th>Email</th>
 	     <th>Edad</th><th>Editar</th><th>Borrar</th> </tr>
-	  
+	  </thead>
+	  <tbody>
 		<?php foreach ($usuario as $usuarios): ?>
 			<tr>
 			 <td><?=$usuarios->nombre ?></td>
@@ -36,9 +38,11 @@
 			 </form>
 			</td>
 			 </tr>
-			 
-         <?php endforeach; ?>
+		         <?php endforeach; ?>
+         </tbody>
 		 </table>
 
 	</div>
+
+
 
