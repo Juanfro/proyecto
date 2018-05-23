@@ -7,7 +7,10 @@
  </form>
 
  	<table class="table table-bordered">
+ 	<thead>
 	   <tr><th>nombre</th></tr>
+	</thead>
+	<tbody>
 		<?php foreach ($paises as $pais): ?>
 			<tr>
 			 <td><?=$pais->nombre ?></td>
@@ -15,6 +18,7 @@
 			 </tr>
 			 
          <?php endforeach; ?>
+    </tbody>     
 	</table>
 
 	</div>
