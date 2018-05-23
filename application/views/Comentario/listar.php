@@ -3,7 +3,10 @@
 
 
 <table class="table table-bordered">
+<thead>
 <tr><th>Contenido</th><th>Modificar</th><th>Borrar</th></tr>
+</thead>
+<tbody>
 <?php foreach ($comentario as $comentarios): ?>
 			<tr>
 			
@@ -26,6 +29,7 @@
 			 </tr>
 			 
          <?php endforeach; ?>
+         </tbody>
 	</table>
 
 	</div>
