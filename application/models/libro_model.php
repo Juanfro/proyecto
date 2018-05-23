@@ -40,14 +40,11 @@ class libro_model extends CI_model{
 		return $status;
 	}
 	
-<<<<<<< HEAD
-	public  function getAll($filtro){
-		return R::find('libro',"titulo like ?", [$filtro . '%']);	//TODO Filtrar Por título. Según está busca un autor y no está en esta tabla.
-=======
+
 	public  function getAll($filtro=''){
 		
 		return R::find('libro',"titulo like ?", ['%'.$filtro . '%']);	//TODO Filtrar Por título. Según está busca un autor y no está en esta tabla.
->>>>>>> dcbbed98743aede60eab60ba65c9301ded50c338
+
 	}
 	
 	public function getlibroPorId($id_libro){
