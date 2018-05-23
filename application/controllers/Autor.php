@@ -83,7 +83,7 @@ class Autor extends CI_Controller {
 			$this->autor_model->crear('J.K. Rowling','J.K. Rowling',22);
 			$this->autor_model->crear('J.R.R Tolkien','',29);
 			$this->autor_model->crear('Douglas Adams','Douglas Adams',88);
-			$this->autor_model->crear('George R.R. Martin','George R.R. Martin',52);
+			$this->autor_model->crear('George R.R. Martin','George R.R. Martin',52 );
 		}catch (Exception $e){
 			
 		}

@@ -62,14 +62,7 @@ class Libro extends CI_Controller {
 		enmarcar($this, 'Libro/listar', $datos);
 	}
 	
-	public function listarPostAutor($f=''){
-		$filtro = isset($_POST['filtroautor']) ? $_POST['filtroautor'] : $f;
-		$this->load->model('autor_model');
-		
-		$datos['libros']=$this->autor_model->getAll($filtro);
-		$datos['filtro'] = $filtro;
-		enmarcar($this, 'Libro/listar', $datos);
-	}
+	
 
 	public function modificar() {
 		$this->load->model('libro_model');
