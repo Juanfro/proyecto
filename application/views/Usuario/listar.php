@@ -7,7 +7,7 @@
  </form> 
  
  
- <table  id="usuario" class="tablesorter">
+ <table class="table">
  <thead>
 	   <tr><th>Nombre</th><th>Apellido</th><th>Alias</th><th>Contraseña</th><th>Rol</th><th>Email</th>
 	     <th>Edad</th><th>Editar</th><th>Borrar</th> </tr>
