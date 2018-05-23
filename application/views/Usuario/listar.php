@@ -8,7 +8,7 @@
  
  
  <table class="table table-bordered">
-	   <tr><th>Nombre</th><th>Apellido</th><th>Alias</th><th>Contraseña</th><th>Rol</th><th>Email</th>
+	   <tr><th>Nombre</th><th>Apellido</th><th>Alias</th><th>Rol</th><th>Email</th>
 	     <th>Edad</th><th>Editar</th><th>Borrar</th> </tr>
 	  
 		<?php foreach ($usuario as $usuarios): ?>
@@ -16,7 +16,6 @@
 			 <td><?=$usuarios->nombre ?></td>
 			 <td><?=$usuarios->apellido?></td>
 			 <td><?=$usuarios->alias ?></td>
-			 <td><?=$usuarios->contrasena ?></td>
 			 <td><?=$usuarios->rol ?></td>
 			 <td><?=$usuarios->email ?></td>
 			 <td><?=$usuarios->edad ?></td>

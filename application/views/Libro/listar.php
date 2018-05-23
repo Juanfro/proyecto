@@ -1,16 +1,5 @@
 <div class="container">
-	<!--  filtro autor 
-	<form action="<?=base_url()?>Libro/listarPostAutor" method ="post">
-	  <label for='idfiltro'>filtro</label>
- <input  id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'>
- <input type="submit" value="filtrar autor">	
- </form>-->
-	<!--  filtro genero 
-	<form action="<?=base_url()?>Libro/listar" method ="post">
-	  <label for='idfiltro'>filtro</label>
- <input  id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'>
- <input type="submit" value="filtrar genero">	
- </form>-->
+	
 	<!--filtro titulo  -->
 	<form action="<?=base_url()?>Libro/listarPost" method="post">
 		<label for='idfiltro'>filtro</label>
@@ -23,6 +12,7 @@
 			<th>Título</th>
 			<th>autor</th>
 			<th>Idioma</th>
+			<th>Genero</th>
 			<th>nº palabras</th>
 			<th>Sinopsis</th>
 			<th>Edicion</th>
@@ -31,15 +21,29 @@
 			<th>Borrar</th>
 			<th>Seguir</th>
 		</tr>
-	  
+	   <!--  <pre><code><?= print_r($libros)?></code></pre>-->
 		<?php foreach ($libros as $libro): ?>
 			<tr>
 			<td><?=$libro->isbn ?></td>
 			<td><?=$libro->titulo?></td>
-			<td><?=$libro->autor ?></td>
+			
+			<td><?php foreach ($libro->sharedAutorList as $autor): ?>
+			      <?= $autor->nombre ."</br> "; ?> 
+			   <?php endforeach; ?>
+			</td>
+		
+			 
 			<td><?=$libro->idioma ?></td>
+			<td><?php foreach ($libro->sharedGeneroList as $genero): ?>
+			      <?= $genero->nombre ."</br> "; ?> 
+			   <?php endforeach; ?>
+			</td>
 			<td><?=$libro->npalabras ?></td>
+			
+			
+			
 			<td><?=$libro->sinopsis ?></td>
+			<!--edición quitar  -->
 			<td><?=$libro->edicion ?></td>
 			<td><?=$libro->edadminima ?></td>
 			<td>

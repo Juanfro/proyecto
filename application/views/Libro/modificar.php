@@ -12,6 +12,8 @@
 				id="autor" placeholder="<?= $libro->autor?>"></input><br><br>
 				<label for="idioma">Idioma</label> <input type="text" name="idioma"
 				id="idioma" placeholder="<?= $libro->idioma?>"></input><br><br>
+				<label for="genero">Género</label> <input type="text" name="genero"
+				id="genero" placeholder="<?= $libro->genero?>"></input><br><br>
 				<label for="npalabras">Nº Palabras</label> <input type="text" name="npalabras"
 				id="npalabras" placeholder="<?= $libro->npalabras?>"></input><br><br>
 				<label for="sinopsis">Sinopsis</label> <input type="text" name="sinopsis"
