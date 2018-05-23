@@ -9,10 +9,12 @@
  
 
  <table class=" table table-bordered sortable">
+ 	<thead>
 	   <tr><th>Nombre</th><th>Apellido</th><th>Alias</th><th>Rol</th><th>Email</th>
 
 	     <th>Edad</th><th>Editar</th><th>Borrar</th> </tr>
-	  
+	  </thead>
+	  <tbody>
 		<?php foreach ($usuario as $usuarios): ?>
 			<tr>
 			 <td><?=$usuarios->nombre ?></td>
@@ -38,7 +40,7 @@
 			</td>
 			 </tr>
 		         <?php endforeach; ?>
-         
+         </tbody>
 		 </table>
 
 	</div>

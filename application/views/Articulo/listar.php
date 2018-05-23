@@ -1,8 +1,11 @@
 <div class="container">
 
 
- 	<table class="table table-bordered ">
+ 	<table class="table table-bordered sortable">
+ 	<thead>
 	   <tr><th>Titulo</th><th>Contenido</th><th>autor</th><th>Modificar</th><th>Borrar</th></tr>
+	 </thead>
+	 <tbody>
 		<?php foreach ($articulos as $articulo): ?>
 			<tr>
 			 <td><?=$articulo->titulo ?></td>
@@ -25,6 +28,7 @@
 			 </tr>
 			 
          <?php endforeach; ?>
+         </tbody>  
 	</table>
 
 	</div>

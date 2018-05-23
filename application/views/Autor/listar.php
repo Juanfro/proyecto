@@ -6,6 +6,7 @@
 			value="filtrar">
 	</form>
 	<table class="table table-bordered sortable">
+	<thead>
 		<tr>
 			<th>nombre</th>
 			<th>Pseudonimo</th>
@@ -14,6 +15,8 @@
 			<th>Eliminar</th>
 			<th>Listar</th>
 		</tr>
+	</thead>
+	<tbody>
 		<?php foreach ($autores as $autor): ?>
 			<tr>
 			<td><?=$autor->nombre ?></td>
@@ -41,6 +44,7 @@
 		</tr>
 			 
          <?php endforeach; ?>
+    </tbody>     
 		 </table>
 
 </div>

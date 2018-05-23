@@ -7,6 +7,7 @@
 			value="filtrar titulo">
 	</form>
 	<table class=" table table-bordered sortable">
+		<thead>
 		<tr>
 			<th>ISBN</th>
 			<th>Título</th>
@@ -21,7 +22,9 @@
 			<th>Borrar</th>
 			<th>Seguir</th>
 		</tr>
+		</thead>
 	   <!--  <pre><code><?= print_r($libros)?></code></pre>-->
+	   <tbody>
 		<?php foreach ($libros as $libro): ?>
 			<tr>
 			<td><?=$libro->isbn ?></td>
@@ -68,6 +71,7 @@
 		</tr>
 			 
          <?php endforeach; ?>
+         </tbody>
 		 </table>
 
 </div>
