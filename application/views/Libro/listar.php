@@ -31,15 +31,22 @@
 			<th>Borrar</th>
 			<th>Seguir</th>
 		</tr>
-	  
+	   
 		<?php foreach ($libros as $libro): ?>
 			<tr>
 			<td><?=$libro->isbn ?></td>
 			<td><?=$libro->titulo?></td>
-			<td><?=$libro->autor ?></td>
+			
+			<td><?php foreach ($libro->sharedAutorList as $autor): ?>
+			      <?= $autor->nombre ."</br> "; ?> 
+			   <?php endforeach; ?>
+			</td>
+		
+			 
 			<td><?=$libro->idioma ?></td>
 			<td><?=$libro->npalabras ?></td>
 			<td><?=$libro->sinopsis ?></td>
+			<!--edición quitar  -->
 			<td><?=$libro->edicion ?></td>
 			<td><?=$libro->edadminima ?></td>
 			<td>
