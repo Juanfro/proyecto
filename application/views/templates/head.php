@@ -12,7 +12,11 @@
 	<!-- para ordenar -->
 	<script src="https://kryogenix.org/code/browser/sorttable/sorttable.js"></script>
 	
-
+    <!-- wichiwichi2 -->
+     
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+    
 	
 	<title>Proyecto</title>
 

@@ -3,7 +3,7 @@ class comentario_model extends CI_model{
 
 	public function crear($contenido){
 		$comentario=R::dispense('comentario');
-		$comentario->contenido=$contenido;
+		$comentario->comentario=$contenido;
 		
 		R::store($comentario);
 		R::close();
