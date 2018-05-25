@@ -15,13 +15,7 @@
 			
 			
 			
-    <script>
-      $('#summernote').summernote({
-        placeholder: 'Hello bootstrap 4',
-        tabsize: 2,
-        height: 100
-      });
-    </script>
+    
 			
 		</fieldset>
 		<input type="submit" value="comentario"/>

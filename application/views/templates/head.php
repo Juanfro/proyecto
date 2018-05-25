@@ -14,8 +14,15 @@
 	
     <!-- wichiwichi2 -->
      
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+     <link href="<?= base_url()?>assets/css/summernote-lite.css" rel="stylesheet">
+     <script src="<?= base_url()?>assets/js/summernote-lite.js"></script>
+     <script src="<?= base_url()?>assets/js/comentario.js"></script>
+     
+     <link src="<?= base_url()?>assets/font/summernote.woff"></link>
+     <link src="<?= base_url()?>assets/font/summernote.ttf"></link>
+     <link src="<?= base_url()?>assets/font/summernote.eot"></link>
+     
+    
     
 	
 	<title>Proyecto</title>
