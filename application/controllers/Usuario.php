@@ -64,6 +64,17 @@ class Usuario extends CI_Controller {
 		$datos['body']['usuario'] = $_GET['usuario'];
 		enmarcar($this, 'usuario/crearPOSTerror', $datos);
 	}
+	
+	public function perfil(){
+		$this->load->model('usuario_model');
+		$id_usuario = $_POST['id_usuario'];
+	
+		$datos['usuario'] = $this->usuario_model->getusuarioPorId($id_usuario);
+	
+		enmarcar($this, 'Usuario/perfil',$datos);
+	
+	}
+	
 
 	public function listar() {
 		$this->listarPost();
