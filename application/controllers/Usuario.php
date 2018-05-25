@@ -12,6 +12,7 @@ class Usuario extends CI_Controller {
 	}
 
 	public function loginPost() {
+		
 		$nombre = $_POST['nombre'];
 		$pwd = $_POST['pwd'];
 		

@@ -98,7 +98,8 @@
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Mi perfil<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li>
-						<a href="<?=base_url()?>blog/crear">Ir a mi perfil</a>						
+					  
+						<a href="<?=base_url()?>Usuario/perfil">Ir a mi perfil</a>						
 					</li>
 				</ul>
 			</li>
