@@ -26,10 +26,18 @@ class autor_model extends CI_model {
 	
 	
 	
-	public function modificar($id_autor, $nombre, $pseudonimo) {
+	public function modificar($id_autor, $nombre, $pseudonimo,$pais,$biografia,$anodenacimiento) {
 		$autor = R::load('autor', $id_autor);
 		$autor->nombre = $nombre;
 		$autor->pseudonimo = $pseudonimo;
+		$autor->biografia = $biografia;
+		$autor->anodenacimiento = $anodenacimiento;
+		
+		
+		$pais=R::findOne('pais', 'id =?', [$pais]);
+		
+		$autor->pais=$pais;
+		
 		R::store($autor);
 	}
 

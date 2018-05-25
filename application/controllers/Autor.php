@@ -29,6 +29,10 @@ class Autor extends CI_Controller {
 	public function modificar() {
 		$this->load->model('autor_model');
 		$id_autor = $_POST['id_autor'];
+		
+		$this->load->model('pais_model');
+		$datos['body']['paises'] = $this->pais_model-> getAll($filtro="");
+		
 		$datos['autor'] = $this->autor_model->getautorPorId($id_autor);
 		
 		enmarcar($this, 'autor/modificar', $datos);
@@ -37,11 +41,14 @@ class Autor extends CI_Controller {
 	public function modificarpost() {
 		$nombre = $_POST['nombre'];
 		$pseudonimo = $_POST['pseudonimo'];
+		$biografia = $_POST['biografia'];
+		$anodenacimiento = $_POST['anodenacimiento'];
+		$pais = $_POST['pais'];
 		
 		$id_autor = $_POST['id_autor'];
 		
 		$this->load->model('autor_model');
-		$this->autor_model->modificar($id_autor, $nombre, $pseudonimo);
+		$this->autor_model->modificar($id_autor, $nombre, $pseudonimo, $pais,$biografia,$anodenacimiento);
 	}
 
 	public function borrar() {
