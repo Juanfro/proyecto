@@ -7,7 +7,8 @@
 .perfil{
     padding-left: 360px;
     margin-left: 280px;
-    border-radius :10%;   
+    border-radius :10%;
+       
 }
 .header{
     height: 287px;
@@ -18,7 +19,7 @@
 
 #informacion{
     background-color: darkslateblue;
-    height: 170px;
+    height: 200px;
     padding: 20px;
     margin-top: 42px;
     border-radius: 15%;

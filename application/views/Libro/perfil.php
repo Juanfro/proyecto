@@ -6,17 +6,13 @@
                 <img  class="imagen" src="<?= base_url()?>assets/img/Koala.jpg"  alt="koala">
             </div>
             <div class="col-md-3" id="informacion">
-              <label for="nombre">Nombre : </label> <br>
+              <label for="isbn">isbn : </label> <br>
 				
-				<span><?= $autor->nombre?></span><br><br>
+				<span><?= $libro->isbn?></span><br><br>
 				
-				<label for="pseudonimo">Pseudonimo :</label><br> <span><?= $autor->pseudonimo?></span>
+				<label for="titulo">titulo :</label><br> <span><?= $libro->titulo?></span>
 				<br><br>
 				
-				
-				<label for="anodenacimiento">Año de Nacimiento :</label><br>
-				 <span
-				><?= $autor->anodenacimiento?></span><br><br>
 				  
              </div>
         
@@ -26,15 +22,10 @@
         <div class="col-md-6"  >
             
             <div class="row" >
-               <label for="biografia">Biografia</label><br><br> <p id="biografia"
-				><?= $autor->biografia ?></p><br><br>
+               <label for="Sinapsis">Sinapsis</label><br><br> <p id="biografia"
+				><?= $libro->sinopsis ?></p><br><br>
             </div>
             
         </div>
 </div>        
         
-
-    </div>
-
-
-

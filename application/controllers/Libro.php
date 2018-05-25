@@ -6,6 +6,15 @@ class Libro extends CI_Controller {
 		$this->crear();
 		
 	}
+	public function perfil(){
+		$this->load->model('libro_model');
+		$id_libro = $_POST['id_libro'];
+	
+		$datos['libro'] = $this->libro_model->getlibroPorId($id_libro);
+	
+		enmarcar($this, 'libro/perfil',$datos);
+	
+	}
 
 	public function crear() {
 		//Cargar modelo autor
