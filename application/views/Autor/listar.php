@@ -8,12 +8,13 @@
 	<table class="table table-bordered sortable">
 	<thead>
 		<tr>
-			<th>nombre</th>
+			<th>Nombre</th>
 			<th>Pseudonimo</th>
 			<th>Pais</th>
 			<th>Modificar</th>
 			<th>Eliminar</th>
 			<th>Listar</th>
+			<th>Perfil</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -39,6 +40,12 @@
 				<form action="<?= base_url()?>Autor/seguir" method="post">
 					<input type="hidden" name="id_autor" id="id_autor" value="<?= $autor->id?>"/>
 					<button class="glyphicon glyphicon-heart" type="submit"></button>
+				</form>
+			</td>
+			<td>
+				<form action="<?= base_url()?>Autor/perfil" method="post">
+					<input type="hidden" name="id_autor" id="id_autor" value="<?= $autor->id?>"/>
+					<button class="glyphicon glyphicon-user" type="submit"></button>
 				</form>
 			</td>
 		</tr>

@@ -18,9 +18,11 @@ class Autor extends CI_Controller {
 	public function crearpost() {
 		$nombre = $_POST['nombre'];
 		$pseudonimo = $_POST['pseudonimo'];
+		$biografia = $_POST['biografia'];
+		$anodenacimiento = $_POST['anodenacimiento'];
 		$pais = $_POST['pais'];
 		$this->load->model('autor_model');
-		$this->autor_model->crear($nombre, $pseudonimo, $pais);
+		$this->autor_model->crear($nombre, $pseudonimo, $pais,$biografia,$anodenacimiento);
 		enmarcar($this, 'autor/crearOK');
 	}
 
