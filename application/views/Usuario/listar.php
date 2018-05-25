@@ -16,7 +16,7 @@
 	  </thead>
 	  <tbody>
 		<?php foreach ($usuario as $usuarios): ?>
-			<tr>
+		<tr>
 			 <td><?=$usuarios->nombre ?></td>
 			 <td><?=$usuarios->apellido?></td>
 			 <td><?=$usuarios->alias ?></td>
@@ -25,23 +25,31 @@
 			 <td><?=$usuarios->edad ?></td>
 			 
 			 <td>
-			 <form action="<?=base_url()?>Usuario/modificar" method ="post">
-			 <input type="hidden" name="id_usuario" value="<?=$usuarios->id?>"/>
+			   <form action="<?=base_url()?>Usuario/modificar" method ="post">
+			     <input type="hidden" name="id_usuario" value="<?=$usuarios->id?>"/>
 			 <!-- envia el tipo de rol que tiene -->
-			 <input type="hidden" name="id_rol" value="<?=$usuarios->rol?>"/>
-			 <button class=" glyphicon glyphicon-edit" type="submit"/>
-			 </form>
+			     <input type="hidden" name="id_rol" value="<?=$usuarios->rol?>"/>
+			    <button class=" glyphicon glyphicon-edit" type="submit"/>
+			   </form>
 			 </td>
+			 
 			 <td>
-			 <form action="<?=base_url()?>Usuario/borrar" method ="post">
-			 <input type="hidden" name="id_usuario" value="<?=$usuarios->id?>"/>
-			 <button class="glyphicon glyphicon-remove" type="submit"></button>
-			 </form>
-			</td>
-			 </tr>
-		         <?php endforeach; ?>
+			   <form action="<?=base_url()?>Usuario/borrar" method ="post">
+			      <input type="hidden" name="id_usuario" value="<?=$usuarios->id?>"/>
+			      <button class="glyphicon glyphicon-remove" type="submit"></button>
+			   </form>
+			 </td>
+			 
+			 <td>
+				<form action="<?= base_url()?>Usuario/perfil" method="post">
+					<input type="hidden" name="id_usuario" id="id_usuario" value="<?= $usuarios->id?>"/>
+					<button class="glyphicon glyphicon-book" type="submit"></button>
+				</form>
+			</td>	
+			</tr>
+		      <?php endforeach; ?>
          </tbody>
-		 </table>
+	</table>
 
 	</div>
 

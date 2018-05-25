@@ -21,6 +21,7 @@
 			<th>Editar</th>
 			<th>Borrar</th>
 			<th>Seguir</th>
+			<th>Perfil</th>
 		</tr>
 		</thead>
 	   <!--  <pre><code><?= print_r($libros)?></code></pre>-->
@@ -68,10 +69,16 @@
 					<button class="glyphicon glyphicon-heart" type="submit"></button>
 				</form>
 			</td>
+			<td>
+				<form action="<?= base_url()?>Libro/perfil" method="post">
+					<input type="hidden" name="id_libro" id="id_libro" value="<?= $libro->id?>"/>
+					<button class="glyphicon glyphicon-book" type="submit"></button>
+				</form>
+			</td>	
 		</tr>
 			 
          <?php endforeach; ?>
          </tbody>
-		 </table>
+	</table>
 
 </div>
