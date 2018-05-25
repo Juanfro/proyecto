@@ -9,7 +9,7 @@
 		 	<input type="text" name="titulo" id="titulo" required="required"></input><br><br>
 				
 			<label for="contenido">Contenido</label> 
-			<textarea name="summernote" id="summernote" required="required"></textarea><br><br>				
+			<textarea name="contenido" id="contenido" required="required"></textarea><br><br>				
 			
 			
 			

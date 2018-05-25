@@ -15,7 +15,7 @@ class Articulo extends CI_Controller {
 		$this->load->model('articulo_model');
 		
 		$titulo = isset($_POST['titulo']) ? $_POST['titulo'] : null;
-		$contenido = isset($_POST['summernote']) ? $_POST['summernote'] : null;
+		$contenido = isset($_POST['contenido']) ? $_POST['contenido'] : null;
 		$idUsuario = isset($_SESSION['usuario']['id']) ? $_SESSION['usuario']['id'] : null;
 		
 		try {

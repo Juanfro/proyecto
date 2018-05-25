@@ -10,7 +10,7 @@
 <?php foreach ($comentario as $comentarios): ?>
 			<tr>
 			
-			 <td><?=$comentarios->contenido ?></td>
+			 <td><?=$comentarios->comentario ?></td>
 			<td>
 			
 			<form action="<?=base_url()?>Comentario/modificar" method ="post">

@@ -11,7 +11,7 @@
 			
 			<label for="comentario">Contenido</label> 
 			
-			<textarea name="summernote" id="summernote" required="required"></textarea><br><br>	
+			<textarea name="contenido" id="contenido" required="required"></textarea><br><br>	
 			
 			
 		</fieldset>
