@@ -12,7 +12,7 @@
  	<thead>
 	   <tr><th>Nombre</th><th>Apellido</th><th>Alias</th><th>Rol</th><th>Email</th>
 
-	     <th>Edad</th><th>Editar</th><th>Borrar</th> </tr>
+	     <th>Edad</th><th>Editar</th><th>Borrar</th><th>perfil</th> </tr>
 	  </thead>
 	  <tbody>
 		<?php foreach ($usuario as $usuarios): ?>
@@ -43,7 +43,7 @@
 			 <td>
 				<form action="<?= base_url()?>Usuario/perfil" method="post">
 					<input type="hidden" name="id_usuario" id="id_usuario" value="<?= $usuarios->id?>"/>
-					<button class="glyphicon glyphicon-book" type="submit"></button>
+					<button class="glyphicon glyphicon-user" type="submit"></button>
 				</form>
 			</td>	
 			</tr>

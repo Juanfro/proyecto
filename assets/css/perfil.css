@@ -1,0 +1,37 @@
+.imagen{
+    width:250px;
+     height:250px;
+    padding: 20px;
+    border-radius :40%; 
+}
+.perfil{
+    padding-left: 360px;
+    margin-left: 280px;
+    border-radius :10%;   
+}
+.header{
+    height: 287px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+   
+}
+
+#informacion{
+    background-color: darkslateblue;
+    height: 170px;
+    padding: 20px;
+    margin-top: 42px;
+    border-radius: 15%;
+
+}
+#biografia{
+    background-color:darkorange;
+}
+.cuerpo{
+    height: 400px;
+}
+.row{
+    padding: 20px;
+    height: 100px;
+    
+}

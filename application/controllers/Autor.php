@@ -33,9 +33,19 @@ class Autor extends CI_Controller {
 		$this->load->model('pais_model');
 		$datos['body']['paises'] = $this->pais_model-> getAll($filtro="");
 		
-		$datos['autor'] = $this->autor_model->getautorPorId($id_autor);
+		$datos ['autor'] = $this->autor_model->getautorPorId($id_autor);
 		
 		enmarcar($this, 'autor/modificar', $datos);
+	}
+	
+	public function perfil(){
+		$this->load->model('autor_model');
+		$id_autor = $_POST['id_autor'];
+		
+		$datos['autor'] = $this->autor_model->getautorPorId($id_autor);
+		
+		enmarcar($this, 'autor/perfil',$datos);
+		
 	}
 
 	public function modificarpost() {

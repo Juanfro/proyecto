@@ -8,7 +8,7 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="<?= base_url()?>assets/bootstrap/js/bootstrap.min.js"></script>
 	<!-- para ordenar -->
 	<script src="https://kryogenix.org/code/browser/sorttable/sorttable.js"></script>
 	
@@ -22,6 +22,8 @@
      <link src="<?= base_url()?>assets/font/summernote.ttf"></link>
      <link src="<?= base_url()?>assets/font/summernote.eot"></link>
      
+   <!-- perfil css -->  
+     <link href="<?= base_url()?>assets/css/perfil.css" rel="stylesheet"></link>
      
     
     
