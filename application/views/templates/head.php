@@ -22,6 +22,7 @@
      <link src="<?= base_url()?>assets/font/summernote.ttf"></link>
      <link src="<?= base_url()?>assets/font/summernote.eot"></link>
      
+     
     
     
 	

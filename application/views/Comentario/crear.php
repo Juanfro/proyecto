@@ -11,11 +11,8 @@
 			
 			<label for="comentario">Contenido</label> 
 			
-			<div id="summernote"></div>
+			<textarea name="summernote" id="summernote" required="required"></textarea><br><br>	
 			
-			
-			
-    
 			
 		</fieldset>
 		<input type="submit" value="comentario"/>
