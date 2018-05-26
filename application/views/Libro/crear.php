@@ -6,8 +6,10 @@
 				<label for="idlibro"> introducir los datos del libro</label>
 			</legend>
 			<label for="isbn">ISBN</label>
-			<input type="text" name="isbn" id="isbn" required="required" onchange="validarISBN()"></input><br> <br>
+			<input type="text" name="isbn" id="isbn" required="required" onblur="validarISBN()"></input>
 			<div id="pasaISBN"></div>
+			<br> <br>
+			
 
 			<label for="titulo">Título</label>
 			<input type="text" name="titulo" id="titulo" required="required"></input><br> <br>

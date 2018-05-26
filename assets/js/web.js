@@ -18,8 +18,8 @@ function validarISBN(){
 	var patronPasa = (isbn10.test(isbn) | isbn13.test(isbn) );
 	
 	if(patronPasa){
-		document.getElementById('pasaISBN').innerHTML='Pasa';
+		document.getElementById('pasaISBN').innerHTML='ISBN VÁLIDO';
 	}else{
-		document.getElementById('pasaISBN').innerHTML='No Pasa';
+		document.getElementById('pasaISBN').innerHTML='ISBN INVÁLIDO';
 	}
 }
