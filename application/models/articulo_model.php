@@ -8,6 +8,7 @@
 		$articulo->titulo=$titulo;
 		$articulo->contenido=$contenido; //TODO formato WYSIWYG	
 		$articulo->fecha=date("Y-m-d H:i:s");
+		
 		//Autor: El usuario que escribe el artículo
 		$autor = R::findOne('usuario', 'id =?', [$idUsuario]);
 		$articulo->usuarioautor = $autor;
