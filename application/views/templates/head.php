@@ -22,6 +22,10 @@
      <link src="<?= base_url()?>assets/font/summernote.ttf"></link>
      <link src="<?= base_url()?>assets/font/summernote.eot"></link>
      
+     <!-- Javascript Web -->
+     	<script src="<?= base_url()?>assets/js/web.js"></script>
+     <!-- End Javascript Web -->
+     
    <!-- perfil css -->  
      <link href="<?= base_url()?>assets/css/perfil.css" rel="stylesheet"></link>
      
