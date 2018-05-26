@@ -67,11 +67,21 @@
 					
 			
 			<li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Listas<span class="caret"></span></a>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Listas Autores<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li>
-						<a href="<?=base_url()?>lista/crear">Nuevo</a>
-						<a href="<?=base_url()?>lista/listar">Listar</a>
+						<a href="<?=base_url()?>listaAutores/crear">Nuevo</a>
+						<a href="<?=base_url()?>listaAutores/listar">Listar</a>
+					</li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Listas Libros<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="<?=base_url()?>listalibros/crear">Nuevo</a>
+						<a href="<?=base_url()?>listaLibros/listar">Listar</a>
 					</li>
 				</ul>
 			</li>
