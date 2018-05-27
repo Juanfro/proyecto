@@ -22,19 +22,31 @@
 					</td>
 					
 					<td>
-					
+					<?php foreach($lista->sharedAutorList as $autor): ?>
+					 <?= $autor->nombre ."</br> "; ?> 
+					<?php endforeach; ?>
 					</td>
 					
 					<td>
-					
+					  <form action="<?=base_url()?>ListaAutores/modificar" method="post">
+						<input type="hidden" name="id_autor" id="id_autor" value="<?=$autor->id?>" /> 
+						<input type="hidden" name="filtro" value="<?=$filtro ?>" />
+						<button class=" glyphicon glyphicon-edit" type="submit"></button>
+					  </form>
 					</td>
 					
 					<td>
-					
+					  <form action="<?=base_url()?>ListaAutores/borrar" method="post">
+						<input type="hidden" name="id_autor" value="<?=$autor->id?>" />
+						<button class="glyphicon glyphicon-remove" type="submit"></button>
+					  </form>
 					</td>
 					
 					<td>
-					
+					  <form action="<?= base_url()?>ListaAutores/seguir" method="post">
+						<input type="hidden" name="id_autor" id="id_autor" value="<?= $autor->id?>"/>
+						<button class="glyphicon glyphicon-heart" type="submit"></button>
+					  </form>
 					</td>
 					
 					<td>

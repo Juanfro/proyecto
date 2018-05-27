@@ -43,11 +43,13 @@ class ListaAutores extends CI_Controller {
 	
 	//LISTAR
 	
-	public function listar(){
+	public function listar($f = ''){
 		//TODO FILTRO
+		$filtro = isset($_POST['filtro']) ? $_POST['filtro'] : $f;
 		$this->load->model('listaautores_model');
-		$datos['listas'] = $this->listaautores_model->getAll();
+		$datos['listas'] = $this->listaautores_model->getAll($filtro);
 		
+		$datos['filtro'] = $filtro;
 		enmarcar($this, 'ListaAutores/listar', $datos);
 	}
 }
