@@ -40,6 +40,16 @@ class ListaAutores extends CI_Controller {
 		 * R::close();
 		 */
 	}
+	
+	//LISTAR
+	
+	public function listar(){
+		//TODO FILTRO
+		$this->load->model('listaautores_model');
+		$datos['listas'] = $this->listaautores_model->getAll();
+		
+		enmarcar($this, 'ListaAutores/listar', $datos);
+	}
 }
 
 ?>

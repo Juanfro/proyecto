@@ -25,6 +25,14 @@ class listaautores_model extends CI_Model{
 		
 	}
 	
+	public function getAll($filtro=''){
+		return R::find('listaautor', 'nombre like ?', ['%' . $filtro . '%']);
+	}
+	
+	public function seguir($id_lista, $id_usuario){//TODO
+		
+	}
+	
 }
 
 ?>
