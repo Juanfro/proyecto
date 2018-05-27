@@ -1,6 +1,10 @@
 <div class="container">
 	<!-- FILTRO -->
-	
+	<form action="<?=base_url()?>ListaAutores/listar" method="post">
+		<label for='idfiltro'>filtro</label>
+		<input id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'> <input type="submit"
+			value="filtrar nombre_lista">
+	</form>
 	<!-- End FILTRO -->
 	
 	<table class=" table table-bordered sortable">
