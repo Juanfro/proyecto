@@ -39,6 +39,7 @@ class ListaAutores extends CI_Controller {
 		 * R::store($listautores);
 		 * R::close();
 		 */
+		
 	}
 	
 	//LISTAR
@@ -52,6 +53,35 @@ class ListaAutores extends CI_Controller {
 		$datos['filtro'] = $filtro;
 		enmarcar($this, 'ListaAutores/listar', $datos);
 	}
+	
+	//modificar
+	
+	public function modificar() {
+		$this->load->model('listaautores_model');
+		$this->load->model('autor_model');
+		
+		$id_lista = $_POST['id_lista'];
+
+		$datos['lista'] = $this->listaautores_model->getlistaPorId($id_lista);
+		$datos['autores'] = $this->autor_model->getAll();
+		
+		enmarcar($this, 'ListaAutores/modificar', $datos);
+	}
+	
+	public function modificarpost() {
+		$nombre = $_POST['nombre']; // Nombre De la Lista
+		$autores = $_POST['autores'];
+		
+		
+		$id_lista = $_POST['id_lista'];
+		
+		$datos['autores']=$autores;
+		
+		$this->load->model('listaautores_model');
+		$this->listaautores_model->modificar($nombre, $autores,$id_lista);
+		enmarcar($this, 'Libro/modificadoOK');
+	}
+	
 }
 
 ?>
