@@ -82,6 +82,19 @@ class ListaAutores extends CI_Controller {
 		enmarcar($this, 'Libro/modificadoOK');
 	}
 	
+	//Seguir lista
+	
+	public function seguir(){
+		
+		$this->load->model('listaautores_model');
+		
+		$id_lista = isset($_POST['id_lista']) ? $_POST['id_lista'] : null;
+		$id_usuario = isset ($_SESSION['usuario']['id']) ? $_SESSION['usuario']['id'] : null;
+		
+		$this->listaautores_model->seguir($id_lista, $id_usuario);
+		
+	}
+	
 }
 
 ?>
