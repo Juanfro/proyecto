@@ -48,7 +48,7 @@ class listaautores_model extends CI_Model {
 		R::store($lista);
 		R::close();
 	}
-<<<<<<< HEAD
+
 	public function borrar($id_listar){
 		$listar= R::load('listaautor',$id_listar);
 	
@@ -59,13 +59,11 @@ class listaautores_model extends CI_Model {
 	
 	}
 	
-	public function seguir($id_lista, $id_usuario){//TODO
-=======
-
+	
 	public function seguir($id_lista, $id_usuario) {
 		$lista = R::load('listaautor', $id_lista);
 		$usuario = R::load('usuario', $id_usuario);
->>>>>>> 1ca3b4a145560ed733958fe1afc095b87eb87661
+
 		
 		$lista->sharedUsuarioList[] = $usuario;
 		
