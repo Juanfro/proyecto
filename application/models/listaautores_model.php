@@ -49,6 +49,15 @@ class listaautores_model extends CI_Model{
 		R::close();
 	
 	}
+	public function borrar($id_listar){
+		$listar= R::load('listaautor',$id_listar);
+	
+		if($listar->id !=0){
+			R::trash($listar);
+		}
+		R::close();
+	
+	}
 	
 	public function seguir($id_lista, $id_usuario){//TODO
 		

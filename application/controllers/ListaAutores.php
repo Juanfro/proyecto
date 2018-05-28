@@ -82,6 +82,14 @@ class ListaAutores extends CI_Controller {
 		enmarcar($this, 'Libro/modificadoOK');
 	}
 	
+	public function borrar() {
+		$id_listar = $_POST['id_lista'];
+		$this->load->model('listaautores_model');
+		$this->listaautores_model->borrar($id_listar);
+		$this->listar();
+	}
+	
+	
 }
 
 ?>
