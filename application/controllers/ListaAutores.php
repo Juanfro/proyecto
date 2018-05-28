@@ -20,13 +20,14 @@ class ListaAutores extends CI_Controller {
 		// DATOS
 		$nombre = $_POST['nombre']; // Nombre De la Lista
 		$autores = $_POST['autores']; // Autores En la lista
+		
 		$usuarioAutor = isset($_SESSION['usuario']['id']) ? $_SESSION['usuario']['id'] : null; // ID del Usuario que crea la Lista
-		                                                                                       
+		$descripcion=$_POST['descripcion'];
 		// Cargar Modelo
 		
 		$this->load->model('listaautores_model');
 		
-		$this->listaautores_model->crear($nombre, $autores, $usuarioAutor);
+		$this->listaautores_model->crear($nombre, $autores, $usuarioAutor,$descripcion);
 		
 		// $listautores = R::dispense('listautores');		
 		/*
