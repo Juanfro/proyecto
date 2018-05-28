@@ -22,7 +22,7 @@
 			<tr>
 			<td><?=$autor->nombre ?></td>
 			<td><?=$autor->pseudonimo ?></td>
-			<td><?= $autor->pais->nombre ?>
+			<td><?= $autor->pais->nombre ?></td>
 			<td>
 				<form action="<?=base_url()?>Autor/modificar" method="post">
 					<input type="hidden" name="id_autor" id="id_autor" value="<?=$autor->id?>" /> 

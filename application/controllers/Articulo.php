@@ -59,6 +59,8 @@ class Articulo extends CI_Controller {
 	    
 		enmarcar($this, 'Articulo/listar', $datos);
 	}
+	
+	
 
 	public function modificar() {
 		$this->load->model('articulo_model');
