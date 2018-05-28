@@ -8,6 +8,7 @@
 				<label for="nombre">Nombre</label> 
 				<input type="text" name="nombre" id="nombre"></input><br><br>
 			
+
 				<label for="autores[]">Autores</label><br><br>
 					<select multiple name="autores[]" id="autores[]">			 
 						<?php foreach ($autores as $autor): ?>
@@ -22,6 +23,7 @@
 			
 		</fieldset>
 		
+
 	</form>
 	
 </div>
