@@ -8,8 +8,8 @@
 			<label for="nombre">Nombre</label> 
 			<input type="text" name="nombre" id="nombre"></input><br><br>
 			
-			<label for="autores[]">Autores</label><br><br>
-			<select multiple name="autores[]" id="autores[]">			 
+			<label for="autores">Autores</label><br><br>
+			<select multiple="multiple" name="autores[]" id="autores">			 
 				<?php foreach ($autores as $autor): ?>
 				<option value="<?=$autor->id ?>"><?=$autor->nombre ?></option>
 			 	<?php endforeach;?>
@@ -17,7 +17,7 @@
 			<br><br>
 			
 			<input type="submit" value="registrar lista de autores">
-		
+		</fieldset>
 	</form>
 	
 </div>
