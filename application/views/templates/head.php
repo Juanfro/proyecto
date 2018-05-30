@@ -29,6 +29,10 @@
    <!-- perfil css -->  
      <link href="<?= base_url()?>assets/css/perfil.css" rel="stylesheet"></link>
      
+     <!--leer mas -->
+     <script src="<?= base_url()?>assets/js/expander.js"></script>
+     <script src="<?= base_url()?>assets/js/leermas.js"></script>
+     
     
     
 	

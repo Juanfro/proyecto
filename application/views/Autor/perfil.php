@@ -26,8 +26,10 @@
         <div class="col-md-6"  >
             
             <div class="row" >
-               <label for="biografia">Biografia</label><br><br> <p id="biografia"
-				><?= $autor->biografia ?></p><br><br>
+               <label for="biografia">Biografia</label><br><br>
+               <div class="expandable">
+                <p id="biografia"><?= $autor->biografia ?></p><br><br>
+                </div>
             </div>
             
         </div>

@@ -22,8 +22,10 @@
         <div class="col-md-6"  >
             
             <div class="row" >
-               <label for="Sinapsis">Sinapsis</label><br><br> <p id="biografia"
-				><?= $libro->sinopsis ?></p><br><br>
+               <label for="Sinopsis">Sinopsis</label><br><br> 
+               <div class="expandable">
+               <p id="biografia"><?= $libro->sinopsis ?></p><br><br>
+               <div class="expandable">
             </div>
             
         </div>
