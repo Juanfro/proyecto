@@ -21,4 +21,8 @@ class listalibros_model extends CI_Model{
 		R::store($lista);
 		R::close();
 	}
+	
+	public function getAll($filtro=''){
+		return R::find('listalibros', 'nombre like ?', ['%' . $filtro . '%']);
+	}
 }

@@ -27,5 +27,17 @@ class ListaLibros extends CI_Controller {
 		$this->listalibros_model->crear($nombre, $autores, $usuarioAutor);
 		
 	}
+	
+	//Mostrar Listas
+	
+	public function listar($f =''){
+		$filtro = isset($_POST['filtro']) ? $_POST['filtro'] : $f;
+		
+		$this->load->model('listalibros_model');
+		$datos['listas'] = $this->listalibros_model->getAll($filtro);		
+		$datos['filtro'] = $filtro;
+		
+		enmarcar($this, 'listaLibros/listar', $datos);
+	}
 }
 ?>
