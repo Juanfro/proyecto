@@ -33,6 +33,11 @@
      <script src="<?= base_url()?>assets/js/expander.js"></script>
      <script src="<?= base_url()?>assets/js/leermas.js"></script>
      
+     <!-- resaltar la búsqueda  -->
+     <script src="<?= base_url()?>assets/js/highlight.js"></script>
+     <script src="<?= base_url()?>assets/js/resaltar.js"></script>
+     
+    
     
     
 	
