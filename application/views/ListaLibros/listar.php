@@ -11,7 +11,7 @@
 		<thead>
 			<tr>
 				<th>Nombre</th>
-				<th>Autores</th>
+				<th>Libros</th>
 				<th>Editar</th>
 				<th>Borrar</th>
 				<th>Seguir</th>
@@ -27,7 +27,7 @@
 						
 						<td>
 							<?php foreach($lista->sharedLibroList as $libro):?>
-								<?= $libro->nombre . "</br>";?>
+								<?= $libro->titulo . "</br>";?>
 							<?php endforeach;?>
 						</td>
 						
