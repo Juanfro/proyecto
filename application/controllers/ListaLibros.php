@@ -39,5 +39,15 @@ class ListaLibros extends CI_Controller {
 		
 		enmarcar($this, 'listaLibros/listar', $datos);
 	}
+	
+	public function seguir(){
+		
+		$this->load->model('listalibros_model');
+		
+		$id_lista = isset($_POST['id_lista']) ? $_POST['id_lista'] : null;
+		$id_usuario = isset ($_SESSION['usuario']['id']) ? $_SESSION['usuario']['id'] : null;
+		
+		$this->listalibros_model->seguir($id_lista, $id_usuario);
+	}
 }
 ?>

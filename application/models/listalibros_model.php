@@ -25,4 +25,14 @@ class listalibros_model extends CI_Model{
 	public function getAll($filtro=''){
 		return R::find('listalibros', 'nombre like ?', ['%' . $filtro . '%']);
 	}
+	
+	public function seguir($id_lista, $id_usuario){
+		$lista = R::load('listalibros', $id_lista);
+		$usuario = R::load('usuario', $id_usuario);
+		
+		$lista->sharedUsuarioList[]= $usuario;
+		
+		R::store($lista);
+		R::close();
+	}
 }

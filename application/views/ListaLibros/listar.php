@@ -47,7 +47,7 @@
 						</td>
 						
 						<td>
-							<form action="<?= base_url()?>ListaAutores/seguir" method="post">
+							<form action="<?= base_url()?>ListaLibros/seguir" method="post">
 								<input type="hidden" name="id_lista" id="id_lista" value="<?= $lista->id?>"/>
 								<button class="glyphicon glyphicon-heart" type="submit"></button>
 							</form>
