@@ -39,7 +39,12 @@ class ListaLibros extends CI_Controller {
 		
 		enmarcar($this, 'listaLibros/listar', $datos);
 	}
-	
+	public function borrar() {
+		$id_listar = $_POST['id_lista'];
+		$this->load->model('listalibros_model');
+		$this->listalibros_model->borrar($id_listar);
+		$this->listar();
+	}
 	public function seguir(){
 		
 		$this->load->model('listalibros_model');

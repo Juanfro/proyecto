@@ -25,12 +25,12 @@
 			</tr>
 		</thead>
 		<!--  <pre><code><?= print_r($libros)?></code></pre>-->
-		<tbody>
+		<tbody >
 		<?php foreach ($libros as $libro): ?>
-			<tr>
+			<tr class="jcorgFilterTextParent">
 				<td><?=$libro->isbn ?></td>
-				<td class="jcorgFilterTextParent">
-					<div class="jcorgFilterTextChild">
+				<td class="jcorgFilterTextChild" >
+					<div  >
 						<?=$libro->titulo?>
 					</div>
 				</td>
