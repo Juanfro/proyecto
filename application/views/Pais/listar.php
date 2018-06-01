@@ -12,8 +12,8 @@
 	</thead>
 	<tbody>
 		<?php foreach ($paises as $pais): ?>
-			<tr>
-			 <td><?=$pais->nombre ?></td>
+			<tr class="jcorgFilterTextParent">
+			 <td class="jcorgFilterTextChild"><?=$pais->nombre ?></td>
 			
 			 </tr>
 			 

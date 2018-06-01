@@ -11,8 +11,8 @@
 	   </thead>
 	   <tbody>
 		<?php foreach ($generos as $genero): ?>
-			<tr>
-			 <td><?=$genero->nombre ?></td>
+			<tr class="jcorgFilterTextParent">
+			 <td class="jcorgFilterTextChild"><?=$genero->nombre ?></td>
 			
 			 </tr>
 			 
