@@ -20,8 +20,8 @@
 		</thead>
 		<tbody>
 			<?php foreach ($listas as $lista):?>
-				<tr>
-					<td>
+				<tr class="jcorgFilterTextParent">
+					<td class="jcorgFilterTextChild">
 					<?= $lista->nombre?>
 					</td>
 					
