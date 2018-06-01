@@ -19,8 +19,8 @@
 	</thead>
 	<tbody>
 		<?php foreach ($autores as $autor): ?>
-			<tr>
-			<td><?=$autor->nombre ?></td>
+			<tr  class="jcorgFilterTextParent">
+			<td class="jcorgFilterTextChild" ><?=$autor->nombre ?></td>
 			<td><?=$autor->pseudonimo ?></td>
 			<td><?= $autor->pais->nombre ?></td>
 			<td>
