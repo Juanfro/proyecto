@@ -7,6 +7,7 @@
 			</legend>
 			<label for="isbn">ISBN</label>
 			<input type="text" name="isbn" id="isbn" required="required" onblur="validarISBN()"></input>
+			<div id="pasaFormato"></div>
 			<div id="pasaISBN"></div>
 			<br> <br>
 			
