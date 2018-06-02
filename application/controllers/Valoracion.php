@@ -9,7 +9,7 @@ class Valoracion extends CI_Controller{
 		enmarcar($this,'Valoracion/crear');
 
 	}
-	public function crearPost(){
+	public function crearPost(){		//TODO Recibir Id del libro y del usuario que crea la valoracion
 		$nota=isset($_POST['nota'])?$_POST['nota']:null ;
 		$contenido=isset($_POST['contenido'])?$_POST['contenido']:null;
 		$this->load->model('valoracion_model');

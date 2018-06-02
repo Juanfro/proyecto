@@ -22,6 +22,7 @@
 				<th>Borrar</th>
 				<th>Seguir</th>
 				<th>Perfil</th>
+				<th>Valoracion</th>
 			</tr>
 		</thead>
 		<!--  <pre><code><?= print_r($libros)?></code></pre>-->
@@ -77,6 +78,12 @@
 					<form action="<?= base_url()?>Libro/perfil" method="post">
 						<input type="hidden" name="id_libro" id="id_libro" value="<?= $libro->id?>" />
 						<button class="glyphicon glyphicon-book" type="submit"></button>
+					</form>
+				</td>
+				<td>
+					<form action="<?= base_url()?>valoracion/crearPost" method="post">
+						<input type="hidden" name="id_libro" id="id_libro" value="<?= $libro->id?>" />
+						<button class="glyphicon glyphicon-star-empty" type="submit"></button>
 					</form>
 				</td>
 			</tr>
