@@ -1,7 +1,7 @@
 <?php
 class valoracion_model extends CI_model{
 
-	public function crear($nota,$contenido){
+	public function crear($nota,$contenido){ 	//TODO Recibir idUsuario y idLibro
 		$valoracion=R::dispense('valoracion');
 		$valoracion->nota=$nota;
 		$valoracion->contenido=$contenido;
@@ -11,7 +11,6 @@ class valoracion_model extends CI_model{
 
 	public  function getAll(){
 		return R::findAll('valoracion');
-
 
 	}
 	public function getvaloracionPorId($id_valoracion){

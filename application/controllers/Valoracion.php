@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 class Valoracion extends CI_Controller{
 	public function index()
@@ -6,10 +7,17 @@ class Valoracion extends CI_Controller{
 
 	}
 	public function crear(){
-		enmarcar($this,'Valoracion/crear');
+		$datos['id_libro'] = $_POST['id_libro'];
+		enmarcar($this,'Valoracion/crear', $datos);
 
 	}
 	public function crearPost(){		//TODO Recibir Id del libro y del usuario que crea la valoracion
+		
+		//DATOS
+		$id_libro= isset($_POST['id_libro']) ? $_POST['id_libro'] : null;
+		$id_usuario= isset($_SESSION['usuario']['id']) ? $_SESSION['usuario']['id'] : null;
+		$nombreUsuario = isset($_SESSION['usuario']['nombre']) ? $_SESSION['usuario']['nombre'] : null;
+		
 		$nota=isset($_POST['nota'])?$_POST['nota']:null ;
 		$contenido=isset($_POST['contenido'])?$_POST['contenido']:null;
 		$this->load->model('valoracion_model');

@@ -5,6 +5,8 @@
 				<label for="idValoracion"> Valoracion</label>
 			</legend>
 			
+			<input type="hidden" name="id_libro" value="<?= $id_libro?>"></input>
+			
 			<label for="nota">nota</label>
 		 	<input type="text" name="nota" id="nota" ></input><br><br>
 				

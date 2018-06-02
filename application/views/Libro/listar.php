@@ -81,7 +81,7 @@
 					</form>
 				</td>
 				<td>
-					<form action="<?= base_url()?>valoracion/crearPost" method="post">
+					<form action="<?= base_url()?>valoracion/crear" method="post">
 						<input type="hidden" name="id_libro" id="id_libro" value="<?= $libro->id?>" />
 						<button class="glyphicon glyphicon-star-empty" type="submit"></button>
 					</form>
