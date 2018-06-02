@@ -26,8 +26,10 @@ function validarISBN() {
 		
 		if(suma%11==0){
 			console.log("Valido");
+			document.getElementById('pasaISBN').innerHTML= "ISBN10 Válido";
 		}else{
 			console.log("InValido");
+			document.getElementById('pasaISBN').innerHTML= "ISBN10 Inválido";
 		}		
 	}
 	
@@ -48,34 +50,27 @@ function validarISBN() {
 		
 		if(suma%10==0){
 			console.log("Valido");
+			document.getElementById('pasaISBN').innerHTML= "ISBN13 Válido";
 		}else{
-			console.log("InValido");
+			document.getElementById('pasaISBN').innerHTML= "ISBN13 Inválido";
 		}
 	}
 
 	if (isbn10.test(isbn)) {
-		document.getElementById('pasaFormato').innerHTML = 'Formato VÁLIDO. ISBN10';
+		document.getElementById('pasaFormato').innerHTML = 'Formato VÁLIDO.';
 		var exploded = isbn.split("-");
-		imploded = exploded.join("");
+		var imploded = exploded.join("");
 		console.log(imploded);
 		validacion10(imploded);
 		
 	} else if (isbn13.test(isbn)) {
-		document.getElementById('pasaFormato').innerHTML = 'Formato VÁLIDO. ISBN13';
+		document.getElementById('pasaFormato').innerHTML = 'Formato VÁLIDO.';
 		var exploded = isbn.split("-");
-		imploded = exploded.join("");
-		console.log(imploded);
+		var imploded = exploded.join("");		
 		validacion13(imploded);
 		
 	} else {
-		document.getElementById('pasaFormato').innerHTML = 'Formato INVÁLIDO';
+		document.getElementById('pasaFormato').innerHTML = 'Formato INVÁLIDO. Escribe un ISBN con formato ISBN10 [xx-xxxx-xxx-x] o ISBN13 [xxx-xx-xxxx-xxx-x]';
 	}
-
-	if (imploded.length == 10) {
-		console.log("ISBN10");
-	} else if (imploded.length == 13) {
-		console.log("ISBN13");
-	} else {
-		console.log("INVALIDO");
-	}
+	
 }
