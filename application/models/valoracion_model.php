@@ -1,8 +1,16 @@
 <?php
 class valoracion_model extends CI_model{
 
-	public function crear($nota,$contenido){ 	//TODO Recibir idUsuario y idLibro
+	public function crear($id_libro, $id_usuario, $nota,$contenido){
+		
+		//DATOS
+		$libro = R::load('libro', $id_libro);
+		$usuario = R::load('usuario', $id_usuario);
+		
 		$valoracion=R::dispense('valoracion');
+		
+		$valoracion->usuario =$usuario;
+		$valoracion->libro = $libro;
 		$valoracion->nota=$nota;
 		$valoracion->contenido=$contenido;
 		R::store($valoracion);

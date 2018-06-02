@@ -21,7 +21,7 @@ class Valoracion extends CI_Controller{
 		$nota=isset($_POST['nota'])?$_POST['nota']:null ;
 		$contenido=isset($_POST['contenido'])?$_POST['contenido']:null;
 		$this->load->model('valoracion_model');
-		$this->valoracion_model->crear($nota,$contenido);
+		$this->valoracion_model->crear($id_libro, $id_usuario, $nota,$contenido);
 		enmarcar($this,'Valoracion/crearOK' );
 	}
 
