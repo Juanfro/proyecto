@@ -31,8 +31,26 @@ function validarISBN() {
 		}		
 	}
 	
-	function validacion13() {
+	function validacion13(imploded) {
+		var suma =0;
+		var multiplicador =1;
 		
+		for(var i=0;i<imploded.length;i++){
+			if(i%2==0){
+				multiplicador=1;
+			}else{
+				multiplicador=3;
+			}			
+			suma += multiplicador*imploded[i];			
+		}
+		
+		console.log(suma);
+		
+		if(suma%10==0){
+			console.log("Valido");
+		}else{
+			console.log("InValido");
+		}
 	}
 
 	if (isbn10.test(isbn)) {
@@ -47,7 +65,7 @@ function validarISBN() {
 		var exploded = isbn.split("-");
 		imploded = exploded.join("");
 		console.log(imploded);
-		validación13(imploded);
+		validacion13(imploded);
 		
 	} else {
 		document.getElementById('pasaFormato').innerHTML = 'Formato INVÁLIDO';
