@@ -54,5 +54,34 @@ class ListaLibros extends CI_Controller {
 		
 		$this->listalibros_model->seguir($id_lista, $id_usuario);
 	}
+	//modificar
+	
+	public function modificar() {
+		$this->load->model('listalibros_model');
+		$this->load->model('libro_model');
+	
+		$id_lista = $_POST['id_lista'];
+	
+		$datos['lista'] = $this->listalibros_model->getlistaPorId($id_lista);
+		$datos['libros'] = $this->libro_model->getAll();
+	
+		enmarcar($this, 'ListaLibros/modificar', $datos);
+	}
+	
+	public function modificarpost() {
+		$nombre = $_POST['nombre']; // Nombre De la Lista
+		$libros = $_POST['libros'];
+	
+	
+		$id_lista = $_POST['id_lista'];
+	
+		$datos['libros']=$libros;
+	
+		$this->load->model('listalibros_model');
+		$this->listalibros_model->modificar($nombre, $libros,$id_lista);
+		enmarcar($this, 'Libro/modificadoOK');
+	}
+	
+	
 }
 ?>
