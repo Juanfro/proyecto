@@ -14,8 +14,10 @@ class Articulo extends CI_Controller {
 
 		$this->load->model('articulo_model');
 		
+		$autorArticulo=isset($_SESSION['usuario']['nombre']) ? $_SESSION['usuario']['nombre'] : 'Anónimo';
+		
 		$titulo = isset($_POST['titulo']) ? $_POST['titulo'] : null;
-		$contenido = isset($_POST['contenido']) ? $_POST['contenido'] : null;
+		$contenido = isset($_POST['contenido']) ? $_POST['contenido'] . '<div class="firma">Artículo escrito por ' . $autorArticulo . '</div>' : null;
 		$idUsuario = isset($_SESSION['usuario']['id']) ? $_SESSION['usuario']['id'] : null;
 		
 		try {

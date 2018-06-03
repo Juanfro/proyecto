@@ -11,13 +11,12 @@
 			<tr>
 			 <td><?=$articulo->titulo ?></td>
 			 <td><?=$articulo->contenido ?></td>
-			 <td><?php 
-			   $id_autor=$articulo->usuarioautor_id;
-			   $autor=R::findOne('usuario','id=?',[$id_autor]);
-			   echo $autor->nombre;
-			 ?>
-			 	
-			 
+			 <td>
+				 <?php 
+				   $id_autor=$articulo->usuarioautor_id;
+				   $autor=R::findOne('usuario','id=?',[$id_autor]);
+				   echo $autor->nombre;
+				 ?>
 			 </td>
 			<td>
 			<form action="<?=base_url()?>Articulo/modificar" method ="post">
