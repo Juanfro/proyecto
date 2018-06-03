@@ -18,6 +18,7 @@
 				<th>Sinopsis</th>
 				<th>Edicion</th>
 				<th>Edad Minima</th>
+				<th>Valoracion</th>
 				<th>Editar</th>
 				<th>Borrar</th>
 				<th>Seguir</th>
@@ -55,6 +56,11 @@
 				<!--edición quitar  -->
 				<td><?=$libro->edicion ?></td>
 				<td><?=$libro->edadminima ?></td>
+				<td><?php 
+				   $id_libro=$libro->id;
+				   $valoracion=R::findOne('valoracion','id=?',[$id_libro]);
+				   echo $valoracion->id." ".$valoracion->contenido;
+				 ?></td>
 				<td>
 					<form action="<?=base_url()?>Libro/modificar" method="post">
 						<input type="hidden" name="id_libro" value="<?=$libro->id?>" /> 
