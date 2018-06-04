@@ -32,6 +32,7 @@ class valoracion_model extends CI_model{
 		R::store($valoracion);
 	}
 	 
+	
 	public  function borrar ($id_valoracion){
 		 
 		 

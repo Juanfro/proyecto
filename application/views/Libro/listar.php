@@ -52,15 +52,25 @@
 				
 				<td><?=$libro->npalabras ?></td>
 
-				<td><?=$libro->sinopsis ?></td>
+				<td style='width: 200px'><?=$libro->sinopsis ?></td>
 				<!--edición quitar  -->
 				<td><?=$libro->edicion ?></td>
 				<td><?=$libro->edadminima ?></td>
 				<td><?php 
 				   $id_libro=$libro->id;
-				   $valoracion=R::findOne('valoracion','id=?',[$id_libro]);
-				   echo $valoracion->id." ".$valoracion->contenido;
-				 ?></td>
+				   /*$valoracion=R::findOne('valoracion','id=?',[$id_libro]);
+				   echo " nota: ",$valoracion->id." contenido: ".$valoracion->contenido;*/
+				   
+				   $valoracion=R::findCollection('valoracion','ORDER BY nota ASC ');
+				   while ($valoraciones = $valoracion->next()) {
+				   $idvlibro=$valoraciones->libro_id;
+				   	if ($idvlibro == $id_libro){
+				   	echo "nota".$valoraciones->nota." contenido ".$valoraciones->contenido;
+				   }
+				   }
+				 ?>
+				 
+				 </td>
 				<td>
 					<form action="<?=base_url()?>Libro/modificar" method="post">
 						<input type="hidden" name="id_libro" value="<?=$libro->id?>" /> 

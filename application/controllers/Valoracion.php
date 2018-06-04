@@ -60,7 +60,14 @@ class Valoracion extends CI_Controller{
 		enmarcar($this, 'Valoracion/borrarOK');
 
 	}
-
+     
+	public function vista(){
+		$id_valoracion =$_POST['id_valoracion'];
+		$this->load->model('valoracion_model');
+		$datos['valoracion']=$this->valoracion_model->getvaloracionPorId($id_valoracion);
+		enmarcar($this, 'Valoracion/vista',$datos);
+		
+	}
 
 
 	public function listar() {
