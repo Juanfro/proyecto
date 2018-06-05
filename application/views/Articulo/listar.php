@@ -19,7 +19,11 @@
 		<?php foreach ($articulos as $articulo): ?>
 			<tr>
 				<td><?=$articulo->titulo ?></td>
-				<td><?=$articulo->contenido ?></td>
+				<td>
+				  <div class="expandable">
+				    <?=$articulo->contenido ?>
+				 </div>
+				</td>
 				<td>
 				 <?php
 			$id_autor = $articulo->usuarioautor_id;
