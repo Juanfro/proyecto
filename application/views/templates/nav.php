@@ -115,6 +115,10 @@
 			</li>
 			
 			<!-- LOGIN -->
+			<li class="dropdown">
+				<a class="dropdown-toggle" href="<?=base_url()?>Home/vista">Home</span></a>
+				
+			</li>
 			
 			<li>
 				
