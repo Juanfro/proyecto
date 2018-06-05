@@ -37,14 +37,14 @@
 					</div>
 				</td>
 
-				<td>
+				<td class="jcorgFilterTextChild">
 					<?php foreach ($libro->sharedAutorList as $autor): ?>
 						<?= $autor->nombre ."</br> "; ?> 
 					<?php endforeach; ?>
 				</td>
 
 				<td><?=$libro->idioma ?></td>
-				<td>
+				<td class="jcorgFilterTextChild">
 				<?php foreach ($libro->sharedGeneroList as $genero): ?>
 			      	<?= $genero->nombre ."</br> "; ?> 			   
 			   	<?php endforeach; ?>
@@ -52,7 +52,7 @@
 				
 				<td><?=$libro->npalabras ?></td>
 
-				<td style='width: 200px'><?=$libro->sinopsis ?></td>
+				<td><?=$libro->sinopsis ?></td>
 				<!--edición quitar  -->
 				<td><?=$libro->edicion ?></td>
 				<td><?=$libro->edadminima ?></td>
@@ -64,9 +64,18 @@
 				   $valoracion=R::findCollection('valoracion','ORDER BY nota ASC ');
 				   while ($valoraciones = $valoracion->next()) {
 				   $idvlibro=$valoraciones->libro_id;
+				   
+				   /*echo "longitud de valoraciones ".$longvaloracion;*/
 				   	if ($idvlibro == $id_libro){
-				   	echo "nota".$valoraciones->nota." contenido ".$valoraciones->contenido;
+				   		
+				   		$nota=$valoraciones->nota;
+				   			
+				   		
+				   		
+				   	echo "nota ".$nota." contenido ".$valoraciones->contenido;
+				   	   
 				   }
+				  
 				   }
 				 ?>
 				 

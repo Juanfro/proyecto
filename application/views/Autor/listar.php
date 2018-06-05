@@ -21,7 +21,7 @@
 		<?php foreach ($autores as $autor): ?>
 			<tr  class="jcorgFilterTextParent">
 			<td class="jcorgFilterTextChild" ><?=$autor->nombre ?></td>
-			<td><?=$autor->pseudonimo ?></td>
+			<td class="jcorgFilterTextChild"><?=$autor->pseudonimo ?></td>
 			<td><?= $autor->pais->nombre ?></td>
 			<td>
 				<form action="<?=base_url()?>Autor/modificar" method="post">
