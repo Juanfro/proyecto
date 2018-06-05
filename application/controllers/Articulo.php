@@ -7,7 +7,16 @@ class Articulo extends CI_Controller {
 	}
 
 	public function crear() {
-		enmarcar($this, 'Articulo/crear');
+		//Lista de autores
+		$this->load->model('autor_model');
+		$datos['autores'] = $this->autor_model->getAll();
+		
+		//Lista Libros
+		$this->load->model('libro_model');
+		$datos['libros']= $this->libro_model->getAll();
+		
+		
+		enmarcar($this, 'Articulo/crear', $datos);
 	}
 
 	public function crearPost() {
@@ -20,8 +29,13 @@ class Articulo extends CI_Controller {
 		$contenido = isset($_POST['contenido']) ? $_POST['contenido'] . '<div class="firma">Artículo escrito por ' . $autorArticulo . '</div>' : null;
 		$idUsuario = isset($_SESSION['usuario']['id']) ? $_SESSION['usuario']['id'] : null;
 		
+		//Autores Mencionados
+		$autores = isset($_POST['autores']) ? $_POST['autores'] : null;
+		//Libros Mencionados
+		$libros = isset($_POST['libros']) ? $_POST['libros'] :null;
+		
 		try {
-			$this->articulo_model->create_articulo($titulo, $contenido, $idUsuario);
+			$this->articulo_model->create_articulo($titulo, $contenido, $idUsuario, $autores, $libros);
 			header('Location:' . base_url() . 'articulo/crearPOSTok?titulo=' . $titulo . '&contenido=' . $contenido);
 		} catch (Exception $e) {
 			header('Location:' . base_url() . 'articulo/crearPOSTerror?titulo=' . $titulo . '&contenido=' . $contenido);
