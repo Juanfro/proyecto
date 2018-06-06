@@ -107,9 +107,10 @@
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Mi perfil<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li>
-					  
-						<a href="<?=base_url()?>Usuario/perfil">Ir a mi perfil</a>						
+					<li>					  
+						<a href="<?=base_url()?>Usuario/perfil">Ir a mi perfil</a>
+						<a href="<?=base_url()?>Usuario/cerrarsesion">Cerrar Sesión</a>
+					
 					</li>
 				</ul>
 			</li>

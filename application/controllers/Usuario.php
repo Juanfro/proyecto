@@ -12,7 +12,6 @@ class Usuario extends CI_Controller {
 	}
 
 	public function loginPost() {
-		
 		$nombre = $_POST['nombre'];
 		$pwd = $_POST['pwd'];
 		
@@ -20,24 +19,29 @@ class Usuario extends CI_Controller {
 		$ok = $this->usuario_model->verificar($nombre, $pwd);
 		
 		if ($ok) {
-			session_start();//Al princpio?
+			session_start(); // Al princpio?
 			$usuarioId = $this->usuario_model->getUsuarioPorNombre($nombre);
-
+			
 			$_SESSION['usuario']['id'] = $usuarioId;
 			$usuarioRol = $this->usuario_model->getRolUsuario($nombre);
 			$_SESSION['usuario']['rol'] = $usuarioRol;
 			$_SESSION['usuario']['nombre'] = $nombre;
-			//$_SESSION['usuario']['nombre'] = $usuario->nombre;
-			//$_SESSION['usuario']['apellido'] = $usuario->apellido;
-			//header('Location:' . base_url() . 'usuario/loginOk');
+			// $_SESSION['usuario']['nombre'] = $usuario->nombre;
+			// $_SESSION['usuario']['apellido'] = $usuario->apellido;
+			// header('Location:' . base_url() . 'usuario/loginOk');
 			enmarcar($this, 'usuario/loginOk');
 		} else {
 			enmarcar($this, 'usuario/loginError');
 		}
 	}
+	
+	public function cerrarsesion(){
+		session_start();
+		session_unset();
+		session_destroy();
+		header('Location:' . base_url());
+	}
 
-	
-	
 	public function crearPost() {
 		$this->load->model('usuario_model');
 		$nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
@@ -65,17 +69,15 @@ class Usuario extends CI_Controller {
 		$datos['body']['usuario'] = $_GET['usuario'];
 		enmarcar($this, 'usuario/crearPOSTerror', $datos);
 	}
-	
-	public function perfil(){
+
+	public function perfil() {
 		$this->load->model('usuario_model');
 		$id_usuario = $_POST['id_usuario'];
-	
+		
 		$datos['usuario'] = $this->usuario_model->getusuarioPorId($id_usuario);
-	
-		enmarcar($this, 'Usuario/perfil',$datos);
-	
+		
+		enmarcar($this, 'Usuario/perfil', $datos);
 	}
-	
 
 	public function listar() {
 		$this->listarPost();
@@ -88,33 +90,33 @@ class Usuario extends CI_Controller {
 		$datos['usuario'] = $this->usuario_model->getAll($filtro);
 		enmarcar($this, 'Usuario/listar', $datos);
 	}
-	
-	
-	public function modificar(){
+
+	public function modificar() {
 		$this->load->model('usuario_model');
 		$id_usuario = $_POST['id_usuario'];
 		$datos['usuario'] = $this->usuario_model->getusuarioPorId($id_usuario);
-	
+		
 		enmarcar($this, 'usuario/modificar', $datos);
 	}
-	public function modificarPost(){
-		$nombre =  $_POST['nombre'];
-		$apellido =  $_POST['apellido'] ;
-		$alias = $_POST['alias'] ;
-		$pwd =  $_POST['contrasena'] ;
-		$rol =  $_POST['rol'] ;
-		$email =  $_POST['email'] ;
-		$edad =  $_POST['edad'] ;
-	
-		$id_usuario=$_POST['id_usuario'];
-	
+
+	public function modificarPost() {
+		$nombre = $_POST['nombre'];
+		$apellido = $_POST['apellido'];
+		$alias = $_POST['alias'];
+		$pwd = $_POST['contrasena'];
+		$rol = $_POST['rol'];
+		$email = $_POST['email'];
+		$edad = $_POST['edad'];
+		
+		$id_usuario = $_POST['id_usuario'];
+		
 		$this->load->model('usuario_model');
-		$this->usuario_model->modificar($id_usuario,$nombre,$apellido,$alias,$pwd,$rol,$email,$edad);
-	    $this->listar();
+		$this->usuario_model->modificar($id_usuario, $nombre, $apellido, $alias, $pwd, $rol, $email, $edad);
+		$this->listar();
 	}
-	
-	public function borrar(){
-		$id_usuario=$_POST['id_usuario'];
+
+	public function borrar() {
+		$id_usuario = $_POST['id_usuario'];
 		$this->load->model('usuario_model');
 		$this->usuario_model->borrar($id_usuario);
 		$this->listar();
