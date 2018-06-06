@@ -18,7 +18,11 @@
 			</pre>
 		<?php foreach ($articulos as $articulo): ?>
 			<tr>
-				<td><?=$articulo->titulo ?></td>
+				<td>
+			<a href=<?= base_url()?>Articulo/mostrar/<?=$articulo->id ?>> 
+			<?=$articulo->titulo ?></a>	
+			
+				</td>
 				<td>
 				  <div class="expandable">
 				    <?=$articulo->contenido ?>
