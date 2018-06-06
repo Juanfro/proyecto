@@ -106,10 +106,10 @@ class Articulo extends CI_Controller {
 		enmarcar($this, 'Articulo/borrarOK');
 	}
 	
-	public function mostrar(){
+	public function mostrar($id){
 		$this->load->model('articulo_model');
 		
-		$id_articulo = isset($_POST['id_articulo']) ? $_POST['id_articulo'] : null;
+		$id_articulo =$id;
 		
 		$datos['articulo'] = $this->articulo_model->getArticuloPorId($id_articulo);
 		

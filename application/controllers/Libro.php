@@ -6,9 +6,9 @@ class Libro extends CI_Controller {
 		$this->crear();
 		
 	}
-	public function perfil(){
+	public function perfil($id){
 		$this->load->model('libro_model');
-		$id_libro = $_POST['id_libro'];
+		$id_libro =$id;
 	
 		$datos['libro'] = $this->libro_model->getlibroPorId($id_libro);
 	
