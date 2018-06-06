@@ -32,8 +32,10 @@
 			<tr class="jcorgFilterTextParent">
 				<td><?=$libro->isbn ?></td>
 				<td class="jcorgFilterTextChild" >
-					<div  >
+					<div>
+					<a href=<?= base_url()?>libro/perfil/<?=$libro->id ?>> 
 						<?=$libro->titulo?>
+					</a>	
 					</div>
 				</td>
 
