@@ -101,52 +101,50 @@
 			</li>
 			
 			<!---------------------------------------------------------->
-			
-			<!-- Mi Perfil -->
-			
 			<li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Mi perfil<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li>					  
-						<a href="<?=base_url()?>Usuario/perfil">Ir a mi perfil</a>
-						<a href="<?=base_url()?>Usuario/cerrarsesion">Cerrar Sesión</a>
-					
-					</li>
-				</ul>
+				<a class="dropdown-toggle" href="<?=base_url()?>Home/vista">Home</a>				
 			</li>
-			
-			<!-- LOGIN -->
-			<li class="dropdown">
-				<a class="dropdown-toggle" href="<?=base_url()?>Home/vista">Home</span></a>
-				
-			</li>
-			
-			<li>
-				
-			</li>
-
 		</ul>
 		
 		<ul class="nav navbar-nav navbar-right"> <!-- Hay que mandarle de alguna forma la informacion sobre si el usuario ha hecho login  -->
-			<li><a>DEBUG NombreUsuario: <?= $_SESSION['usuario']['nombre']//DEBUG ?></a></li>
+			<!--  <li><a>DEBUG NombreUsuario: <?= $_SESSION['usuario']['nombre']//DEBUG ?></a></li>
 			<li><a>DEBUG RolUsuario: <?= $_SESSION['usuario']['rol'] ?></a></li>
-			<li><a>DEBUG IdUsuario: <?= $_SESSION['usuario']['id'] ?></a></li>			
+			<li><a>DEBUG IdUsuario: <?= $_SESSION['usuario']['id'] ?></a></li>-->
+				
+				
+			<?php if(isset($_SESSION['usuario'])):?>
+				<!-- Mi Perfil -->
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Mi perfil<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li>					  
+							<a href="<?=base_url()?>Usuario/perfil">Ir a mi perfil</a>
+							<a href="<?=base_url()?>Usuario/cerrarsesion">Cerrar Sesión</a>
+						
+						</li>
+					</ul>
+				</li>
+			<?php else:?>
+				<!-- Registrarse -->
+				<li><a href="<?=base_url()?>Usuario/crear">Registrarse</a></li><!-- Popup? Nueva pagina? -->
+				
+				<!-- LOGIN -->
+				<li class="dropdown">
+	    			<a class="dropdown-toggle" data-toggle="dropdown">Login<span class="caret"></span></a>
+	    			<ul class="dropdown-menu">
+	    				<li>
+	    					<form action="<?=base_url()?>usuario/loginPost"  method="post"><!-- Recarga la pagina? Recarga la seccion? -->
+	    						<input type="text"  name="nombre" id="nombre" placeholder="nombre/usuario">
+	    						<input type="password"  name ="pwd" id="contrasena" placeholder="contraseña">
+	    						<input type="submit" value="Entrar">
+	    					</form>
+	    				</li>
+	    			</ul>    						
+				</li>
+			<?php endif;?>
+				
+				
 			
-			<li><a href="<?=base_url()?>Usuario/crear">Registrarse</a></li><!-- Popup? Nueva pagina? -->
-			
-			<li class="dropdown">
-    			<a class="dropdown-toggle" data-toggle="dropdown">Login<span class="caret"></span></a>
-    			<ul class="dropdown-menu">
-    				<li>
-    					<form action="<?=base_url()?>usuario/loginPost"  method="post"><!-- Recarga la pagina? Recarga la seccion? -->
-    						<input type="text"  name="nombre" id="nombre" placeholder="nombre/usuario">
-    						<input type="password"  name ="pwd" id="contrasena" placeholder="contraseña">
-    						<input type="submit" value="Entrar">
-    					</form>
-    				</li>
-    			</ul>
-    						
-			</li>
 		</ul>
 	</div>
 	
