@@ -20,7 +20,7 @@
 			<input type="text" name="contrasena" id="contrasena" required="required"></input><br>
 			<br>
 
-			<?php if($_SESSION['usuario']['rol']=='administrador'):?>
+			<?php if(isset($_SESSION['usuario']['rol']) && $_SESSION['usuario']['rol']=='administrador'):?>
 			<label for="rol">Rol</label>
 			<!-- <input type="text" name="rol" id="rol" required="required"></input> -->
 			<select name="rol" id="rol">
@@ -37,7 +37,9 @@
 			<br>
 
 			<label for="edad">Edad</label>
-			<input type="text" name="edad" id="edad"></input><br>
+			<input type="text" name="edad" id="edad" onkeyup="validarEdad()"></input><br>
+			<div id="pasaEdad"></div>
+			
 			<br> <input type="submit" value="registrar usuario">
 		</fieldset>
 	</form>

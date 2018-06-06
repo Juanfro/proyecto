@@ -74,3 +74,14 @@ function validarISBN() {
 	}
 	
 }
+
+function validarEdad(){
+	var patronEdad = /\d+/;
+	var edad = (document.getElementById('edad').value);
+	
+	if(!isNaN(edad) && patronEdad.test(edad) && parseInt(edad)==edad && edad>0){
+		document.getElementById('pasaEdad').innerHTML = "Edad Correcta"
+	}else{
+		document.getElementById('pasaEdad').innerHTML = "La edad tiene que ser un número entero positivo."
+	}
+}
