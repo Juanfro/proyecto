@@ -3,8 +3,8 @@
 	<!--filtro titulo  -->
 	<form action="<?=base_url()?>Libro/listarPost" method="post">
 		<label for='idfiltro'>filtro</label>
-		<input id='idfiltro' type="text" name='filtro'  value='<?=$filtro?>'> 
-		<input  type="submit" value="filtrar titulo">
+		<input id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'> <input type="submit"
+			value="filtrar titulo">
 	</form>
 	<table class=" table table-bordered sortable">
 		<thead>
@@ -18,24 +18,25 @@
 				<th>Sinopsis</th>
 				<th>Edicion</th>
 				<th>Edad Minima</th>
-				<th>Valoracion</th>
-				<th>Editar</th>
-				<th>Borrar</th>
+				<th>Valoracion</th>				
+				<?php if(isset ($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador' || $_SESSION['usuario']['rol'] == 'editor')):?>
+					<th>Editar</th>
+					<th>Borrar</th>
+				<?php endif;?>				
 				<th>Seguir</th>
-				
 				<th>Valoracion</th>
 			</tr>
 		</thead>
 		<!--  <pre><code><?= print_r($libros)?></code></pre>-->
-		<tbody >
+		<tbody>
 		<?php foreach ($libros as $libro): ?>
 			<tr class="jcorgFilterTextParent">
 				<td><?=$libro->isbn ?></td>
 				<td>
-					<div class="jcorgFilterTextChild" >
-					<a href="<?= base_url()?>libro/perfil/<?=$libro->id ?>"> 
+					<div class="jcorgFilterTextChild">
+						<a href="<?= base_url()?>libro/perfil/<?=$libro->id ?>"> 
 						<?=$libro->titulo?>
-					</a>	
+					</a>
 					</div>
 				</td>
 
@@ -51,57 +52,65 @@
 			      	<?= $genero->nombre ."</br> "; ?> 			   
 			   	<?php endforeach; ?>
 				</td>
-				
+
 				<td><?=$libro->npalabras ?></td>
 
 				<td><?=$libro->sinopsis ?></td>
 				<!--edición quitar  -->
 				<td><?=$libro->edicion ?></td>
 				<td><?=$libro->edadminima ?></td>
-				<td><?php 
-				   $id_libro=$libro->id;
-				   /*$valoracion=R::findOne('valoracion','id=?',[$id_libro]);
-				   echo " nota: ",$valoracion->id." contenido: ".$valoracion->contenido;*/
-				   
-				   $valoracion=R::findCollection('valoracion','ORDER BY nota ASC ');
-				   while ($valoraciones = $valoracion->next()) {
-				   $idvlibro=$valoraciones->libro_id;
-				   
-				   /*echo "longitud de valoraciones ".$longvaloracion;*/
-				   	if ($idvlibro == $id_libro){
-				   		
-				   		$nota=$valoraciones->nota;
-				   			
-				   		
-				   		
-				   	echo "nota ".$nota." contenido ".$valoraciones->contenido;
-				   	   
-				   }
-				  
-				   }
-				 ?>
+				<td>
+					<?php
+						$id_libro = $libro->id;
+						/*
+						 * $valoracion=R::findOne('valoracion','id=?',[$id_libro]);
+						 * echo " nota: ",$valoracion->id." contenido: ".$valoracion->contenido;
+						 */
+						
+						$valoracion = R::findCollection('valoracion', 'ORDER BY nota ASC ');
+						while ($valoraciones = $valoracion->next()) {
+							$idvlibro = $valoraciones->libro_id;
+							
+							/* echo "longitud de valoraciones ".$longvaloracion; */
+							if ($idvlibro == $id_libro) {
+								
+								$nota = $valoraciones->nota;
+								
+								echo "nota " . $nota . " contenido " . $valoraciones->contenido;
+							}
+						}
+					?>
 				 
-				 </td>
-				<td>
-					<form action="<?=base_url()?>Libro/modificar" method="post">
-						<input type="hidden" name="id_libro" value="<?=$libro->id?>" /> 
-						<input type="hidden" name="filtro" value="<?=$filtro ?>" />
-						<button class=" glyphicon glyphicon-edit" type="submit"></button>
-					</form>
-				</td>
-				<td>
-					<form action="<?=base_url()?>Libro/borrar" method="post">
-						<input type="hidden" name="id_libro" value="<?=$libro->id?>" />
-						<button class="glyphicon glyphicon-remove" type="submit"></button>
-					</form>
-				</td>
+			 	</td>
+			 	
+			 	<?php if(isset ($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador' || $_SESSION['usuario']['rol'] == 'editor')):?>
+				 	<!-- Modificar -->
+				 	<td>
+						<form action="<?=base_url()?>Libro/modificar" method="post">
+							<input type="hidden" name="id_libro" value="<?=$libro->id?>" /> <input type="hidden"
+								name="filtro" value="<?=$filtro ?>" />
+							<button class=" glyphicon glyphicon-edit" type="submit"></button>
+						</form>
+					</td>
+					<!-- Modificar -->
+					<td>
+						<form action="<?=base_url()?>Libro/borrar" method="post">
+							<input type="hidden" name="id_libro" value="<?=$libro->id?>" />
+							<button class="glyphicon glyphicon-remove" type="submit"></button>
+						</form>
+					</td>
+			 	<?php endif;?>
+			 	
+			 	
+				
+				
 				<td>
 					<form action="<?= base_url()?>Libro/seguir" method="post">
 						<input type="hidden" name="id_libro" value="<?=$libro->id?>">
 						<button class="glyphicon glyphicon-heart" type="submit"></button>
 					</form>
 				</td>
-				
+
 				<td>
 					<form action="<?= base_url()?>valoracion/crear" method="post">
 						<input type="hidden" name="id_libro" id="id_libro" value="<?= $libro->id?>" />
