@@ -25,9 +25,10 @@
 				<?php endif;?>		
 				<?php if(isset($_SESSION['usuario']) ):?>
 					<th>Seguir</th>
+					<th>Valorar</th>
 				<?php endif;?>		
 				
-				<th>Valoracion</th>
+				
 			</tr>
 		</thead>
 		<!--  <pre><code><?= print_r($libros)?></code></pre>-->
@@ -113,14 +114,15 @@
 							<button class="glyphicon glyphicon-heart" type="submit"></button>
 						</form>
 					</td>
+					<td>
+						<form action="<?= base_url()?>valoracion/crear" method="post">
+							<input type="hidden" name="id_libro" id="id_libro" value="<?= $libro->id?>" />
+							<button class="glyphicon glyphicon-star-empty" type="submit"></button>
+						</form>
+					</td>
 			 	<?php endif;?>				
 
-				<td>
-					<form action="<?= base_url()?>valoracion/crear" method="post">
-						<input type="hidden" name="id_libro" id="id_libro" value="<?= $libro->id?>" />
-						<button class="glyphicon glyphicon-star-empty" type="submit"></button>
-					</form>
-				</td>
+				
 			</tr>
 			 
          <?php endforeach; ?>
