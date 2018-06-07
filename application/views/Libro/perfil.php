@@ -25,31 +25,28 @@
 					<p id="biografia"><?= $libro->sinopsis ?></p>
 					<br>
 					<br>
-				</div>
+			    </div>
 				<label for="Valoracion">Valoraciones</label>
-				
+				<br>
+			
 				<?php 
 				   $id_libro=$libro->id;
 				   /*$valoracion=R::findOne('valoracion','id=?',[$id_libro]);
 				   echo " nota: ",$valoracion->id." contenido: ".$valoracion->contenido;*/
 				   
-				   $valoracion=R::findCollection('valoracion','ORDER BY nota ASC ');
+				   $valoracion=R::findCollection('valoracion','ORDER BY nota DESC ');
 				   while ($valoraciones = $valoracion->next()) {
 				   $idvlibro=$valoraciones->libro_id;
-				   
 				   /*echo "longitud de valoraciones ".$longvaloracion;*/
 				   	if ($idvlibro == $id_libro){
-				   		
 				   		$nota=$valoraciones->nota;
-				   			
-				   		
-				   		
 				   	echo "nota ".$nota." contenido ".$valoraciones->contenido;
 				   	   
 				   }
 				  
 				   }
 				 ?>
+				
 			</div>
 		</div>
 	</div>
