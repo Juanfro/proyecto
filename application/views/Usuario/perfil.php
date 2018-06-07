@@ -19,6 +19,7 @@
 				<br><br>
 				<label for="rol">rol :</label><br>
 				 <span><?= $usuario->rol?></span>
+				 
 				<br><br>
 				
 				
