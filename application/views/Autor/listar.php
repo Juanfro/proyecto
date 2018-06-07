@@ -14,7 +14,7 @@
 			<th>Modificar</th>
 			<th>Eliminar</th>
 			<th>Listar</th>
-			<th>Perfil</th>
+			
 		</tr>
 	</thead>
 	<tbody>
@@ -46,12 +46,7 @@
 					<button class="glyphicon glyphicon-heart" type="submit"></button>
 				</form>
 			</td>
-			<td>
-				<form action="<?= base_url()?>Autor/perfil" method="post">
-					<input type="hidden" name="id_autor" id="id_autor" value="<?= $autor->id?>"/>
-					<button class="glyphicon glyphicon-user" type="submit"></button>
-				</form>
-			</td>
+			
 		</tr>
 			 
          <?php endforeach; ?>

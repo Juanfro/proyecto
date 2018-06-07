@@ -4,14 +4,14 @@
        
                 
               
+			<!-- limite de articulos mostrados -->
 			
-			
-			<?php $articulos = R::findCollection('articulo','ORDER BY fecha DESC');
+			<?php $articulos = R::findCollection('articulo','ORDER BY fecha DESC LIMIT 4');
 			  
 			 
 				   while ($articulo = $articulos->next()) {
 				  
-				  echo "<div class='col-md-6' id='informacion'>";
+				  echo "<div class='col-md-3 expandable' id='informacion'>";
 				   	echo $articulo->contenido;
 				   echo "</div>";   
 				   }?>

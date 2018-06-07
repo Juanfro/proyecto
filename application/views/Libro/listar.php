@@ -22,7 +22,7 @@
 				<th>Editar</th>
 				<th>Borrar</th>
 				<th>Seguir</th>
-				<th>Perfil</th>
+				
 				<th>Valoracion</th>
 			</tr>
 		</thead>
@@ -101,12 +101,7 @@
 						<button class="glyphicon glyphicon-heart" type="submit"></button>
 					</form>
 				</td>
-				<td>
-					<form action="<?= base_url()?>Libro/perfil" method="post">
-						<input type="hidden" name="id_libro" id="id_libro" value="<?= $libro->id?>" />
-						<button class="glyphicon glyphicon-book" type="submit"></button>
-					</form>
-				</td>
+				
 				<td>
 					<form action="<?= base_url()?>valoracion/crear" method="post">
 						<input type="hidden" name="id_libro" id="id_libro" value="<?= $libro->id?>" />
