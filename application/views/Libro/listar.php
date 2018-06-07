@@ -22,8 +22,11 @@
 				<?php if(isset ($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador' || $_SESSION['usuario']['rol'] == 'editor')):?>
 					<th>Editar</th>
 					<th>Borrar</th>
-				<?php endif;?>				
-				<th>Seguir</th>
+				<?php endif;?>		
+				<?php if(isset($_SESSION['usuario']) ):?>
+					<th>Seguir</th>
+				<?php endif;?>		
+				
 				<th>Valoracion</th>
 			</tr>
 		</thead>
@@ -101,15 +104,16 @@
 					</td>
 			 	<?php endif;?>
 			 	
+			 	<!-- Seguir -->
 			 	
-				
-				
-				<td>
-					<form action="<?= base_url()?>Libro/seguir" method="post">
-						<input type="hidden" name="id_libro" value="<?=$libro->id?>">
-						<button class="glyphicon glyphicon-heart" type="submit"></button>
-					</form>
-				</td>
+			 	<?php if(isset($_SESSION['usuario']) ):?>
+				 	<td>
+						<form action="<?= base_url()?>Libro/seguir" method="post">
+							<input type="hidden" name="id_libro" value="<?=$libro->id?>">
+							<button class="glyphicon glyphicon-heart" type="submit"></button>
+						</form>
+					</td>
+			 	<?php endif;?>				
 
 				<td>
 					<form action="<?= base_url()?>valoracion/crear" method="post">
