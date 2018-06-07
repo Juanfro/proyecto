@@ -18,6 +18,7 @@
 			</pre>
 		<?php foreach ($articulos as $articulo): ?>
 			<tr>
+			
 				<td>
 			<a href=<?= base_url()?>Articulo/mostrar/<?=$articulo->id ?>> 
 			<?=$articulo->titulo ?></a>	
