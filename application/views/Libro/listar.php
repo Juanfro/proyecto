@@ -31,8 +31,8 @@
 		<?php foreach ($libros as $libro): ?>
 			<tr class="jcorgFilterTextParent">
 				<td><?=$libro->isbn ?></td>
-				<td class="jcorgFilterTextChild"  >
-					<div >
+				<td>
+					<div class="jcorgFilterTextChild" >
 					<a href="<?= base_url()?>libro/perfil/<?=$libro->id ?>"> 
 						<?=$libro->titulo?>
 					</a>	

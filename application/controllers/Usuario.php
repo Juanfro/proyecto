@@ -70,9 +70,9 @@ class Usuario extends CI_Controller {
 		enmarcar($this, 'usuario/crearPOSTerror', $datos);
 	}
 
-	public function perfil() {
+	public function perfil($id) {
 		$this->load->model('usuario_model');
-		$id_usuario = $_POST['id_usuario'];
+		$id_usuario = $id;
 		
 		$datos['usuario'] = $this->usuario_model->getusuarioPorId($id_usuario);
 		

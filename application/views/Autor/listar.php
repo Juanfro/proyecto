@@ -20,8 +20,8 @@
 	<tbody>
 		<?php foreach ($autores as $autor): ?>
 			<tr  class="jcorgFilterTextParent">
-			<td class="jcorgFilterTextChild" >
-			<a href="<?= base_url()?>Autor/perfil/<?=$autor->id ?>"> 
+			<td >
+			<a href="<?= base_url()?>Autor/perfil/<?=$autor->id ?>" class="jcorgFilterTextChild" > 
 			<?=$autor->nombre ?>
 			</a>
 			</td>

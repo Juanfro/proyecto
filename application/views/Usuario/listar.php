@@ -17,7 +17,11 @@
 	  <tbody>
 		<?php foreach ($usuario as $usuarios): ?>
 		<tr>
-			 <td><?=$usuarios->nombre ?></td>
+			 <td>
+			 <a href="<?= base_url()?>Usuario/perfil/<?=$usuarios->id ?>">
+			 <?=$usuarios->nombre ?>
+			 </a>
+			 </td>
 			 <td><?=$usuarios->apellido?></td>
 			 <td><?=$usuarios->alias ?></td>
 			 <td><?=$usuarios->rol ?></td>
