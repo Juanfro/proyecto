@@ -15,14 +15,17 @@
 				<th>Editar</th>
 				<th>Borrar</th>
 				<th>Seguir</th>
-				<th>Ir a la lista</th>
+				
 			</tr>
 		</thead>
 			<tbody>
 				<?php foreach ($listas as $lista) :?>
 					<tr class="jcorgFilterTextParent">
 						<td class="jcorgFilterTextChild">
-							<?= $lista->nombre?>
+							<a href="<?= base_url()?>ListaLibros/perfil/<?=$lista->id?>" class="jcorgFilterTextChild">
+								<?= $lista->nombre?>
+							</a>
+							
 						</td>
 						
 						<td>
@@ -51,11 +54,8 @@
 								<input type="hidden" name="id_lista" id="id_lista" value="<?= $lista->id?>"/>
 								<button class="glyphicon glyphicon-heart" type="submit"></button>
 							</form>
-						</td>
+						</td>						
 						
-						<td>
-							<?php //TODO Ir a la lista?>
-						</td>
 					</tr>				
 				<?php endforeach;?>				
 		</tbody>
