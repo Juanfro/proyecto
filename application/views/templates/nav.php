@@ -11,8 +11,11 @@
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Libros<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li>
-						<a href="<?=base_url()?>libro/crear">Nuevo</a>
-						<a href="<?=base_url()?>libro/listar">Listar</a>
+						<?php if(isset($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador' | $_SESSION['usuario']['rol']== 'editor' ) ) :?>
+							<a href="<?=base_url()?>libro/crear">Nuevo</a>
+						<?php endif;?>
+							<a href="<?=base_url()?>libro/listar">Listar</a>
+						
 					</li>
 				</ul>
 			</li>
@@ -89,7 +92,7 @@
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?= $_SESSION['usuario']['nombre'];?><span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li>					  
-							<a href="<?=base_url()?>Usuario/perfil">Ir a mi perfil</a>
+							<a href="<?=base_url()?>Usuario/perfil/<?=$_SESSION['usuario']['id']?>">Ir a mi perfil</a>
 							<a href="<?=base_url()?>Usuario/cerrarsesion">Cerrar Sesión</a>
 						
 						</li>
