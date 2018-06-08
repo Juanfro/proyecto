@@ -1,9 +1,21 @@
 <div class="container">
 	<div class="header col-md-12">
-		DATOS DEBUG:
-		<br>
-		Nombre:<?=$lista->nombre?>
-		<br>
-		ID: <?= $lista->id?>
+		<div class="col-md-12">
+			<div class="col-md-3">
+				<img class="imagen" src="<?= base_url()?>assets/img/Koala.jpg" alt="koala">
+			</div>
+			<div class="col-md-3" id="informacion">
+				<label for="lista">Nombre Lista : </label>
+				<br> <span><?= $lista->nombre?></span><br>
+				<br>
+
+				<label for="libros">Libros :</label>
+				<br> <?php foreach($lista->sharedLibroList as $libro):?>
+								<?= $libro->titulo . "</br>";?>
+							<?php endforeach;?>
+									
+				<br>
+			</div>
+		</div>	
 	</div>
 </div>

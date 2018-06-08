@@ -1,9 +1,9 @@
 <div class="container">
 	<!-- FILTRO -->
 	<form action="<?=base_url()?>ListaLibros/listar" method="post">
-		<label for='idfiltro'>filtro</label>
+		<label for='idfiltro'>Filtro</label>
 		<input id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'> 
-		<input type="submit" value="filtrar nombre_lista">
+		
 	</form>
 	<!-- End FILTRO -->
 	
