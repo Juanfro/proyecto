@@ -3,13 +3,13 @@
 	<form action="<?=base_url()?>ListaAutores/listar" method="post">
 		<label for='idfiltro'>filtro</label>
 		<input id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'> 
-		<input type="submit" value="filtrar nombre_lista">
+		
 	</form>
 	<!-- End FILTRO -->
 	
 	<table class=" table table-bordered sortable">
 		<thead>
-			<tr>
+			<tr class="jcorgFilterTextParent">
 				<th>Nombre</th>
 				<th>Autores</th>
 				<th>Editar</th>
@@ -20,9 +20,11 @@
 		</thead>
 		<tbody>
 			<?php foreach ($listas as $lista):?>
-				<tr class="jcorgFilterTextParent">
-					<td class="jcorgFilterTextChild">
-					<?= $lista->nombre?>
+				<tr>
+					<td>
+						<a href=<?= base_url()?>ListaAutores/perfil/<?=$lista->id ?> class="jcorgFilterTextChild">
+				 <?= $lista->nombre?>
+				 </a>
 					</td>
 					
 					<td>

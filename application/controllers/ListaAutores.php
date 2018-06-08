@@ -105,6 +105,15 @@ class ListaAutores extends CI_Controller {
 		$this->listaautores_model->seguir($id_lista, $id_usuario);
 		
 	}
+	public function perfil($id){
+		$this->load->model('listaautores_model');
+	
+		$id_lista =$id;
+	
+		$datos['lista'] = $this->listaautores_model->getlistaPorId($id_lista);
+	
+		enmarcar($this, 'ListaAutores/perfil', $datos);
+	}
 	
 
 }
