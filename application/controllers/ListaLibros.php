@@ -82,6 +82,15 @@ class ListaLibros extends CI_Controller {
 		enmarcar($this, 'Libro/modificadoOK');
 	}
 	
+	public function perfil($id){
+		$this->load->model('listalibros_model');
+		$id_lista = $id;
+		
+		$datos['lista'] = $this->listalibros_model->getlistaPorId($id_lista);
+		
+		enmarcar($this, 'ListaLibros/perfil', $datos);
+	}
+	
 	
 }
 ?>
