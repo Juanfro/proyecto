@@ -65,16 +65,16 @@
 			<!---------------------------------------------------------->
 			
 			<!-- Blogs -->
-			
+			<!-- 
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Blogs<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li>						
-						<a href="<?=base_url()?>blog/listar">Listar</a>
+						<a href="<?//=base_url()?>blog/listar">Listar</a>
 					</li>
 				</ul>
 			</li>
-			
+			 -->
 			<!---------------------------------------------------------->
 			<li class="dropdown">
 				<a class="dropdown-toggle" href="<?=base_url()?>Home/vista">Home</a>				
