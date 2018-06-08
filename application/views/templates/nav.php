@@ -22,14 +22,15 @@
 			
 			<!---------------------------------------------------------->
 			
-			<!-- Autores --> 		
-			
+			<!-- Autores -->			
 			
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Autores<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li>
-						<a href="<?=base_url()?>autor/crear">Nuevo</a>
+						<?php if(isset($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador' | $_SESSION['usuario']['rol']== 'editor' ) ) :?>
+							<a href="<?=base_url()?>autor/crear">Nuevo</a>
+						<?php endif;?>
 						<a href="<?=base_url()?>autor/listar">Listar</a>
 					</li>
 				</ul>
