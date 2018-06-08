@@ -86,7 +86,7 @@
 			<?php if(isset($_SESSION['usuario'])):?>
 				<!-- Mi Perfil -->
 				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Mi perfil<span class="caret"></span></a>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?= $_SESSION['usuario']['nombre'];?><span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li>					  
 							<a href="<?=base_url()?>Usuario/perfil">Ir a mi perfil</a>
