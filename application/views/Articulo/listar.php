@@ -1,9 +1,13 @@
 <div class="container">
 
-
+   <form  method="post">
+		<label for='idfiltro'>Filtro</label>
+		<input id='idfiltro' type="text" name='filtro' value=''> 
+	</form>
+	
 	<table class="table table-bordered sortable">
 		<thead>
-			<tr>
+			<tr class="jcorgFilterTextParent">
 				<th>Titulo</th>
 				<th>Contenido</th>
 				<th>autor</th>
@@ -13,14 +17,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			<pre>
-				<code><?php /*print_r($articulos) */?></code>
-			</pre>
+			
 		<?php foreach ($articulos as $articulo): ?>
 			<tr>
 			
 				<td>
-			<a href=<?= base_url()?>Articulo/mostrar/<?=$articulo->id ?>> 
+			<a href=<?= base_url()?>Articulo/mostrar/<?=$articulo->id ?> class="jcorgFilterTextChild"> 
 			<?=$articulo->titulo ?></a>	
 			
 				</td>

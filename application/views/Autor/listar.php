@@ -2,9 +2,9 @@
 
 	<form action="<?=base_url()?>Autor/listarfiltro" method="post">
 		<label for='idfiltro'>filtro</label>
-		<input id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'> <input type="submit"
-			value="filtrar">
+		<input id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'>
 	</form>
+	
 	<table class="table table-bordered sortable">
 	<thead>
 		<tr>

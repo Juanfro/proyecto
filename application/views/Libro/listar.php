@@ -3,12 +3,12 @@
 	<!--filtro titulo  -->
 	<form action="<?=base_url()?>Libro/listarPost" method="post">
 		<label for='idfiltro'>filtro</label>
-		<input id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'> <input type="submit"
-			value="filtrar titulo">
+		<input id='idfiltro' type="text" name='filtro' value=''> 
+		
 	</form>
 	<table class=" table table-bordered sortable">
 		<thead>
-			<tr>
+			<tr class="jcorgFilterTextParent">
 				<th>ISBN</th>
 				<th>Título</th>
 				<th>autor</th>
@@ -34,14 +34,13 @@
 		<!--  <pre><code><?= print_r($libros)?></code></pre>-->
 		<tbody>
 		<?php foreach ($libros as $libro): ?>
-			<tr class="jcorgFilterTextParent">
+			<tr >
 				<td><?=$libro->isbn ?></td>
 				<td>
-					<div>
-						<a class="jcorgFilterTextChild" href="<?= base_url()?>libro/perfil/<?=$libro->id ?>"> 
-						<?=$libro->titulo?>
-					</a>
-					</div>
+				<a href="<?= base_url()?>libro/perfil/<?=$libro->id ?>" class="jcorgFilterTextChild"> 
+				<?=$libro->titulo?>
+				</a>
+					
 				</td>
 
 				<td class="jcorgFilterTextChild">
