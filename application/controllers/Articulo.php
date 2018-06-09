@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 class Articulo extends CI_Controller {
 
 	public function index() {
@@ -7,32 +8,30 @@ class Articulo extends CI_Controller {
 	}
 
 	public function crear() {
-		//Lista de autores
+		// Lista de autores
 		$this->load->model('autor_model');
 		$datos['autores'] = $this->autor_model->getAll();
 		
-		//Lista Libros
+		// Lista Libros
 		$this->load->model('libro_model');
-		$datos['libros']= $this->libro_model->getAll();
-		
+		$datos['libros'] = $this->libro_model->getAll();
 		
 		enmarcar($this, 'Articulo/crear', $datos);
 	}
 
 	public function crearPost() {
-
 		$this->load->model('articulo_model');
 		
-		$autorArticulo=isset($_SESSION['usuario']['nombre']) ? $_SESSION['usuario']['nombre'] : 'Anónimo';
+		$autorArticulo = isset($_SESSION['usuario']['nombre']) ? $_SESSION['usuario']['nombre'] : 'Anónimo';
 		
 		$titulo = isset($_POST['titulo']) ? $_POST['titulo'] : null;
 		$contenido = isset($_POST['contenido']) ? $_POST['contenido'] . '<div class="firma">Artículo escrito por ' . $autorArticulo . '</div>' : null;
 		$idUsuario = isset($_SESSION['usuario']['id']) ? $_SESSION['usuario']['id'] : null;
 		
-		//Autores Mencionados
+		// Autores Mencionados
 		$autores = isset($_POST['autores']) ? $_POST['autores'] : null;
-		//Libros Mencionados
-		$libros = isset($_POST['libros']) ? $_POST['libros'] :null;
+		// Libros Mencionados
+		$libros = isset($_POST['libros']) ? $_POST['libros'] : null;
 		
 		try {
 			$this->articulo_model->create_articulo($titulo, $contenido, $idUsuario, $autores, $libros);
@@ -59,25 +58,34 @@ class Articulo extends CI_Controller {
 		$this->load->model('articulo_model');
 		
 		try {
-			$this->articulo_model->create_articulo('Articulo1', 'Lorem fistrum mamaar mamaar qué dise usteer papaar papaar condemor de la pradera. No te digo trigo por no llamarte Rodrigor tiene musho peligro ese pedazo de condemor de la pradera por la gloria de mi madre quietooor quietooor fistro sexuarl. La caidita pecador fistro al ataquerl amatomaa pupita pupita hasta luego Lucas fistro llevame al sircoo. Mamaar sexuarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor jarl. Caballo blanco caballo negroorl qué dise usteer no puedor caballo blanco caballo negroorl quietooor ese que llega. Ese hombree de la pradera jarl benemeritaar a peich diodeno diodeno torpedo sexuarl por la gloria de mi madre.',3);
-			$this->articulo_model->create_articulo('Articulo2', 'Lorem fistrum mamaar mamaar qué dise usteer papaar papaar condemor de la pradera. No te digo trigo por no llamarte Rodrigor tiene musho peligro ese pedazo de condemor de la pradera por la gloria de mi madre quietooor quietooor fistro sexuarl. La caidita pecador fistro al ataquerl amatomaa pupita pupita hasta luego Lucas fistro llevame al sircoo. Mamaar sexuarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor jarl. Caballo blanco caballo negroorl qué dise usteer no puedor caballo blanco caballo negroorl quietooor ese que llega. Ese hombree de la pradera jarl benemeritaar a peich diodeno diodeno torpedo sexuarl por la gloria de mi madre.',4);
-			$this->articulo_model->create_articulo('Articulo3', 'Lorem fistrum mamaar mamaar qué dise usteer papaar papaar condemor de la pradera. No te digo trigo por no llamarte Rodrigor tiene musho peligro ese pedazo de condemor de la pradera por la gloria de mi madre quietooor quietooor fistro sexuarl. La caidita pecador fistro al ataquerl amatomaa pupita pupita hasta luego Lucas fistro llevame al sircoo. Mamaar sexuarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor jarl. Caballo blanco caballo negroorl qué dise usteer no puedor caballo blanco caballo negroorl quietooor ese que llega. Ese hombree de la pradera jarl benemeritaar a peich diodeno diodeno torpedo sexuarl por la gloria de mi madre.',2);
-			$this->articulo_model->create_articulo('Articulo4', 'Lorem fistrum mamaar mamaar qué dise usteer papaar papaar condemor de la pradera. No te digo trigo por no llamarte Rodrigor tiene musho peligro ese pedazo de condemor de la pradera por la gloria de mi madre quietooor quietooor fistro sexuarl. La caidita pecador fistro al ataquerl amatomaa pupita pupita hasta luego Lucas fistro llevame al sircoo. Mamaar sexuarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor jarl. Caballo blanco caballo negroorl qué dise usteer no puedor caballo blanco caballo negroorl quietooor ese que llega. Ese hombree de la pradera jarl benemeritaar a peich diodeno diodeno torpedo sexuarl por la gloria de mi madre.',1);
-			$this->articulo_model->create_articulo('Articulo5', 'Lorem fistrum mamaar mamaar qué dise usteer papaar papaar condemor de la pradera. No te digo trigo por no llamarte Rodrigor tiene musho peligro ese pedazo de condemor de la pradera por la gloria de mi madre quietooor quietooor fistro sexuarl. La caidita pecador fistro al ataquerl amatomaa pupita pupita hasta luego Lucas fistro llevame al sircoo. Mamaar sexuarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor jarl. Caballo blanco caballo negroorl qué dise usteer no puedor caballo blanco caballo negroorl quietooor ese que llega. Ese hombree de la pradera jarl benemeritaar a peich diodeno diodeno torpedo sexuarl por la gloria de mi madre.',4);
-			$this->articulo_model->create_articulo('Articulo6', 'Lorem fistrum mamaar mamaar qué dise usteer papaar papaar condemor de la pradera. No te digo trigo por no llamarte Rodrigor tiene musho peligro ese pedazo de condemor de la pradera por la gloria de mi madre quietooor quietooor fistro sexuarl. La caidita pecador fistro al ataquerl amatomaa pupita pupita hasta luego Lucas fistro llevame al sircoo. Mamaar sexuarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor jarl. Caballo blanco caballo negroorl qué dise usteer no puedor caballo blanco caballo negroorl quietooor ese que llega. Ese hombree de la pradera jarl benemeritaar a peich diodeno diodeno torpedo sexuarl por la gloria de mi madre.',5);
+			$this->articulo_model->create_articulo('Articulo1', 'Lorem fistrum mamaar mamaar qué dise usteer papaar papaar condemor de la pradera. No te digo trigo por no llamarte Rodrigor tiene musho peligro ese pedazo de condemor de la pradera por la gloria de mi madre quietooor quietooor fistro sexuarl. La caidita pecador fistro al ataquerl amatomaa pupita pupita hasta luego Lucas fistro llevame al sircoo. Mamaar sexuarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor jarl. Caballo blanco caballo negroorl qué dise usteer no puedor caballo blanco caballo negroorl quietooor ese que llega. Ese hombree de la pradera jarl benemeritaar a peich diodeno diodeno torpedo sexuarl por la gloria de mi madre.', 3);
+			$this->articulo_model->create_articulo('Articulo2', 'Lorem fistrum mamaar mamaar qué dise usteer papaar papaar condemor de la pradera. No te digo trigo por no llamarte Rodrigor tiene musho peligro ese pedazo de condemor de la pradera por la gloria de mi madre quietooor quietooor fistro sexuarl. La caidita pecador fistro al ataquerl amatomaa pupita pupita hasta luego Lucas fistro llevame al sircoo. Mamaar sexuarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor jarl. Caballo blanco caballo negroorl qué dise usteer no puedor caballo blanco caballo negroorl quietooor ese que llega. Ese hombree de la pradera jarl benemeritaar a peich diodeno diodeno torpedo sexuarl por la gloria de mi madre.', 4);
+			$this->articulo_model->create_articulo('Articulo3', 'Lorem fistrum mamaar mamaar qué dise usteer papaar papaar condemor de la pradera. No te digo trigo por no llamarte Rodrigor tiene musho peligro ese pedazo de condemor de la pradera por la gloria de mi madre quietooor quietooor fistro sexuarl. La caidita pecador fistro al ataquerl amatomaa pupita pupita hasta luego Lucas fistro llevame al sircoo. Mamaar sexuarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor jarl. Caballo blanco caballo negroorl qué dise usteer no puedor caballo blanco caballo negroorl quietooor ese que llega. Ese hombree de la pradera jarl benemeritaar a peich diodeno diodeno torpedo sexuarl por la gloria de mi madre.', 2);
+			$this->articulo_model->create_articulo('Articulo4', 'Lorem fistrum mamaar mamaar qué dise usteer papaar papaar condemor de la pradera. No te digo trigo por no llamarte Rodrigor tiene musho peligro ese pedazo de condemor de la pradera por la gloria de mi madre quietooor quietooor fistro sexuarl. La caidita pecador fistro al ataquerl amatomaa pupita pupita hasta luego Lucas fistro llevame al sircoo. Mamaar sexuarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor jarl. Caballo blanco caballo negroorl qué dise usteer no puedor caballo blanco caballo negroorl quietooor ese que llega. Ese hombree de la pradera jarl benemeritaar a peich diodeno diodeno torpedo sexuarl por la gloria de mi madre.', 1);
+			$this->articulo_model->create_articulo('Articulo5', 'Lorem fistrum mamaar mamaar qué dise usteer papaar papaar condemor de la pradera. No te digo trigo por no llamarte Rodrigor tiene musho peligro ese pedazo de condemor de la pradera por la gloria de mi madre quietooor quietooor fistro sexuarl. La caidita pecador fistro al ataquerl amatomaa pupita pupita hasta luego Lucas fistro llevame al sircoo. Mamaar sexuarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor jarl. Caballo blanco caballo negroorl qué dise usteer no puedor caballo blanco caballo negroorl quietooor ese que llega. Ese hombree de la pradera jarl benemeritaar a peich diodeno diodeno torpedo sexuarl por la gloria de mi madre.', 4);
+			$this->articulo_model->create_articulo('Articulo6', 'Lorem fistrum mamaar mamaar qué dise usteer papaar papaar condemor de la pradera. No te digo trigo por no llamarte Rodrigor tiene musho peligro ese pedazo de condemor de la pradera por la gloria de mi madre quietooor quietooor fistro sexuarl. La caidita pecador fistro al ataquerl amatomaa pupita pupita hasta luego Lucas fistro llevame al sircoo. Mamaar sexuarl ese pedazo de mamaar no te digo trigo por no llamarte Rodrigor jarl. Caballo blanco caballo negroorl qué dise usteer no puedor caballo blanco caballo negroorl quietooor ese que llega. Ese hombree de la pradera jarl benemeritaar a peich diodeno diodeno torpedo sexuarl por la gloria de mi madre.', 5);
 		} catch (Exception $e) {}
 	}
 
-	// si pongo ['body'] me miestra errores
+	//Listar Todos Los Artículos
 	public function listar() {
 		$this->load->model('articulo_model');
 		$datos['articulos'] = $this->articulo_model->getAll();
-	    
+		
 		enmarcar($this, 'Articulo/listar', $datos);
 	}
 	
-	
-
+	//Mostrar Un artículo
+	public function mostrar($id) {
+		$this->load->model('articulo_model');
+		
+		$id_articulo = $id;
+		
+		$datos['articulo'] = $this->articulo_model->getArticuloPorId($id_articulo);
+		
+		enmarcar($this, 'articulo/mostrar', $datos);
+	}
+		
 	public function modificar() {
 		$this->load->model('articulo_model');
 		$id_articulo = $_POST['id_articulo'];
@@ -105,15 +113,7 @@ class Articulo extends CI_Controller {
 		
 		enmarcar($this, 'Articulo/borrarOK');
 	}
+
 	
-	public function mostrar($id){
-		$this->load->model('articulo_model');
-		
-		$id_articulo =$id;
-		
-		$datos['articulo'] = $this->articulo_model->getArticuloPorId($id_articulo);
-		
-		enmarcar($this, 'articulo/mostrar', $datos);
-	}
 }
 ?>

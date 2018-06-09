@@ -1,15 +1,15 @@
 <div class="container">
 
-   <form  method="post">
+	<form method="post">
 		<label for='idfiltro'>Filtro</label>
-		<input id='idfiltro' type="text" name='filtro' value=''> 
+		<input id='idfiltro' type="text" name='filtro' value=''>
 	</form>
 	<br>
 	<form action="<?= base_url()?>Articulo/crear" method="post">
 		<button class="glyphicon glyphicon-plus pointer" type="submit"></button>
-	</form>	
+	</form>
 	<br>
-	
+
 	<table class="table table-bordered sortable">
 		<thead>
 			<tr class="jcorgFilterTextParent">
@@ -17,59 +17,55 @@
 				<th>Contenido</th>
 				<th>autor</th>
 				<th>Modificar</th>
-				<th>Borrar</th>
-				<th>Ir al artículo</th>
+				<th>Borrar</th>				
 			</tr>
 		</thead>
-		<tbody>
+		
+		<tbody>			
+			<?php foreach ($articulos as $articulo): ?>
+				<tr>
+					<!-- Titulo -->
+					<td>
+						<a href="<?= base_url()?>Articulo/mostrar/<?=$articulo->id?>" class="jcorgFilterTextChild"> 
+							<?=$articulo->titulo ?>
+						</a>
+					</td>
+					
+					<!-- Contenido -->
+					<td>
+						<div class="expandable">
+						    <?=$articulo->contenido ?>
+						</div>
+					</td>
+					
+					<!-- Autor -->
+					<td>
+						<?php
+							$id_autor = $articulo->usuarioautor_id;
+							$autor = R::findOne('usuario', 'id=?', [$id_autor]);
+							echo $autor->nombre;
+						?>
+					</td>
+					 
+					<!-- Modificar -->
+					<td>
+						<form action="<?=base_url()?>Articulo/modificar" method="post">
+							<input type="hidden" name="id_articulo" value="<?=$articulo->id?>" />
 			
-		<?php foreach ($articulos as $articulo): ?>
-			<tr>
-			
-				<td>
-			<a href=<?= base_url()?>Articulo/mostrar/<?=$articulo->id ?> class="jcorgFilterTextChild"> 
-			<?=$articulo->titulo ?></a>	
-			
-				</td>
-				<td>
-				  <div class="expandable">
-				    <?=$articulo->contenido ?>
-				 </div>
-				</td>
-				<td>
-				 <?php
-			$id_autor = $articulo->usuarioautor_id;
-			$autor = R::findOne('usuario', 'id=?', [
-				$id_autor
-			]);
-			echo $autor->nombre;
-			?>
-			 </td>
-				<td>
-					<form action="<?=base_url()?>Articulo/modificar" method="post">
-						<input type="hidden" name="id_articulo" " value="<?=$articulo->id?>" />
-
-						<button class=" glyphicon glyphicon-edit" type="submit" />
-					</form>
-				</td>
-				<td>
-					<form action="<?=base_url()?>Articulo/borrar" method="post">
-						<input type="hidden" name="id_articulo" value="<?=$articulo->id?>" />
-						<button class="glyphicon glyphicon-remove" type="submit"></button>
-					</form>
-				</td>
-				
-				<td>
-					<form action="<?=base_url()?>Articulo/mostrar" method="post">
-						<input type="hidden" name="id_articulo" value="<?=$articulo->id?>" />
-						<button class="glyphicon glyphicon-book" type="submit"></button>
-					</form>
-				</td>
-
-			</tr>
-			 
-         <?php endforeach; ?>
-         </tbody>
+							<button class=" glyphicon glyphicon-edit" type="submit"></button>
+						</form>
+					</td>
+					
+					<!-- Borrar -->
+					<td>
+						<form action="<?=base_url()?>Articulo/borrar" method="post">
+							<input type="hidden" name="id_articulo" value="<?=$articulo->id?>" />
+							<button class="glyphicon glyphicon-remove" type="submit"></button>
+						</form>
+					</td>				
+						 
+			<?php endforeach; ?>
+		         </tbody>
 	</table>
 	<form action="<?= base_url()?>Articulo/crear" method="post">
 		<button class="glyphicon glyphicon-plus pointer" type="submit"></button>
