@@ -8,7 +8,7 @@ class listaautores_model extends CI_Model {
 		$usuario = R::findOne('usuario', 'id =?', [
 			$id_usuario
 		]);
-		$lista->usuarioautor = $usuario;
+		$lista->usuario = $usuario;
 		
 		// Datos
 		

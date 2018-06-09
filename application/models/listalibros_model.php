@@ -7,7 +7,7 @@ class listalibros_model extends CI_Model{
 		
 		//Usuario creador de la lista
 		$usuario = R::findOne('usuario', 'id =?', [$id_usuario]);
-		$lista->usuarioautor = $usuario;
+		$lista->usuario = $usuario;
 		
 		//Datos
 		$lista->nombre = $nombre;	//Nombre de la lista
