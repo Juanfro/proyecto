@@ -21,10 +21,10 @@ class ListaLibros extends CI_Controller {
 		$nombre = $_POST['nombre']; 	//Nombre de la lista
 		$autores = $_POST['libros'];	//Libros En la lista
 		$usuarioAutor = isset($_SESSION['usuario']['id']) ? $_SESSION['usuario']['id'] : null;	//ID del usuario que crea la lista
-		
+		$descripcion=$_POST['descripcion'];
 		//Modelo
 		$this->load->model('listalibros_model');
-		$this->listalibros_model->crear($nombre, $autores, $usuarioAutor);
+		$this->listalibros_model->crear($nombre, $autores, $usuarioAutor,$descripcion);
 		
 	}
 	

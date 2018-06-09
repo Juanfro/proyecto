@@ -59,7 +59,7 @@ class Autor extends CI_Controller {
 		
 		$this->load->model('autor_model');
 		$this->autor_model->modificar($id_autor, $nombre, $pseudonimo, $pais,$biografia,$anodenacimiento);
-		$this->listar();
+		
 	}
 
 	public function borrar() {

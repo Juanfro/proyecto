@@ -22,7 +22,7 @@
 				<br>
 				<br>
 				<div class="expandable">
-					<p id="biografia"><?= $libro->sinopsis ?></p>
+					<p id="biografia" class="letra"><?= $libro->sinopsis ?></p>
 					<br>
 					<br>
 			    </div>

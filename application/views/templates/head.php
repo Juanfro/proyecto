@@ -37,7 +37,8 @@
      <script src="<?= base_url()?>assets/js/highlight.js"></script>
      <script src="<?= base_url()?>assets/js/resaltar.js"></script>
      
-    
+    <!-- resaltar la priimera letra -->
+  	<link href="<?= base_url()?>assets/css/resaltar-letra.css" rel="stylesheet"></link>
     
     
 	

@@ -28,7 +28,7 @@
             <div class="row" >
                <label for="biografia">Biografia</label><br><br>
                <div class="expandable">
-                <p id="biografia"><?= $autor->biografia ?></p><br><br>
+                <p id="biografia" class="letra"><?= $autor->biografia ?></p><br><br>
                 </div>
             </div>
             

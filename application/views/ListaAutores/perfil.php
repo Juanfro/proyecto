@@ -17,6 +17,10 @@
 				<?php endforeach; ?>
 									
 				<br>
+				<label for="autores">Descripcion :</label>
+				<div class="expandable">
+                <p id="biografia" class="letra"><?= $lista->descripcion ?></p><br><br>
+                </div>
 			</div>
 		</div>	
 	</div>

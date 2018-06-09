@@ -15,7 +15,9 @@
 				 	<?php endforeach;?>
 				</select>
 				<br><br>
-			
+				<label>Descripción</label>
+					<textarea name="descripcion" id="descripcion" rows="4" cols="12" ></textarea>
+			    <br>
 			<input type="submit" value="registrar lista de libros">
 		</fieldset>
 	</form>
