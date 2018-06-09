@@ -4,6 +4,20 @@
 	</div>
 	<div class="collapse navbar-collapse" id="myNavbar">
 		<ul class="nav navbar-nav">
+		
+			<!-- Articulos -->
+			 
+			 <li class="dropdown">
+			 	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Artículos<span class="caret"></span></a>
+			 	<ul class="dropdown-menu">
+			 		<li>
+			 			<?php if(isset($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador' | $_SESSION['usuario']['rol']== 'editor' ) ) :?>
+							<a href="<?=base_url()?>articulo/crear">Nuevo</a>
+						<?php endif;?>
+							<a href="<?=base_url()?>articulo/listar">Listar</a>						
+			 		</li>
+			 	</ul>
+			 </li>
 			 
 			<!-- Libros --> 
 			

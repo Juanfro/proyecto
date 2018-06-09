@@ -80,7 +80,7 @@
 					<?php if(isset($_SESSION['usuario']) ):?>
 						<td>
 							<form action="<?= base_url()?>ListaAutores/seguir" method="post">
-								<input type="hidden" name="id_lista" id="id_lista" value="<?= $lista->id?>" />
+								<input type="hidden" name="id_lista" id="id_lista" value="<?= $lista->id?>"/>
 								<button class="glyphicon glyphicon-heart" type="submit"></button>
 							</form>
 						</td>
