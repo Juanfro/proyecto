@@ -17,7 +17,7 @@
 				<th>Seguir</th>
 			</tr>
 		</thead>
-		<tbody   >
+		<tbody>
 			<?php foreach ($listas as $lista) :?>
 				<tr>
 					<td>
