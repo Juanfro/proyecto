@@ -2,10 +2,15 @@
 
 	<!--filtro titulo  -->
 	<form action="<?=base_url()?>Libro/listarPost" method="post">
-		<label for='idfiltro'>filtro</label>
+		<label for='idfiltro'>Filtro</label>
 		<input id='idfiltro' type="text" name='filtro' value=''> 
 		
 	</form>
+	<br>
+	<form action="<?= base_url()?>Libro/crear" method="post">
+		<button class="glyphicon glyphicon-plus" type="submit"></button>
+	</form>
+	<br>
 	<table class=" table table-bordered sortable">
 		<thead>
 			<tr class="jcorgFilterTextParent">
@@ -127,5 +132,7 @@
          <?php endforeach; ?>
          </tbody>
 	</table>
-
+<form action="<?= base_url()?>Libro/crear" method="post">
+		<button class="glyphicon glyphicon-plus" type="submit"></button>
+	</form>
 </div>

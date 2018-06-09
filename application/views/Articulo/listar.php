@@ -4,6 +4,11 @@
 		<label for='idfiltro'>Filtro</label>
 		<input id='idfiltro' type="text" name='filtro' value=''> 
 	</form>
+	<br>
+	<form action="<?= base_url()?>Articulo/crear" method="post">
+		<button class="glyphicon glyphicon-plus" type="submit"></button>
+	</form>	
+	<br>
 	
 	<table class="table table-bordered sortable">
 		<thead>
@@ -66,4 +71,7 @@
          <?php endforeach; ?>
          </tbody>
 	</table>
+	<form action="<?= base_url()?>Articulo/crear" method="post">
+		<button class="glyphicon glyphicon-plus" type="submit"></button>
+	</form>
 </div>
