@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container crear">
 
 	<form class="form" id="idForm" action="<?=base_url()?>comentario/crearPost" method="post">
 		<fieldset>

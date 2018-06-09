@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 class Comentario extends CI_Controller {
 
@@ -6,15 +7,18 @@ class Comentario extends CI_Controller {
 		$this->crear();
 	}
 
-	public function crear() {
+	/*public function crear() {
 		enmarcar($this, 'Comentario/crear');
-	}
+	}*/
 
 	public function crearPost() {
+		//DATOS
 		$contenido = $_POST['contenido'];
-		
+		$id_articulo = $_POST['id_articulo'];
+		$id_usuario = isset($_SESSION['usuario']['id']) ? $_SESSION['usuario']['id'] : 'Anónimo';
+			
 		$this->load->model('comentario_model');
-		$this->comentario_model->crear($contenido);
+		$this->comentario_model->crear($contenido, $id_articulo, $id_usuario);
 		
 		enmarcar($this, 'Comentario/crearOk');
 	}

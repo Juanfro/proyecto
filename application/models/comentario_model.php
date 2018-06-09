@@ -1,9 +1,17 @@
 <?php
 class comentario_model extends CI_model{
 
-	public function crear($contenido){
+	public function crear($contenido, $id_artículo, $id_usuario){
+		
+		//DATOS
+		$articulo = R::load('articulo', $id_artículo);
+		$usuario = R::load('usuario', $id_usuario);
+		
 		$comentario=R::dispense('comentario');
-		$comentario->comentario=$contenido;
+		
+		$comentario->contenido=$contenido;
+		$comentario->articulo=$articulo;
+		$comentario->usuario=$usuario;
 		
 		R::store($comentario);
 		R::close();
