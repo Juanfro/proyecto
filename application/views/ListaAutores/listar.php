@@ -5,8 +5,12 @@
 		<input id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'> 
 		
 	</form>
+	<br/>
 	<!-- End FILTRO -->
-	
+	<form action="<?= base_url()?>ListaAutores/crear" method="post">
+		<button class="glyphicon glyphicon-plus" type="submit"></button>
+	</form>
+	<br/>
 	<table class=" table table-bordered sortable">
 		<thead>
 			<tr class="jcorgFilterTextParent">
@@ -59,6 +63,8 @@
 			<?php endforeach;?>
 		</tbody>
 	</table>
-	
+	<form action="<?= base_url()?>ListaAutores/crear" method="post">
+		<button class="glyphicon glyphicon-plus" type="submit"></button>
+	</form>
 	
 </div>
