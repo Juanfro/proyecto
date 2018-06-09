@@ -15,7 +15,7 @@
 				<th>Editar</th>
 				<th>Borrar</th>
 				<th>Seguir</th>
-				<th>Ir a la lista</th>				
+								
 			</tr>
 		</thead>
 		<tbody>
@@ -55,9 +55,6 @@
 					  </form>
 					</td>
 					
-					<td>
-					
-					</td>
 				</tr>
 			<?php endforeach;?>
 		</tbody>
