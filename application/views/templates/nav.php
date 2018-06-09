@@ -45,7 +45,10 @@
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Listas Autores<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li>
-						<a href="<?=base_url()?>listaAutores/crear">Nuevo</a>
+						<?php if(isset ($_SESSION['usuario'])):?>
+							<a href="<?=base_url()?>listaAutores/crear">Nuevo</a>
+						<?php endif;?>
+						
 						<a href="<?=base_url()?>listaAutores/listar">Listar</a>
 					</li>
 				</ul>
