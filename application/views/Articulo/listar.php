@@ -6,7 +6,7 @@
 	</form>
 	<br>
 	<form action="<?= base_url()?>Articulo/crear" method="post">
-		<button class="glyphicon glyphicon-plus" type="submit"></button>
+		<button class="glyphicon glyphicon-plus pointer" type="submit"></button>
 	</form>	
 	<br>
 	
@@ -72,6 +72,6 @@
          </tbody>
 	</table>
 	<form action="<?= base_url()?>Articulo/crear" method="post">
-		<button class="glyphicon glyphicon-plus" type="submit"></button>
+		<button class="glyphicon glyphicon-plus pointer" type="submit"></button>
 	</form>
 </div>
