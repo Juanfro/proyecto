@@ -16,6 +16,7 @@
 			<tr class="jcorgFilterTextParent">
 				<th>Nombre</th>
 				<th>Autores</th>
+				<th>Autor de la lista</th>
 				<th>Editar</th>
 				<th>Borrar</th>
 				<th>Seguir</th>
@@ -25,16 +26,23 @@
 		<tbody>
 			<?php foreach ($listas as $lista):?>
 				<tr>
+					<!-- Nombre -->
 					<td>
-						<a href=<?= base_url()?>ListaAutores/perfil/<?=$lista->id ?> class="jcorgFilterTextChild">
-				 <?= $lista->nombre?>
-				 </a>
+						<a href="<?= base_url()?>ListaAutores/perfil/<?=$lista->id ?>" class="jcorgFilterTextChild">
+							<?= $lista->nombre?>
+						</a>
 					</td>
 					
+					<!-- Autores -->
 					<td>
 					<?php foreach($lista->sharedAutorList as $autor): ?>
 					 <?= $autor->nombre ."</br> "; ?> 
 					<?php endforeach; ?>
+					</td>
+					
+					<!-- Creador de la Lista -->
+					<td>
+						<?= $lista->usuario->alias?>
 					</td>
 					
 					<td>
