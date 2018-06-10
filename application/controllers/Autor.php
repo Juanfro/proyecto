@@ -98,12 +98,12 @@ class Autor extends CI_Controller {
 		$this->load->model('autor_model');
 		
 		try{
-			$this->autor_model->crear('Herbert Frank','Herbert Frank',2);
-			$this->autor_model->crear('Terry Pratchett','Terry Pratchett',12);
-			$this->autor_model->crear('J.K. Rowling','J.K. Rowling',22);
-			$this->autor_model->crear('J.R.R Tolkien','',29);
-			$this->autor_model->crear('Douglas Adams','Douglas Adams',88);
-			$this->autor_model->crear('George R.R. Martin','George R.R. Martin',52 );
+			$this->autor_model->crear('Herbert Frank','Herbert Frank', 142, 'Biografía de Frank Herbert',  2);
+			$this->autor_model->crear('Terry Pratchett','Terry Pratchett', 142, 'Biografia Terry Prattchett',12);
+			$this->autor_model->crear('J.K. Rowling','J.K. Rowling', 142, 'Biografia de JK ROWLINg',22);
+			$this->autor_model->crear('J.R.R Tolkien','', 142, 'Biografia de Tolkien',29);
+			$this->autor_model->crear('Douglas Adams','Douglas Adams', 142, 'Biografia de Douglas Adams',88);
+			$this->autor_model->crear('George R.R. Martin','George R.R. Martin', 142, ' Biografía de RR MArtin',52 );
 		}catch (Exception $e){
 			
 		}
