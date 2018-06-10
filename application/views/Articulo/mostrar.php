@@ -28,6 +28,22 @@
 	<?php endif;?>
 	
 	<section class="comentarios">
+	<?php 
+				   $id_comentario=$articulo->id;
+				  
+				   $comentario=R::findCollection('comentario','ORDER BY fecha DESC ');
+				   while ($comentarios = $comentario->next()) {
+				    $idvcomentario=$comentarios->articulo_id;
+				  /*echo "longitud de valoraciones ".$longvaloracion;*/
+				   	if ($idvcomentario == $id_comentario){
+				   		$contenido=$comentarios->contenido;
+				   	echo "contenido ".$contenido."<br>";
+				   	   
+				   }
+				 
+				   }
+				 ?>
+				
 	
 	</section>
 	
