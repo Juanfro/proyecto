@@ -27,6 +27,10 @@
 		</section>
 	<?php endif;?>
 	
+	<section class="comentarios">
+	
+	</section>
+	
 	
 	
 </div>

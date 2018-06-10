@@ -13,7 +13,7 @@ class comentario_model extends CI_model{
 		
 		
 		$comentario=R::dispense('comentario');
-		
+		$comentario->fecha=date("Y-m-d H:i:s");
 		$comentario->contenido=$contenido;
 		$comentario->articulo=$articulo;
 		$comentario->usuario=$usuario;
