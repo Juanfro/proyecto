@@ -5,7 +5,12 @@ class comentario_model extends CI_model{
 		
 		//DATOS
 		$articulo = R::load('articulo', $id_artículo);
-		$usuario = R::load('usuario', $id_usuario);
+		if($id_usuario!='Anónimo'){
+			$usuario = R::load('usuario', $id_usuario);
+		}else{
+			$usuario= 'Anónimo';
+		}
+		
 		
 		$comentario=R::dispense('comentario');
 		
