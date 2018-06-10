@@ -19,7 +19,7 @@
 					<?php else:?>
 						<div>DEBuG ID Usuario: NO ID</div>
 					<?php endif;?>
-					<textarea name="contenido" rows="5" cols="150"></textarea>	
+					<textarea name="contenido" id="contenido" ></textarea>	
 					<br>												
 					<input type="submit" value="Enviar Comentario">				
 				</form>
