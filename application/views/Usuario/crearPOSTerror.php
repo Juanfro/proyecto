@@ -1,5 +1,5 @@
 <div class="container">
 	<h4>
-		ERROR: Ya existe el usuario <?= $body['usuario'] ?>.
+		ERROR: <?= $body['error'] ?>
 	</h4>
 </div>

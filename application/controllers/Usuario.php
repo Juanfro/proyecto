@@ -56,17 +56,20 @@ class Usuario extends CI_Controller {
 			$this->usuario_model->create_usuario($nombre, $apellido, $alias, $pwd, $rol, $email, $edad);
 			header('Location:' . base_url() . 'usuario/crearPOSTok?usuario=' . $alias);
 		} catch (Exception $e) {
-			header('Location:' . base_url() . 'usuario/crearPOSTerror?usuario=' . $alias);
+			$error = $e->getMessage();
+			header('Location:' . base_url() . 'usuario/crearPOSTerror?error=' . $error);
 		}
 	}
 
 	public function crearPOSTok() {
 		$datos['body']['usuario'] = $_GET['usuario'];
+		//$datos['body']['error'] = $_GET['error'];
 		enmarcar($this, 'usuario/crearPOSTok', $datos);
 	}
 
 	public function crearPOSTerror() {
-		$datos['body']['usuario'] = $_GET['usuario'];
+		//$datos['body']['usuario'] = $_GET['usuario'];
+		$datos['body']['error'] = $_GET['error'];
 		enmarcar($this, 'usuario/crearPOSTerror', $datos);
 	}
 
