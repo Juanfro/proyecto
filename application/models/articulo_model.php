@@ -11,7 +11,7 @@
 		
 		//Autor: El usuario que escribe el artículo
 		$usuarioAutor = R::findOne('usuario', 'id =?', [$idUsuario]);
-		$articulo->usuarioautor = $usuarioAutor;
+		$articulo->usuario = $usuarioAutor;
 		
 		//Autores mencionados
 		if($id_autores!=null){

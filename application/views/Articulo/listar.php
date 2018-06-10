@@ -16,8 +16,11 @@
 				<th>Titulo</th>
 				<th>Contenido</th>
 				<th>autor</th>
+				
+				<?php if( isset($_SESSION['usuario']) && ($_SESSION['usuario']['rol']=='administrador' || $_SESSION['usuario']['rol']=='editor' ) ):?>
 				<th>Modificar</th>
 				<th>Borrar</th>				
+				<?php endif;?>
 			</tr>
 		</thead>
 		
@@ -47,23 +50,24 @@
 						?>
 					</td>
 					 
-					<!-- Modificar -->
-					<td>
-						<form action="<?=base_url()?>Articulo/modificar" method="post">
-							<input type="hidden" name="id_articulo" value="<?=$articulo->id?>" />
-			
-							<button class=" glyphicon glyphicon-edit" type="submit"></button>
-						</form>
-					</td>
-					
-					<!-- Borrar -->
-					<td>
-						<form action="<?=base_url()?>Articulo/borrar" method="post">
-							<input type="hidden" name="id_articulo" value="<?=$articulo->id?>" />
-							<button class="glyphicon glyphicon-remove" type="submit"></button>
-						</form>
-					</td>				
-						 
+					<?php if( isset($_SESSION['usuario']) && ($_SESSION['usuario']['rol']=='administrador' || $_SESSION['usuario']['rol']=='editor' ) ):?>
+						<!-- Modificar -->
+						<td>
+							<form action="<?=base_url()?>Articulo/modificar" method="post">
+								<input type="hidden" name="id_articulo" value="<?=$articulo->id?>" />
+				
+								<button class=" glyphicon glyphicon-edit" type="submit"></button>
+							</form>
+						</td>
+						
+						<!-- Borrar -->
+						<td>
+							<form action="<?=base_url()?>Articulo/borrar" method="post">
+								<input type="hidden" name="id_articulo" value="<?=$articulo->id?>" />
+								<button class="glyphicon glyphicon-remove" type="submit"></button>
+							</form>
+						</td>				
+					<?php endif;?>	 
 			<?php endforeach; ?>
 		         </tbody>
 	</table>
