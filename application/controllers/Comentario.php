@@ -20,7 +20,7 @@ class Comentario extends CI_Controller {
 		$this->load->model('comentario_model');
 		$this->comentario_model->crear($contenido, $id_articulo, $id_usuario);
 		
-		enmarcar($this, 'Comentario/crearOk');
+		enmarcar($this, 'comentario/crearOk');
 	}
 
 	public function modificar() {
@@ -28,7 +28,7 @@ class Comentario extends CI_Controller {
 		$id_comentario = $_POST['id_comentario'];
 		$datos['comentario'] = $this->comentario_model->getComentarioPorId($id_comentario);
 		
-		enmarcar($this, 'Comentario/modificar', $datos);
+		enmarcar($this, 'comentario/modificar', $datos);
 	}
 
 	public function modificarPost() {
@@ -39,7 +39,7 @@ class Comentario extends CI_Controller {
 		$this->load->model('comentario_model');
 		$this->comentario_model->modificar($id_comentario, $contenido);
 		
-		enmarcar($this, 'Comentario/modificarOK');
+		enmarcar($this, 'comentario/modificarOK');
 	}
 
 	public function borrar() {
@@ -48,13 +48,13 @@ class Comentario extends CI_Controller {
 		$this->load->model('comentario_model');
 		
 		$this->comentario_model->borrar($id_comentario);
-		enmarcar($this, 'Comentario/borrarOK');
+		enmarcar($this, 'comentario/borrarOK');
 	}
 
 	public function listar() {
 		$this->load->model('comentario_model');
 		$datos['comentario'] = $this->comentario_model->getAll();
-		enmarcar($this, 'Comentario/listar', $datos);
+		enmarcar($this, 'comentario/listar', $datos);
 	}
 }
 
