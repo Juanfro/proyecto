@@ -223,7 +223,7 @@ class Pais extends CI_Controller{
     	$this->load->model('pais_model');
     	$datos['paises']=$this->pais_model->getAll($filtro);
     	$datos['filtro'] = $filtro;
-    	enmarcar($this, 'Pais/listar',$datos);
+    	enmarcar($this, 'pais/listar',$datos);
     	
     	
     }
