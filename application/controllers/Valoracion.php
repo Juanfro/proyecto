@@ -8,7 +8,7 @@ class Valoracion extends CI_Controller{
 	}
 	public function crear(){
 		$datos['id_libro'] = $_POST['id_libro'];
-		enmarcar($this,'Valoracion/crear', $datos);
+		enmarcar($this,'valoracion/crear', $datos);
 
 	}
 	public function crearPost(){		//TODO Recibir Id del libro y del usuario que crea la valoracion
@@ -22,7 +22,7 @@ class Valoracion extends CI_Controller{
 		$contenido=isset($_POST['contenido'])?$_POST['contenido']:null;
 		$this->load->model('valoracion_model');
 		$this->valoracion_model->crear($id_libro, $id_usuario, $nota,$contenido);
-		enmarcar($this,'Valoracion/crearOK' );
+		enmarcar($this,'valoracion/crearOK' );
 	}
 
 	public function modificar(){
@@ -32,7 +32,7 @@ class Valoracion extends CI_Controller{
 		$id_valoracion=$_POST['id_valoracion'];
 		$datos['valoracion']= $this->valoracion_model->getValoracionPorId($id_valoracion);
 
-		enmarcar($this, 'Valoracion/modificar',$datos);
+		enmarcar($this, 'valoracion/modificar',$datos);
 
 	}
 
@@ -47,7 +47,7 @@ class Valoracion extends CI_Controller{
 		$this->load->model('valoracion_model');
 		$this->valoracion_model->modificar($id_valoracion,$nota,$contenido);
 
-		enmarcar($this, 'Valoracion/modificarOK');
+		enmarcar($this, 'valoracion/modificarOK');
 
 	}
 
@@ -57,7 +57,7 @@ class Valoracion extends CI_Controller{
 		$id_valoracion =$_POST['id_valoracion'];
 		$this->load->model('valoracion_model');
 		$this->valoracion_model->borrar($id_valoracion);
-		enmarcar($this, 'Valoracion/borrarOK');
+		enmarcar($this, 'valoracion/borrarOK');
 
 	}
      
@@ -65,7 +65,7 @@ class Valoracion extends CI_Controller{
 		$id_valoracion =$_POST['id_valoracion'];
 		$this->load->model('valoracion_model');
 		$datos['valoracion']=$this->valoracion_model->getvaloracionPorId($id_valoracion);
-		enmarcar($this, 'Valoracion/vista',$datos);
+		enmarcar($this, 'valoracion/vista',$datos);
 		
 	}
 
@@ -73,7 +73,7 @@ class Valoracion extends CI_Controller{
 	public function listar() {
 		$this->load->model('valoracion_model');
 		$datos['valoracion']= $this->valoracion_model->getAll();
-		enmarcar($this, 'Valoracion/listar', $datos);
+		enmarcar($this, 'valoracion/listar', $datos);
 	}
 	
 }

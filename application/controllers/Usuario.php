@@ -8,7 +8,7 @@ class Usuario extends CI_Controller {
 	}
 
 	public function crear() {
-		enmarcar($this, 'Usuario/crear');
+		enmarcar($this, 'usuario/crear');
 	}
 
 	public function loginPost() {
@@ -79,7 +79,7 @@ class Usuario extends CI_Controller {
 		
 		$datos['usuario'] = $this->usuario_model->getusuarioPorId($id_usuario);
 		
-		enmarcar($this, 'Usuario/perfil', $datos);
+		enmarcar($this, 'usuario/perfil', $datos);
 	}
 
 	public function listar() {
@@ -91,7 +91,7 @@ class Usuario extends CI_Controller {
 		
 		$this->load->model('usuario_model');
 		$datos['usuario'] = $this->usuario_model->getAll($filtro);
-		enmarcar($this, 'Usuario/listar', $datos);
+		enmarcar($this, 'usuario/listar', $datos);
 	}
 
 	public function modificar() {
