@@ -25,7 +25,7 @@ class Libro extends CI_Controller {
 		$this->load->model('genero_model');
 		$datos['body']['generos'] = $this->genero_model->getAll($filtro='');//Obtener Generos
 	
-		enmarcar($this, 'Libro/crear', $datos);
+		enmarcar($this, 'libro/crear', $datos);
 	}
 
 	public function crearpost() {
@@ -47,9 +47,9 @@ class Libro extends CI_Controller {
 		$this->load->model('libro_model');
 		$status=$this->libro_model->crear($isbn, $titulo,$autor,$genero,$idioma, $npalabras, $sinopsis, $edicion, $edadminima);
 		if($status == 0){
-			enmarcar($this, 'Libro/crearOK');}
+			enmarcar($this, 'libro/crearOK');}
 		else{
-			enmarcar($this, 'Libro/crearError');
+			enmarcar($this, 'libro/crearError');
 		}
 
 	}
@@ -65,7 +65,7 @@ class Libro extends CI_Controller {
 		$datos['libros'] = $this->libro_model->getAll($filtro);
 		$datos['filtro'] = $filtro;
 		
-		enmarcar($this, 'Libro/listar', $datos);
+		enmarcar($this, 'libro/listar', $datos);
 	}
 	
 	
@@ -75,7 +75,7 @@ class Libro extends CI_Controller {
 		$id_libro = $_POST['id_libro'];
 	
 		$datos['libro'] = $this->libro_model->getlibroPorId($id_libro);
-		enmarcar($this, 'Libro/modificar', $datos);
+		enmarcar($this, 'libro/modificar', $datos);
 	}
 
 	public function modificarpost() {
@@ -91,7 +91,7 @@ class Libro extends CI_Controller {
 		$id_libro = $_POST['id_libro'];
 		$this->load->model('libro_model');
 		$this->libro_model->modificar($id_libro, $isbn, $autor, $idioma, $npalabras, $sinopsis, $edicion, $edadminima);
-	 enmarcar($this, 'Libro/modificadoOK');
+	 enmarcar($this, 'libro/modificadoOK');
 	}
 
 	public function borrar() {

@@ -7,14 +7,14 @@ class Genero extends CI_Controller {
 	}
 
 	public function crear() {
-		enmarcar($this, 'Genero/crear');
+		enmarcar($this, 'genero/crear');
 	}
 
 	public function crearpost() {
 		$nombre = $_POST['nombre'];
 		$this->load->model('genero_model');
 		$this->genero_model->crear($nombre);
-		enmarcar($this, 'Genero/crearOK');
+		enmarcar($this, 'genero/crearOK');
 	}
 
 	public function listar() {
@@ -26,7 +26,7 @@ class Genero extends CI_Controller {
 		$this->load->model('genero_model');
 		$datos['generos'] = $this->genero_model->getAll($filtro);
 		$datos['filtro'] = $filtro;
-		enmarcar($this, 'Genero/listar', $datos);
+		enmarcar($this, 'genero/listar', $datos);
 	}
 
 	public function dummyGeneros() {
