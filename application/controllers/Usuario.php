@@ -41,13 +41,18 @@ class Usuario extends CI_Controller {
 		session_destroy();
 		header('Location:' . base_url());
 	}
+	
+	
+	/* encriptacion*/
+	
 
 	public function crearPost() {
 		$this->load->model('usuario_model');
 		$nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
 		$apellido = isset($_POST['apellido']) ? $_POST['apellido'] : null;
 		$alias = isset($_POST['alias']) ? $_POST['alias'] : null;
-		$pwd = isset($_POST['contrasena']) ? $_POST['contrasena'] : null;
+		
+		$pwd = isset($_POST['contrasena']) ?$_POST['contrasena']:null;
 		$rol = isset($_POST['rol']) ? $_POST['rol'] : 'usuario';
 		$email = isset($_POST['email']) ? $_POST['email'] : null;
 		$edad = isset($_POST['edad']) ? $_POST['edad'] : null;

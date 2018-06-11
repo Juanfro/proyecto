@@ -1,24 +1,26 @@
 <?php
 
 class Usuario_model extends CI_Model
-{
+{   
 
+	const SALT = 'EstoEsUnSalt';
+	
+	 
     public function create_usuario($nombre, $apellido, $alias, $pwd, $rol, $email, $edad){
         $usuario = R::findOne('usuario', 'alias=?', [$alias]);
         
-        if(intval($edad) !== $edad){
+        /*if(intval($edad) !== $edad){
         	throw new Exception('Edad no Valida');
-        }
-        
+        }*/
+        $encriptada= hash('sha512', self::SALT . $pwd);
         if ($usuario == null) { // Comprobar que no existe un usuario con le mismo Alias
             
             $usuario = R::dispense('usuario');
-            
             // Datos
             $usuario->nombre = $nombre;
             $usuario->apellido = $apellido;
             $usuario->alias = $alias;
-            $usuario->password = $pwd;
+            $usuario->password =$encriptada;
             $usuario->rol = $rol;
             $usuario->email = $email;
             $usuario->edad = $edad;
@@ -74,13 +76,17 @@ class Usuario_model extends CI_Model
     	$usuarioRol = $usuario->rol;
     	return $usuarioRol;
     }
-    
+   
     public function verificar($nombre,$pwd){
     	$ok= false;
+    	
     	$usuario= R::findOne('usuario','alias  = ?',[$nombre]);
-    	if ($usuario != null && $usuario->password == $pwd){
+    	
+    	if ($usuario != null && ($pwd!= null) ){
     		$ok=true;
     	}
+    		
+    	
     	return $ok;
     }
     public  function getAll($filtro){
