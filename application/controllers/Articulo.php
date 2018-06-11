@@ -72,7 +72,7 @@ class Articulo extends CI_Controller {
 		$this->load->model('articulo_model');
 		$datos['articulos'] = $this->articulo_model->getAll();
 		
-		enmarcar($this, 'Articulo/listar', $datos);
+		enmarcar($this, 'articulo/listar', $datos);
 	}
 	
 	//Mostrar Un artículo
@@ -91,7 +91,7 @@ class Articulo extends CI_Controller {
 		$id_articulo = $_POST['id_articulo'];
 		$datos['articulo'] = $this->articulo_model->getArticuloPorId($id_articulo);
 		
-		enmarcar($this, 'Articulo/modificar', $datos);
+		enmarcar($this, 'articulo/modificar', $datos);
 	}
 
 	public function modificarPost() {
@@ -103,7 +103,7 @@ class Articulo extends CI_Controller {
 		
 		$this->articulo_model->modificar($id_articulo, $titulo, $contenido);
 		
-		enmarcar($this, 'Articulo/modificarOK');
+		enmarcar($this, 'articulo/modificarOK');
 	}
 
 	public function borrar() {
@@ -111,7 +111,7 @@ class Articulo extends CI_Controller {
 		$this->load->model('articulo_model');
 		$this->articulo_model->borrar($id_articulo);
 		
-		enmarcar($this, 'Articulo/borrarOK');
+		enmarcar($this, 'articulo/borrarOK');
 	}
 
 	
