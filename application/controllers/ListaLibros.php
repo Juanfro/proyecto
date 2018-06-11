@@ -12,7 +12,7 @@ class ListaLibros extends CI_Controller {
 		
 		$datos['libros'] = $this->libro_model->getAll();
 		
-		enmarcar($this, 'ListaLibros/crear', $datos);
+		enmarcar($this, 'listaLibros/crear', $datos);
 	}
 	
 	public function crearPost(){
@@ -66,7 +66,7 @@ class ListaLibros extends CI_Controller {
 		$datos['lista'] = $this->listalibros_model->getlistaPorId($id_lista);
 		$datos['libros'] = $this->libro_model->getAll();
 	
-		enmarcar($this, 'ListaLibros/modificar', $datos);
+		enmarcar($this, 'listaLibros/modificar', $datos);
 	}
 	
 	public function modificarpost() {
@@ -80,7 +80,7 @@ class ListaLibros extends CI_Controller {
 	
 		$this->load->model('listalibros_model');
 		$this->listalibros_model->modificar($nombre, $libros,$id_lista);
-		enmarcar($this, 'Libro/modificadoOK');
+		enmarcar($this, 'libro/modificadoOK');
 	}
 	
 	public function perfil($id){
@@ -89,7 +89,7 @@ class ListaLibros extends CI_Controller {
 		
 		$datos['lista'] = $this->listalibros_model->getlistaPorId($id_lista);
 		
-		enmarcar($this, 'ListaLibros/perfil', $datos);
+		enmarcar($this, 'listaLibros/perfil', $datos);
 	}
 	
 	
