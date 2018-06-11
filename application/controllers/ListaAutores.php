@@ -12,7 +12,7 @@ class ListaAutores extends CI_Controller {
 		
 		$datos['autores'] = $this->autor_model->getAll();
 		
-		enmarcar($this, 'ListaAutores/crear', $datos);
+		enmarcar($this, 'listaAutores/crear', $datos);
 	}
 
 	public function crearPost() {
@@ -52,7 +52,7 @@ class ListaAutores extends CI_Controller {
 		$datos['listas'] = $this->listaautores_model->getAll($filtro);
 		
 		$datos['filtro'] = $filtro;
-		enmarcar($this, 'ListaAutores/listar', $datos);
+		enmarcar($this, 'listaAutores/listar', $datos);
 	}
 	
 	//modificar
@@ -66,7 +66,7 @@ class ListaAutores extends CI_Controller {
 		$datos['lista'] = $this->listaautores_model->getlistaPorId($id_lista);
 		$datos['autores'] = $this->autor_model->getAll();
 		
-		enmarcar($this, 'ListaAutores/modificar', $datos);
+		enmarcar($this, 'listaAutores/modificar', $datos);
 	}
 	
 	public function modificarpost() {
@@ -80,7 +80,7 @@ class ListaAutores extends CI_Controller {
 		
 		$this->load->model('listaautores_model');
 		$this->listaautores_model->modificar($nombre, $autores,$id_lista);
-		enmarcar($this, 'Libro/modificadoOK');
+		enmarcar($this, 'libro/modificadoOK');
 	}
 	
 
@@ -112,7 +112,7 @@ class ListaAutores extends CI_Controller {
 	
 		$datos['lista'] = $this->listaautores_model->getlistaPorId($id_lista);
 	
-		enmarcar($this, 'ListaAutores/perfil', $datos);
+		enmarcar($this, 'listaAutores/perfil', $datos);
 	}
 	
 
