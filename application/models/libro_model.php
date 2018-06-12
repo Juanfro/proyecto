@@ -5,7 +5,7 @@ class Libro_model extends CI_model{
 	private function existeLibro($titulo){
 		return R::findOne('libro','titulo=?',[$titulo]) !=null ? true : false;
 	}
-	public function crear($isbn,$titulo, $ids_autor, $ids_genero,$idioma,$npalabras,$sinopsis,$edicion,$edadminima){
+	public function crear($isbn,$titulo, $ids_autor, $ids_genero,$idioma,$npalabras,$sinopsis,$edadminima){
 		$status=0;
 		if(!$this->existeLibro($titulo)){
 	
@@ -18,7 +18,7 @@ class Libro_model extends CI_model{
 		$libro->idioma=$idioma;
 		$libro->npalabras=$npalabras;
 		$libro->sinopsis=$sinopsis;
-		$libro->edicion=$edicion;
+		
 		$libro->edadminima=$edadminima;
 				
 		foreach($ids_autor as $id_autor){
@@ -51,7 +51,7 @@ class Libro_model extends CI_model{
       return R::load('libro',$id_libro);
 		
 	}
-	public function modificar($id_libro,$isbn,$autor,$idioma,$npalabras,$sinopsis,$edicion,$edadminima){
+	public function modificar($id_libro,$isbn,$autor,$idioma,$npalabras,$sinopsis,$edadminima){
 		$libro= R::load('libro',$id_libro);
 		
 		$libro->isbn=$isbn;
@@ -59,7 +59,7 @@ class Libro_model extends CI_model{
 		$libro->idioma=$idioma;
 		$libro->npalabras=$npalabras;
 		$libro->sinopsis=$sinopsis;
-		$libro->edicion=$edicion;
+		
 		$libro->edadminima=$edadminima;
 		
 		R::store($libro);

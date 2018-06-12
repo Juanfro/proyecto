@@ -41,11 +41,11 @@ class Libro extends CI_Controller {
 		$idioma = isset($_POST['idioma'])? $_POST['idioma']:null;
 		$npalabras = isset($_POST['npalabras'])? $_POST['npalabras']:null;
 		$sinopsis = isset($_POST['sinopsis'])? $_POST['sinopsis']:null;
-		$edicion = isset($_POST['edicion'])? $_POST['edicion']:null;
+		
 		$edadminima = isset($_POST['edadminima'])?$_POST['edadminima']:null;
 
 		$this->load->model('libro_model');
-		$status=$this->libro_model->crear($isbn, $titulo,$autor,$genero,$idioma, $npalabras, $sinopsis, $edicion, $edadminima);
+		$status=$this->libro_model->crear($isbn, $titulo,$autor,$genero,$idioma, $npalabras, $sinopsis, $edadminima);
 		if($status == 0){
 			enmarcar($this, 'libro/crearOK');}
 		else{
@@ -72,9 +72,17 @@ class Libro extends CI_Controller {
 
 	public function modificar() {
 		$this->load->model('libro_model');
+		
 		$id_libro = $_POST['id_libro'];
-	
+	   
 		$datos['libro'] = $this->libro_model->getlibroPorId($id_libro);
+		/* carga autor */
+		$this->load->model('autor_model');
+		$datos['body']['autores'] = $this->autor_model->getAll($filtro='');
+		
+		/* carga genero */
+		$this->load->model('genero_model');
+		$datos['body']['generos'] = $this->genero_model->getAll($filtro='');
 		enmarcar($this, 'libro/modificar', $datos);
 	}
 
@@ -85,12 +93,12 @@ class Libro extends CI_Controller {
 		$idioma =  $_POST['idioma'];
 		$npalabras =  $_POST['npalabras'];
 		$sinopsis = $_POST['sinopsis'];
-		$edicion = $_POST['edicion'];
+		
 		$edadminima = $_POST['edadminima'];
 		
 		$id_libro = $_POST['id_libro'];
 		$this->load->model('libro_model');
-		$this->libro_model->modificar($id_libro, $isbn, $autor, $idioma, $npalabras, $sinopsis, $edicion, $edadminima);
+		$this->libro_model->modificar($id_libro, $isbn, $autor, $idioma, $npalabras, $sinopsis, $edadminima);
 	 enmarcar($this, 'libro/modificadoOK');
 	}
 

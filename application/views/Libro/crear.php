@@ -33,14 +33,13 @@
 			<label for="idioma">Idioma</label>
 			<input type="text" name="idioma" id="idioma"></input><br> <br>
 
-			<label for="npalabras">Nº Palabras</label>
+			<label for="npalabras">Nº Paginas</label>
 			<input type="text" name="npalabras" id="npalabras"></input><br> <br>
 
 			<label for="sinopsis">Sinopsis</label>
 			<textarea name="sinopsis" id="sinopsis"></textarea><br> <br>
 
-			<label for="edicion">Edicion</label>
-			<input type="text" name="edicion" id="edicion"></input><br> <br>
+			
 
 			<label for="edadminima">Edad Minima Recomendada</label>
 			<input type="text" name="edadminima" id="edadminima"></input><br> <br> 
