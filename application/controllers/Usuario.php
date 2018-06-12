@@ -103,7 +103,7 @@ class Usuario extends CI_Controller {
 		
 		if($id_usuario == ''){
 			$id_usuario = $_POST['id_usuario'];
-		}		
+		}
 		
 		$datos['usuario'] = $this->usuario_model->getusuarioPorId($id_usuario);
 		
