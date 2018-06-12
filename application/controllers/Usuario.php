@@ -40,8 +40,7 @@ class Usuario extends CI_Controller {
 		session_unset();
 		session_destroy();
 		header('Location:' . base_url());
-	}
-	
+	}	
 	
 	/* encriptacion*/
 	
