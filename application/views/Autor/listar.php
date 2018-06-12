@@ -19,6 +19,7 @@
 				<th>Modificar</th>
 				<th>Eliminar</th>
 			<?php endif;?>
+			
 			<?php if(isset($_SESSION['usuario'])):?>
 				<th>Seguir</th>
 			<?php endif;?>

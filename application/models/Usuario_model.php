@@ -1,11 +1,7 @@
 <?php
 
 class Usuario_model extends CI_Model
-{   
-
-	
-	
-	
+{   	
 	 
     public function create_usuario($nombre, $apellido, $alias, $pwd, $rol, $email, $edad){
         $usuario = R::findOne('usuario', 'alias=?', [$alias]);
@@ -27,12 +23,10 @@ class Usuario_model extends CI_Model
             $usuario->edad = $edad;
             
             //Blog Personal
-            
-            $blog = R::dispense('blog');
+            /*$blog = R::dispense('blog');
             $blog->nombre ='Blog de ' . $alias;
-            R::store($blog);
-            
-            $usuario->blog = $blog;
+            R::store($blog);            
+            $usuario->blog = $blog;*/
             
             R::store($usuario);
         } else {
@@ -82,16 +76,12 @@ class Usuario_model extends CI_Model
     	$ok= false;
     	
     	$usuario= R::findOne('usuario','alias  = ?',[$nombre]);
-        $has =$usuario->password;
-        
-        
+        $has =$usuario->password;        
         
     	if ($usuario != null && ($pwd != null) ){
     		if (password_verify($pwd, $has)){
-    		$ok=true;}
-    		
-    	}
-    		
+    		$ok=true;}    		
+    	}    		
     	
     	return $ok;
     }

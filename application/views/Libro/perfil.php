@@ -50,12 +50,15 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-12">
-		<form action="<?= base_url()?>valoracion/crear" method="post">
-			<input type="hidden" name="id_libro" id="id_libro" value="<?= $libro->id?>" />
-			
-			<label for="valorar">Valorar Libro</label>
-			<button class="glyphicon glyphicon-star-empty" id="valorar" type="submit"></button>
-		</form> 
- 	</div>
+	
+	<?php if(isset($_SESSION['usuario'])):?>
+		<div class="col-md-12 valorar">
+			<form action="<?= base_url()?>valoracion/crear" method="post">
+				<input type="hidden" name="id_libro" id="id_libro" value="<?= $libro->id?>" />
+				
+				<label for="valorar">Valorar Libro</label>
+				<button class="glyphicon glyphicon-star-empty" id="valorar" type="submit"></button>
+			</form> 
+	 	</div>
+ 	<?php endif;?>
 </div>
