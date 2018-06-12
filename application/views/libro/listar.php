@@ -21,7 +21,7 @@
 				<th>Genero</th>
 				<th>nº palabras</th>
 				<th>Sinopsis</th>
-				<th>Edicion</th>
+				
 				<th>Edad Minima</th>
 				<th>Valoracion</th>				
 				<?php if(isset ($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador' || $_SESSION['usuario']['rol'] == 'editor')):?>
@@ -64,8 +64,7 @@
 				<td><?=$libro->npalabras ?></td>
 
 				<td><?=$libro->sinopsis ?></td>
-				<!--edición quitar  -->
-				<td><?=$libro->edicion ?></td>
+				
 				<td><?=$libro->edadminima ?></td>
 				<td>
 					<?php
