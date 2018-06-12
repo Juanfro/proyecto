@@ -79,25 +79,32 @@
 						<a href="<?=base_url()?>listaLibros/listar">Listar</a>
 					</li>
 				</ul>
-			</li>
+			</li>						
 						
-						
-			<!---------------------------------------------------------->
-			
+			<!---------------------------------------------------------->			
 			<!-- Blogs -->
-			<!-- 
-			<li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Blogs<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li>						
-						<a href="<?//=base_url()?>blog/listar">Listar</a>
-					</li>
-				</ul>
-			</li>
-			 -->
+			<!-- 			<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Blogs<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li>						
+							<a href="<?//=base_url()?>blog/listar">Listar</a>
+						</li>
+					</ul>
+				</li>			 -->
 			<!---------------------------------------------------------->
 			<li class="dropdown">
 				<a class="dropdown-toggle" href="<?=base_url()?>Home/vista">Home</a>				
+			</li>
+			
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuarios<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li>
+						<?php if(isset($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador') ) :?>
+							<a href="<?=base_url()?>usuario/listar">Listar</a>
+						<?php endif;?>
+					</li>
+				</ul>
 			</li>
 		</ul>
 		
