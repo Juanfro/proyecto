@@ -3,7 +3,7 @@
 		
 		<legend>
 				<label for="idlibro"> introducir los datos del libro</label>
-			</legend>
+		</legend>
 			<label for="isbn">ISBN</label> <input type="text" name="isbn"
 				id="isbn" placeholder="<?= $libro->isbn?>"></input><br><br>
 				<label for="autor">Titulo</label> <input type="text" name="titulo"
