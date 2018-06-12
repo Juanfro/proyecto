@@ -89,8 +89,9 @@ class Libro extends CI_Controller {
 	public function modificarpost() {
 		$isbn = $_POST['isbn'] ;
 		$titulo = $_POST['titulo'];
-		$autor = $_POST['autor'] ;
+		$autor = $_POST['autorSelect'] ;
 		$idioma =  $_POST['idioma'];
+		$genero = $_POST['generoSelect'] ;
 		$npalabras =  $_POST['npalabras'];
 		$sinopsis = $_POST['sinopsis'];
 		
