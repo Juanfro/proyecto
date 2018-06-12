@@ -98,9 +98,13 @@ class Usuario extends CI_Controller {
 		enmarcar($this, 'usuario/listar', $datos);
 	}
 
-	public function modificar() {
+	public function modificar($id_usuario='') {
 		$this->load->model('usuario_model');
-		$id_usuario = $_POST['id_usuario'];
+		
+		if($id_usuario == ''){
+			$id_usuario = $_POST['id_usuario'];
+		}		
+		
 		$datos['usuario'] = $this->usuario_model->getusuarioPorId($id_usuario);
 		
 		enmarcar($this, 'usuario/modificar', $datos);

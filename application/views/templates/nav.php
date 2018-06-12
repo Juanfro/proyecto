@@ -96,16 +96,19 @@
 				<a class="dropdown-toggle" href="<?=base_url()?>Home/vista">Home</a>				
 			</li>
 			
-			<li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuarios<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li>
-						<?php if(isset($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador') ) :?>
-							<a href="<?=base_url()?>usuario/listar">Listar</a>
-						<?php endif;?>
-					</li>
-				</ul>
-			</li>
+			<?php if(isset($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador') ) :?>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuarios<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<?php if(isset($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador') ) :?>
+								<a href="<?=base_url()?>usuario/listar">Listar</a>
+							<?php endif;?>
+						</li>
+					</ul>
+				</li>
+			<?php endif;?>
+			
 		</ul>
 		
 		<ul class="nav navbar-nav navbar-right"> <!-- Hay que mandarle de alguna forma la informacion sobre si el usuario ha hecho login  -->
