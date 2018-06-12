@@ -16,10 +16,12 @@
 			<tr  class="jcorgFilterTextParent">
 				<th>Nombre</th>
 				<th>Libros</th>
-				<th>Autor</th>
+				<th>Autor</th>		
 				
-				<th>Editar</th>
-				<th>Borrar</th>
+				<!-- Modificar -->
+				<th></th>
+				<!-- Borrar -->
+				<th></th>
 				
 				<?php if(isset($_SESSION['usuario']) ):?>
 					<th>Seguir</th>
