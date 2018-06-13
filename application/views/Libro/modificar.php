@@ -19,11 +19,11 @@
 			<?=print_r($libro)?>
 			</code></pre> -->
 			
-			Autores del libro <br>
+			<!--  Autores del libro <br>
 			$libro->sharedAutorList
 			<pre><code>
 			<?=print_r($libro->sharedAutorList)?>
-			</code></pre>
+			</code></pre>-->
 
 			<label for="titulo">Título</label>
 			<input type="text" name="titulo" id="titulo" value="<?=$libro->titulo ?>"></input><br> <br>
@@ -33,7 +33,7 @@
 				foreach($libro->sharedAutorList as $k=>$v){
 					$ides[]= $k;
 				}
-				echo '<pre><code>' . print_r($ides) .  '</code></pre>'
+				//echo '<pre><code>' . print_r($ides) .  '</code></pre>'
 			?>
 
 			<label for="autorSelect">autor</label>
