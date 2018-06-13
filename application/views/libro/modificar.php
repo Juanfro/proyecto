@@ -1,4 +1,3 @@
-
 <div class="container">
 	<form class="form" id="idForm" action="<?=base_url()?>Libro/modificarpost" method="post">
 		<fieldset>
@@ -7,18 +6,18 @@
 				<label for="idlibro"> introducir los datos del libro</label>
 			</legend>
 			<label for="isbn">ISBN</label>
-			<input type="text" name="isbn" id="isbn"  onblur="validarISBN()" value=<?=$libro->isbn ?>></input>
+			<input type="text" name="isbn" id="isbn" onblur="validarISBN()" value=<?=$libro->isbn ?>></input>
 			<div id="pasaFormato"></div>
 			<div id="pasaISBN"></div>
-			<br> <br>			
-			
+			<br> <br>
+
 			<!-- Libro <br>
 			$libro
 			
 			<pre><code>
 			<?=print_r($libro)?>
 			</code></pre> -->
-			
+
 			<!--  Autores del libro <br>
 			$libro->sharedAutorList
 			<pre><code>
@@ -28,22 +27,22 @@
 			<label for="titulo">Título</label>
 			<input type="text" name="titulo" id="titulo" value="<?=$libro->titulo ?>"></input><br> <br>
 			
-			<?php 
-				$ides = [];
-				foreach($libro->sharedAutorList as $k=>$v){
-					$ides[]= $k;
-				}
-				//echo '<pre><code>' . print_r($ides) .  '</code></pre>'
+			<?php
+			$ides = [];
+			foreach ($libro->sharedAutorList as $k => $v) {
+				$ides[] = $k;
+			}
+			// echo '<pre><code>' . print_r($ides) . '</code></pre>'
 			?>
 
 			<label for="autorSelect">autor</label>
 			<select name="autor[]" id="autorSelect" required="required" multiple="multiple">
 				<option value="">Elige un Autor</option>
 				<?php foreach ($body['autores'] as $autor): ?>
-					<pre><code><?//= print_r($autor)?></code></pre>
-					<option value="<?= $autor['id']?>"
-						<?= in_array($autor['id'], $ides) ? 'selected' : 'error'?>
-					><?=$autor['nombre']?></option>
+					<pre>
+					<code><?//= print_r($autor)?></code>
+				</pre>
+				<option value="<?= $autor['id']?>" <?= in_array($autor['id'], $ides) ? 'selected' : 'error'?>><?=$autor['nombre']?></option>
 				<?php endforeach;?>
 			</select><br> <br>
 
@@ -62,62 +61,14 @@
 			<input type="text" name="npalabras" id="npalabras" value="<?=$libro->npalabras ?>"></input><br> <br>
 
 			<label for="sinopsis">Sinopsis</label>
-			<textarea name="sinopsis" id="sinopsis" value="<?=$libro->sinopsis ?>"></textarea><br> <br>
-
-			
+			<textarea name="sinopsis" id="sinopsis" value="<?=$libro->sinopsis ?>"></textarea>
+			<br> <br>
 
 			<label for="edadminima">Edad Minima Recomendada</label>
-			<input type="text" name="edadminima" id="edadminima" value=<?=$libro->edadminima ?>></input><br> <br> 
-			
-			<input type="hidden" name="id_libro" value="<?=$libro->id?>">
-			<input type="submit" value="modificar libro">
+			<input type="text" name="edadminima" id="edadminima" value=<?=$libro->edadminima ?>></input><br>
+			<br> <input type="hidden" name="id_libro" value="<?=$libro->id?>"> <input type="submit"
+				value="modificar libro">
 		</fieldset>
 	</form>
 
-
 </div>
-=======
-<div class="container">
-	<form class="form" id="idForm" action="<?=base_url()?>Libro/modificarpost" method="post">
-		
-		<legend>
-				<label for="idlibro"> introducir los datos del libro</label>
-		</legend>
-			<label for="isbn">ISBN</label> <input type="text" name="isbn"
-				id="isbn" placeholder="<?= $libro->isbn?>"></input><br><br>
-				<label for="autor">Titulo</label> <input type="text" name="titulo"
-				id="autor" placeholder="<?= $libro->titulo?>"></input><br><br>
-				<label for="autor">Autor</label> 
-				<select name="autor[]" id="autorSelect" required="required" multiple="multiple">
-				<option value="">Elige un Autor</option>
-				<?php foreach ($body['autores'] as $autor): ?>
-					<option value="<?= $autor['id']?>"><?=$autor['nombre']?></option>
-				<?php endforeach;?>
-			</select><br> <br>
-				<label for="idioma">Idioma</label> <input type="text" name="idioma"
-				id="idioma" placeholder="<?= $libro->idioma?>"></input><br><br>
-				<label for="generoSelect">Género</label>
-			<select name="genero[]" id="generoSelect" multiple="multiple">
-				<option value="">Elige un género</option>
-				<?php foreach ($body['generos'] as $genero):?>
-					<option value="<?= $genero['id']?>"><?= $genero['nombre']?></option>
-				<?php endforeach;?> 
-			</select><br> <br>
-			
-				<label for="npaginas">Nº Paginas</label> <input type="text" name="npalabras"
-				id="npalabras" placeholder="<?= $libro->npalabras?>"></input><br><br>
-				<label for="sinopsis">Sinopsis</label> <input type="text" name="sinopsis"
-				id="sinopsis" placeholder="<?= $libro->sinopsis?>"></input><br><br>
-				
-				<label for="edadminima">Edad Minima Recomendada</label> <input type="text" name="edadminima"
-				id="edadminima" placeholder="<?= $libro->edadminima?>"></input><br><br>
-			
-			<input type="hidden" name="id_libro" value="<?= $libro->id?>">
-			<input type="submit" value="modificar libro">
-		
-		
-	</form>
-	
-</div>
-
-
