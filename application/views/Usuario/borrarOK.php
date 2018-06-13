@@ -1,1 +1,0 @@
-<h4>borrado usuario con exito</h4>
