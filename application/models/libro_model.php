@@ -50,7 +50,11 @@ class libro_model extends CI_model{
 	public function modificar($id_libro,$isbn,$ids_autor, $ids_genero,$idioma,$npalabras,$sinopsis,$edadminima){
 		$libro= R::load('libro',$id_libro);
 		$libro->sharedAutorList =[];
+		$libro->sharedGeneroList =[];
 		R::store($libro);
+		
+		
+		
 		
 		$libro->isbn=$isbn;
 		foreach($ids_autor as $id_autor){

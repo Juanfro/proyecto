@@ -42,16 +42,26 @@
 				<?php foreach ($body['autores'] as $autor): ?>
 					<pre><code><?//= print_r($autor)?></code></pre>
 					<option value="<?= $autor['id']?>"
-						<?= in_array($autor['id'], $ides) ? 'selected' : 'error'?>
-					><?=$autor['nombre']?></option>
+						<?= in_array($autor['id'], $ides) ? 'selected' : 'error'?>>
+						<?=$autor['nombre']?></option>
 				<?php endforeach;?>
 			</select><br> <br>
+			
+			<?php 
+				$idgenero = [];
+				foreach($libro->sharedGeneroList as $k=>$v){
+					$idgenero[]= $k;
+				}
+				//echo '<pre><code>' . print_r($ides) .  '</code></pre>'
+			?>
 
 			<label for="generoSelect">Género</label>
 			<select name="genero[]" id="generoSelect" multiple="multiple">
 				<option value="">Elige un género</option>
 				<?php foreach ($body['generos'] as $genero):?>
-					<option value="<?= $genero['id']?>"><?= $genero['nombre']?></option>
+					<option value="<?= $genero['id']?>"
+					<?= in_array($genero['id'], $idgenero) ? 'selected' : 'error'?>>
+					<?= $genero['nombre']?></option>
 				<?php endforeach;?> 
 			</select><br> <br>
 
