@@ -51,16 +51,41 @@ class Libro_model extends CI_model{
       return R::load('libro',$id_libro);
 		
 	}
-	public function modificar($id_libro,$isbn,$autor,$idioma,$npalabras,$sinopsis,$edadminima){
+	public function modificar($id_libro,$isbn,$ids_autor, $ids_genero,$idioma,$npalabras,$sinopsis,$edadminima){
 		$libro= R::load('libro',$id_libro);
+		 $id_libro2=$libro->id;
+		
 		
 		$libro->isbn=$isbn;
-		$libro->autor=$autor;
+		foreach($ids_autor as $id_autor){
+			$autor= R::load('autor', $id_autor);
+			$libro->sharedAutorList[] = $autor;
+		
+			
+		}
+		$query="DELETE FROM autor_libro where libro_id='$id_libro2'";
+		
+		foreach ($ids_genero as $id_genero){
+			$genero= R::load('genero', $id_genero);
+			$libro->sharedGeneroList[]= $genero;
+		}
 		$libro->idioma=$idioma;
 		$libro->npalabras=$npalabras;
 		$libro->sinopsis=$sinopsis;
 		
+		
 		$libro->edadminima=$edadminima;
+		
+		
+		$totalSpec=count($ids_autor);
+		
+		
+		for($i=0;$i<$totalSpec;$i++)
+		   
+		{
+			$spec=$autor[$i];
+			$query="INSERT IN autor_libro SET autor_id='$spec' where libro_id='$id_libro'";
+		}
 		
 		R::store($libro);
 		R::close();
