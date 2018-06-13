@@ -1,9 +1,9 @@
 <nav class="container-fluid navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="<?=base_url()?>">Proyecto Libros</a>
+	<div class="navbar-header  col-sm-2 col-md-4 ">
+		<a class="navbar-brand " href="<?=base_url()?>">Proyecto Libros</a>
 	</div>
-	<div class="collapse navbar-collapse" id="myNavbar">
-		<ul class="nav navbar-nav">
+	<div class="collapse navbar-collapse col-sm-12" id="myNavbar">
+		<ul class="nav navbar-nav ">
 		
 			<!-- Articulos -->
 			 
@@ -92,9 +92,9 @@
 					</ul>
 				</li>			 -->
 			<!---------------------------------------------------------->
-			<li class="dropdown">
+			<!--  <li class="dropdown">
 				<a class="dropdown-toggle" href="<?=base_url()?>Home/vista">Home</a>				
-			</li>
+			</li>-->
 			
 			<?php if(isset($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador') ) :?>
 				<li class="dropdown">
@@ -111,7 +111,7 @@
 			
 		</ul>
 		
-		<ul class="nav navbar-nav navbar-right"> <!-- Hay que mandarle de alguna forma la informacion sobre si el usuario ha hecho login  -->
+		<ul class="nav navbar-nav navbar-right "> <!-- Hay que mandarle de alguna forma la informacion sobre si el usuario ha hecho login  -->
 			<!--  <li><a>DEBUG NombreUsuario: <?= $_SESSION['usuario']['nombre']//DEBUG ?></a></li>
 			<li><a>DEBUG RolUsuario: <?= $_SESSION['usuario']['rol'] ?></a></li>
 			<li><a>DEBUG IdUsuario: <?= $_SESSION['usuario']['id'] ?></a></li>-->
