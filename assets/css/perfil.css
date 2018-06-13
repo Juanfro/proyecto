@@ -20,11 +20,12 @@
 }
 
 #informacion{
-    background-color: darkslateblue;
-    height: 200px;
+	
+    background-color: #893d8b48;
+    height: auto;
     padding: 20px;
     margin-top: 42px;
-    border-radius: 15%;
+    
 
 }
 #biografia{
@@ -48,5 +49,8 @@
 
 .context .jcorgFilterTextParent:not(:last-child) {
   border-bottom: 1px dashed #bdc3c7;
+}
+header{
+	height:141px;
 }
 

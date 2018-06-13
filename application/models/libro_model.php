@@ -1,5 +1,5 @@
 <?php
-class Libro_model extends CI_model{
+class libro_model extends CI_model{
 	
 
 	private function existeLibro($titulo){

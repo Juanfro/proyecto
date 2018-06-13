@@ -2,10 +2,10 @@
  <div class="header col-md-12">
         <div class="col-md-12">
                 
-            <div class="col-md-3" > 
-                <img  class="imagen" src="<?= base_url()?>assets/img/Koala.jpg"  alt="koala">
+            <div class="col-md-6" > 
+                <img  class="imagen" src="<?= base_url()?>assets/img/foto_usuario.png"  alt="koala">
             </div>
-            <div class="col-md-3" id="informacion">
+            <div class="col-md-4" id="informacion">
               <label for="nombre">nombre : </label> <br>
 				
 				<span><?= $usuario->nombre?></span><br><br>
@@ -16,13 +16,7 @@
 				
 				<label for="alias">alias :</label><br>
 				 <span><?= $usuario->alias?></span>
-				<br><br>
-				<label for="rol">rol :</label><br>
-				 <span><?= $usuario->rol?></span>
-				 
-				<br><br>
-				
-				
+					
 				  
              </div>
         

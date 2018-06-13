@@ -1,5 +1,5 @@
 <?php
- class Articulo_model extends CI_Model{
+ class articulo_model extends CI_Model{
      public function create_articulo($titulo, $contenido, $idUsuario, $id_autores, $id_libros){
          
 		$articulo = R::dispense('articulo');		
@@ -28,6 +28,7 @@
 				$articulo->sharedLibroList[] = $libro;
 			}
 		}
+		
          
 		R::store($articulo);
 		         
