@@ -11,15 +11,39 @@
 			<div id="pasaFormato"></div>
 			<div id="pasaISBN"></div>
 			<br> <br>			
+			
+			<!-- Libro <br>
+			$libro
+			
+			<pre><code>
+			<?=print_r($libro)?>
+			</code></pre> -->
+			
+			Autores del libro <br>
+			$libro->sharedAutorList
+			<pre><code>
+			<?=print_r($libro->sharedAutorList)?>
+			</code></pre>
 
 			<label for="titulo">Título</label>
 			<input type="text" name="titulo" id="titulo" value="<?=$libro->titulo ?>"></input><br> <br>
+			
+			<?php 
+				$ides = [];
+				foreach($libro->sharedAutorList as $k=>$v){
+					$ides[]= $k;
+				}
+				echo '<pre><code>' . print_r($ides) .  '</code></pre>'
+			?>
 
 			<label for="autorSelect">autor</label>
 			<select name="autor[]" id="autorSelect" required="required" multiple="multiple">
 				<option value="">Elige un Autor</option>
 				<?php foreach ($body['autores'] as $autor): ?>
-					<option value="<?= $autor['id']?>"><?=$autor['nombre']?></option>
+					<pre><code><?//= print_r($autor)?></code></pre>
+					<option value="<?= $autor['id']?>"
+						<?= in_array($autor['id'], $ides) ? 'selected' : 'error'?>
+					><?=$autor['nombre']?></option>
 				<?php endforeach;?>
 			</select><br> <br>
 
