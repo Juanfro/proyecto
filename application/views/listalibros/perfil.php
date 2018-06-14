@@ -16,11 +16,12 @@
 									
 				<br>
 			</div>
-			
 		</div>
-		<label for="biografia">Biografia</label><br><br>
-               <div class="expandable">
-                <p id="biografia" class="letra"><?= $lista->descripcion ?></p><br><br>
-                </div>	
-	</div>
+		 <div class=" biografia col-sm-4 col-md-8">
+			<label for="biografia">Biografia</label><br><br>
+	               <div class="expandable">
+	                <p id="biografia" class="letra"><?= $lista->descripcion ?></p><br><br>
+	                </div>
+	     </div>	           	
+     </div>
 </div>
