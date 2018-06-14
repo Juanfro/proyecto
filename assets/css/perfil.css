@@ -25,6 +25,7 @@
     height: auto;
     padding: 20px;
     margin-top: 42px;
+    margin-bottom:61px;
     
 
 }
@@ -34,6 +35,8 @@
 .cuerpo{
     background-color: #E8869A;
 }
+body { padding-bottom: 70px; }
+
 .row{
     padding: 20px;
     height: 100px;
