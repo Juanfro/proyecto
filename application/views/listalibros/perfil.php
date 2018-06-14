@@ -2,7 +2,7 @@
 	<div class="header col-md-12">
 		<div class="col-md-12">
 			<div class="col-md-6">
-				<img class="imagen" src="<?= base_url()?>assets/img/Koala.jpg" alt="koala">
+				<img class="imagen" src="<?= base_url()?>assets/img/listalibros.jpg" alt="koala">
 			</div>
 			<div class="col-md-4" id="informacion">
 				<label for="lista">Nombre Lista : </label>
@@ -17,8 +17,8 @@
 				<br>
 			</div>
 		</div>
-		 <div class=" biografia col-sm-4 col-md-8">
-			<label for="biografia">Biografia</label><br><br>
+		 <div class=" biografia col-sm-10 col-md-12">
+			<label for="biografia">Descripción</label><br><br>
 	               <div class="expandable">
 	                <p id="biografia" class="letra"><?= $lista->descripcion ?></p><br><br>
 	                </div>
