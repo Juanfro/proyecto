@@ -38,9 +38,13 @@
 }
 
 
-.row{
+.biografia{
     padding: 20px;
-    height: 100px;
+    height: auto;
+    margin-top:30px;
+    border-radius:45px;
+    margin-bottom:75px;
+    background-color: #D1E7F6;
     
 }
 .context .jcorgFilterTextParent h3 {

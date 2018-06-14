@@ -15,15 +15,15 @@
 							<span><?= $autor->anodenacimiento?></span><br><br>
 			  </div>      
 	  	</div>
-	  <div class="cuerpo col-md-5">
-		<div class="col-md-6"  >
-			<div class="row" >
+	  <div class="col-ms-6 col-md-8 biografia">
+		
+			
 			    <label for="biografia">Biografia</label><br><br>
 			         <div class="expandable">
 			             <p id="biografia" class="letra"><?= $autor->biografia ?></p><br><br>
 			         </div>
-			</div>            
-		</div>
+			          
+		
 	  </div>        
 </div>
 
