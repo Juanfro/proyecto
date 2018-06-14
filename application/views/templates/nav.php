@@ -1,6 +1,6 @@
 <nav class="container-fluid navbar navbar-inverse">
-	<div class="navbar-header  col-sm-2 col-md-4 ">
-		<a class="navbar-brand " href="<?=base_url()?>">Liber locus</a>
+	<div class="navbar-header  col-sm-2 col-md-3 ">
+		<a class="navbar-brand " href="<?=base_url()?>">Liber Locus</a>
 	</div>
 	<div class="collapse navbar-collapse col-sm-12" id="myNavbar">
 		<ul class="nav navbar-nav ">

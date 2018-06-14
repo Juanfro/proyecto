@@ -1,19 +1,16 @@
 <div class="container">
-	<div class="header col-md-12">
-		<div class="col-md-12">
-					<div class="col-md-6">
-						<img class="imagen" src="<?= base_url()?>assets/img/libro.jpg" alt="koala">
-					</div>
-					<div class="col-md-4" id="informacion">
-							<label for="isbn">isbn : </label>
-							<br> <span><?= $libro->isbn?></span><br>
-							<br>
+	<div class="libro col-md-12 ">
+		
+			<div class=" col-sm-6 col-md-6">
+				<img class="imagen" src="<?= base_url()?>assets/img/libro.jpg" alt="koala">
+			 </div>
+			 <div class=" col-sm-4 col-md-4" id="informacion">
+				<label for="isbn">isbn : </label><br> 
+					<span><?= $libro->isbn?></span><br><br>
 			
-							<label for="titulo">titulo :</label>
-							<br> <span><?= $libro->titulo?></span> <br>
-							<br>
-			
-					</div>
+				<label for="titulo">titulo :</label><br> 
+				 	<span><?= $libro->titulo?></span><br><br>
+			  </div>
 			
 						
 				<?php if(isset($_SESSION['usuario'])):?>
@@ -26,41 +23,33 @@
 						</form> 
 				 	</div>
 			 	<?php endif;?>
-			
-			</div>
+				
+		 
 	
-	<div class="cuerpo col-md-12">
-		<div class="col-md-6">
-						<div class="row" style="background-color: pink">
-							<label for="Sinopsis">Sinopsis</label>
-							
-									<div class="expandable">
-										<p id="biografia" class="letra"><?= $libro->sinopsis ?></p>
-										<br>
-										<br>
-								    </div>
-					    </div>			    
-				  	    <div id="informacion">
-							<label for="Valoracion">Valoraciones</label>
-								<br>
-									<?php 
-									   $id_libro=$libro->id;
+			<div class="sinopsis  col-sm-12 col-md-12">
+				<label for="Sinopsis">Sinopsis</label>
+					<div class="expandable">
+						<p id="biografia" class="letra"><?= $libro->sinopsis ?></p><br><br>
+					 </div>
+			 </div>   			    
+				<div class=" valoracion  col-sm-12 col-md-12 ">
+					<label for="Valoracion">Valoraciones</label><br>
+						<?php 
+							$id_libro=$libro->id;
 									   /*$valoracion=R::findOne('valoracion','id=?',[$id_libro]);
 									   echo " nota: ",$valoracion->id." contenido: ".$valoracion->contenido;*/
 									   
-									   $valoracion=R::findCollection('valoracion','ORDER BY nota DESC ');
-									   while ($valoraciones = $valoracion->next()) {
-									   $idvlibro=$valoraciones->libro_id;
+							$valoracion=R::findCollection('valoracion','ORDER BY nota DESC ');
+							while ($valoraciones = $valoracion->next()) {
+								$idvlibro=$valoraciones->libro_id;
 									   /*echo "longitud de valoraciones ".$longvaloracion;*/
-									   	if ($idvlibro == $id_libro){
-									   		$nota=$valoraciones->nota;
-									   	echo "nota ".$nota." contenido ".$valoraciones->contenido;
-									   	   
+									if ($idvlibro == $id_libro){
+									   	$nota=$valoraciones->nota;
+									   	echo "nota ".$nota." contenido ".$valoraciones->contenido;   
 									   }
-									  
-									   }
-									 ?>
-							</div>
-				</div>
+							 }
+							?>
+				 </div>
+			
 		</div>
-	</div>	
+		

@@ -4,8 +4,6 @@ footer{
 	background-color: black;
 	margin-top: 15px;
 	
-	
-	
 }
 .social{
 	text-align: center;
@@ -25,4 +23,7 @@ footer{
 	padding:10px;
     font-size: 20px;
 	
+}
+.navbar-fixed-bottom {
+	border-radius:45px;
 }
