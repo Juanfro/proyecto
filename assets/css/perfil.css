@@ -2,7 +2,9 @@
     width:250px;
      height:250px;
     padding: 20px;
-    border-radius :40%; 
+    border-radius :40%;
+    margin:0 auto;
+    display:block; 
 }
 .perfil{
     padding-left: 360px;
@@ -13,27 +15,44 @@
 .header{
     height: 287px;
     padding-bottom: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 130px;
    
+}
+.icon-address-card:before{
+	padding:13px;
+    font-size: 50px;
+}
+.modificar{
+	float:right;
 }
 
 #informacion{
-    background-color: darkslateblue;
-    height: 200px;
+	
+    background-color: #893d8b48;
+    height: auto;
     padding: 20px;
     margin-top: 42px;
-    border-radius: 15%;
-
+    border-radius:42px;
 }
 #biografia{
-    background-color:darkorange;
+    background-color:#808080;
+    border-radius:45px;
+}
+.usuario{
+	margin-bottom:68px;
 }
 .cuerpo{
-    height: 400px;
+    background-color: #E8869A;
 }
-.row{
+
+
+.biografia{
     padding: 20px;
-    height: 100px;
+    height: auto;
+    margin-top:30px;
+    border-radius:45px;
+    margin-bottom:75px;
+    background-color: #D1E7F6;
     
 }
 .context .jcorgFilterTextParent h3 {
@@ -47,4 +66,45 @@
 .context .jcorgFilterTextParent:not(:last-child) {
   border-bottom: 1px dashed #bdc3c7;
 }
-
+header{
+	height:141px;
+	
+	
+}
+.sinopsis{
+	background-color: #F0CEED;
+	border-radius:25px;
+	margin-bottom:25px ;
+}
+.valoracion{
+	margin-bottom:65px ;
+	background-color:#EDD0DA ;
+	border-radius:25px;
+}
+.libro{
+	padding-bottom: 20px;
+	height: 287px;
+}
+.biografia{
+	background-color:#bdc3c7 ;
+	
+}
+.navbar-inverse{
+	border-radius:25px;
+}
+.articulo{
+	background-color: #893d8b48;
+    height: auto;
+    padding: 20px;
+    margin-top: 42px;
+    border-radius:42px;
+   
+}
+#contarticulo{
+	 background-color: #893d8b48;
+    height: auto;
+    width:auto;
+    padding: 20px;
+    margin-top: 42px;
+    border-radius:42px;
+}

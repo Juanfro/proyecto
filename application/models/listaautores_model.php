@@ -37,12 +37,11 @@ class Listaautores_model extends CI_Model {
 
 	public function modificar($nombre, $ids_autores, $id_lista) {
 		$lista = R::load('listaautor', $id_lista);
+		$lista->sharedAutorList =[];
+		R::store($lista);
 		
 		$lista->nombre = $nombre;
 		
-		if($lista->id !=0){
-			R::trash($lista);
-		}
 		
 		// Autores en la lista
 		foreach ($ids_autores as $id_autor) {

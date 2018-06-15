@@ -9,10 +9,21 @@
 			<input type="text" name="nombre" id="nombre" value="<?=$lista->nombre ?>"></input><br><br>
 			
 			
+			<?php 
+				$ides = [];
+				foreach($lista->sharedAutorList as $k=>$v){
+					$ides[]= $k;
+				}
+				//echo '<pre><code>' . print_r($ides) .  '</code></pre>'
+			?>
+			
+			
 			<label for="autores[]">Autores</label><br><br>
 			<select multiple name="autores[]" id="autores[]">			 
 				<?php foreach ($autores as $autor): ?>
-				<option value="<?=$autor->id ?>"><?=$autor->nombre ?></option>
+				<option value="<?=$autor->id ?>"
+				<?= in_array($autor['id'], $ides) ? 'selected' : 'error'?>>
+				<?=$autor->nombre ?></option>
 			 	<?php endforeach;?>
 			</select>
 			<br><br>

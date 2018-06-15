@@ -15,6 +15,7 @@ class Autor_model extends CI_model {
 		
 		R::store($autor);
 		R::close();
+		
 	}
 	public function getAll($filtro='') {
 		return R::find('autor', "nombre like ?", ['%' . $filtro . '%'	]);

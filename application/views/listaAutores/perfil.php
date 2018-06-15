@@ -1,10 +1,10 @@
 <div class="container">
 	<div class="header col-md-12">
 		<div class="col-md-12">
-			<div class="col-md-3">
-				<img class="imagen" src="<?= base_url()?>assets/img/Koala.jpg" alt="koala">
+			<div class="col-md-6">
+				<img class="imagen" src="<?= base_url()?>assets/img/listaautores.png" alt="lista autores">
 			</div>
-			<div class="col-md-3" id="informacion">
+			<div class="col-md-4" id="informacion">
 				<label for="lista">Nombre Lista : </label>
 				<br> <span><?= $lista->nombre?></span><br>
 				<br>
@@ -17,11 +17,13 @@
 				<?php endforeach; ?>
 									
 				<br>
-				<label for="autores">Descripcion :</label>
+			</div>
+			<div class=" biografia col-sm-10 col-md-12">	
+				<label for="biografia">Descripción:</label>
 				<div class="expandable">
                 <p id="biografia" class="letra"><?= $lista->descripcion ?></p><br><br>
                 </div>
 			</div>
 		</div>	
-	</div>
+	
 </div>

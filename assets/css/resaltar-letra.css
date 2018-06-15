@@ -1,7 +1,7 @@
  
 p.letra::first-letter {
     font-size: 200%;
-    color: #8A2BE2;
+    color: black;
 }
 .pointer {cursor: cell;}
 

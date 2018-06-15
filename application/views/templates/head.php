@@ -40,9 +40,22 @@
     <!-- resaltar la priimera letra -->
   	<link href="<?= base_url()?>assets/css/resaltar-letra.css" rel="stylesheet"></link>
     
-    
+    <!-- footer css -->  
+     <link href="<?= base_url()?>assets/css/footer.css" rel="stylesheet"></link>
 	
-	<title>Proyecto</title>
+	<!-- fontello -->
+	<link href="<?= base_url()?>assets/fontello/css/animation.css" rel="stylesheet"></link>
+	<link href="<?= base_url()?>assets/fontello/css/fontello-codes.css" rel="stylesheet"></link>
+	<link href="<?= base_url()?>assets/fontello/css/fontello-embedded.css" rel="stylesheet"></link>
+	<link href="<?= base_url()?>assets/fontello/css/fontello.css" rel="stylesheet"></link>
+	
+	
+    <link href="<?= base_url()?>assets/fontello/font/fontello.eot" ></link>
+    <link href="<?= base_url()?>assets/fontello/font/fontello.ttf" ></link>
+    <link href="<?= base_url()?>assets/fontello/font/fontello.wolff" ></link>
+	<link href="<?= base_url()?>assets/fontello/font/fontello.wolff2" ></link>
+		
+	<title>Liber locus</title>
 
 </head>
 

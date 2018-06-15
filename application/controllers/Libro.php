@@ -34,8 +34,9 @@ class Libro extends CI_Controller {
 		$this->load->model('libro_model');
 		
 		//Datos
-		$isbn =isset($_POST['isbn']) ?$_POST['isbn']:null ;
+		
 		$titulo = isset($_POST['titulo']) ?$_POST['titulo']:null;
+		$isbn =isset($_POST['isbn']) ?$_POST['isbn']:null ;
 		$autor = isset($_POST['autor']) ?$_POST['autor']:null;
 		$genero = isset($_POST['genero']) ?$_POST['genero']:null;
 		$idioma = isset($_POST['idioma'])? $_POST['idioma']:null;
@@ -45,7 +46,7 @@ class Libro extends CI_Controller {
 		$edadminima = isset($_POST['edadminima'])?$_POST['edadminima']:null;
 
 		$this->load->model('libro_model');
-		$status=$this->libro_model->crear($isbn, $titulo,$autor,$genero,$idioma, $npalabras, $sinopsis, $edadminima);
+		$status=$this->libro_model->crear($titulo,$isbn,$autor,$genero,$idioma, $npalabras, $sinopsis, $edadminima);
 		if($status == 0){
 			enmarcar($this, 'libro/crearOK');}
 		else{
