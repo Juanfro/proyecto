@@ -1,8 +1,8 @@
 <nav class="container-fluid navbar navbar-inverse">
-	<div class="navbar-header  col-sm-2 col-md-3 ">
+	<div class="navbar-header  col-sm-2 ">
 		<a class="navbar-brand " href="<?=base_url()?>">Liber Locus</a>
 	</div>
-	<div class="collapse navbar-collapse col-sm-12" id="myNavbar">
+	<div class="collapse navbar-collapse id="myNavbar">
 		<ul class="nav navbar-nav ">
 		
 			<!-- Articulos -->
@@ -91,7 +91,9 @@
 						</li>
 					</ul>
 				</li>			 -->
+				
 			<!---------------------------------------------------------->
+			
 			<!--  <li class="dropdown">
 				<a class="dropdown-toggle" href="<?=base_url()?>Home/vista">Home</a>				
 			</li>-->
@@ -111,7 +113,7 @@
 			
 		</ul>
 		
-		<ul class="nav navbar-nav navbar-right "> <!-- Hay que mandarle de alguna forma la informacion sobre si el usuario ha hecho login  -->
+		<ul class="nav navbar-nav navbar-right "> 
 			<!--  <li><a>DEBUG NombreUsuario: <?= $_SESSION['usuario']['nombre']//DEBUG ?></a></li>
 			<li><a>DEBUG RolUsuario: <?= $_SESSION['usuario']['rol'] ?></a></li>
 			<li><a>DEBUG IdUsuario: <?= $_SESSION['usuario']['id'] ?></a></li>-->
@@ -129,8 +131,7 @@
 								<a href="<?=base_url()?>Usuario/modificar/<?=$_SESSION['usuario']['id']?>">Editar mi perfil</a>
 							<?php endif;?>-->
 							
-							<a href="<?=base_url()?>Usuario/cerrarsesion">Cerrar Sesión</a>
-						
+							<a href="<?=base_url()?>Usuario/cerrarsesion">Cerrar Sesión</a>						
 						</li>
 					</ul>
 				</li>
@@ -151,14 +152,8 @@
 	    				</li>
 	    			</ul>    						
 				</li>
-			<?php endif;?>
-				
-				
+			<?php endif;?>				
 			
 		</ul>
-	</div>
-	
-	
-	
-	
+	</div>	
 </nav>
