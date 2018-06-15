@@ -36,7 +36,7 @@ tr.seguido
 	background-color: antiquewhite;
 }
 
-#contarticulo.seguido
+.seguido
 {
 	background-color: lime;
 }
