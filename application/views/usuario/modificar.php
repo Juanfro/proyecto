@@ -17,16 +17,16 @@
 			<br>
 
 			<label for="contrasena">Contraseña</label>
-			<input type="password" name="contrasena" id="contrasena" required="required" ></input><br>
+			<input type="password" name="contrasena" id="contrasena" required="required" value="<?= $usuario->password?>"></input><br>
 			<br>
 
 			<?php if($_SESSION['usuario']['rol']=='administrador'):?>
 			<label for="rol">Rol</label>
 			<!-- <input type="text" name="rol" id="rol" required="required"></input> -->
 			<select name="rol" id="rol">
-				<option value="usuario">Usuario</option>
+				<option value="usuario">usuario</option>
 				<option value="editor">editor</option>
-				<option value="administrador">Administrador</option>				
+				<option value="administrador">administrador</option>				
 			</select>
 			<br>
 			<br>

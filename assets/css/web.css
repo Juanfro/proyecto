@@ -1,0 +1,32 @@
+/*body::after
+{
+	content:"";
+	
+	opacity:0.3;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+	
+	background-image: url("../img/background.jpg");
+    background-size:100%;
+    background-repeat: ;
+    background-attachment: fixed;    
+}*/
+
+/* Start Banner*/
+
+
+
+/* End Banner*/
+
+/* start Contenido*/
+
+/*nav+div
+{
+	width:100%;
+	background-color: green;
+}*/
+/* end Contenido*/

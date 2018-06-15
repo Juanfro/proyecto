@@ -9,6 +9,10 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="<?= base_url()?>assets/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="<?=base_url()?>assets/img/favicon/favicon.ico">
+		
 	<!-- para ordenar -->
 	<script src="https://kryogenix.org/code/browser/sorttable/sorttable.js"></script>
 	
@@ -54,6 +58,11 @@
     <link href="<?= base_url()?>assets/fontello/font/fontello.ttf" ></link>
     <link href="<?= base_url()?>assets/fontello/font/fontello.wolff" ></link>
 	<link href="<?= base_url()?>assets/fontello/font/fontello.wolff2" ></link>
+
+	<link href="<?= base_url()?>assets/css/footer.css" rel="stylesheet"></link>	
+	
+	
+	<link href="<?= base_url()?>assets/css/web.css" rel="stylesheet"></link>	
 	
 		
 	<title>Liber locus</title>

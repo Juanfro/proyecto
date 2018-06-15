@@ -54,7 +54,7 @@ class usuario_model extends CI_Model
     	$usuario->alias=$alias;
     	$usuario->password = password_hash($pwd, PASSWORD_DEFAULT);
     	$usuario->rol = $rol;
-    	$usuario->email = $nombre;
+    	$usuario->email = $email;
     	$usuario->edad = $edad;
     	
     	R::store($usuario);
@@ -77,7 +77,7 @@ class usuario_model extends CI_Model
     	$ok= false;
     	
     	$usuario= R::findOne('usuario','alias  = ?',[$nombre]);
-        $has =$usuario->password;        
+        $has =$usuario->password;
         
     	if ($usuario != null && ($pwd != null) ){
     		if (password_verify($pwd, $has)){
