@@ -41,17 +41,18 @@
 		<?php foreach ($libros as $libro): ?>
 			<tr >
 				<td><?=$libro->isbn ?></td>
-				<td>
+				<td >
 				<a href="<?= base_url()?>libro/perfil/<?=$libro->id ?>" class="jcorgFilterTextChild"> 
 				<?=$libro->titulo?>
 				</a>
 					
 				</td>
+				
 
 				<td class="jcorgFilterTextChild">
 					<?php foreach ($libro->sharedAutorList as $autor): ?>
 						<?= $autor->nombre ."</br> "; ?> 
-					<?php endforeach; ?>
+					<?php endforeach; ?> 
 				</td>
 
 				<td><?=$libro->idioma ?></td>

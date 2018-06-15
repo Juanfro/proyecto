@@ -54,6 +54,7 @@
     <link href="<?= base_url()?>assets/fontello/font/fontello.ttf" ></link>
     <link href="<?= base_url()?>assets/fontello/font/fontello.wolff" ></link>
 	<link href="<?= base_url()?>assets/fontello/font/fontello.wolff2" ></link>
+	
 		
 	<title>Liber locus</title>
 

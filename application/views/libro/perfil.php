@@ -17,7 +17,7 @@
 					<?php endforeach; ?>
 				 	
 			  </div>
-			
+			   
 				<?php if(isset($_SESSION['usuario'])):?>
 					<div class="col-md-4 valorar">
 						<form action="<?= base_url()?>valoracion/crear" method="post">
