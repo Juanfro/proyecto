@@ -44,7 +44,7 @@
 					<!-- Autor -->
 					<td>
 						<?php
-							$id_autor = $articulo->usuarioautor_id;
+							$id_autor = $articulo->usuario_id;
 							$autor = R::findOne('usuario', 'id=?', [$id_autor]);
 							echo $autor->nombre;
 						?>
