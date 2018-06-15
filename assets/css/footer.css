@@ -1,7 +1,8 @@
 footer{
-	
+	background-color: #80808038;
+	border-color:#80808038;
 	height: 50px;
-	background-color: black;
+	
 	margin-top: 15px;
 	
 }
@@ -26,5 +27,5 @@ footer{
 	
 }
 .navbar-fixed-bottom {
-	border-radius:45px;
+	border-radius:0;
 }

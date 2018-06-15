@@ -90,7 +90,10 @@ header{
 	
 }
 .navbar-inverse{
-	border-radius:25px;
+	background-color: #80808038;
+	border-color:#80808038;
+	font-weight:500 ;
+	
 }
 .articulo{
 	background-color: #893d8b48;
@@ -108,3 +111,4 @@ header{
     margin-top: 42px;
     border-radius:42px;
 }
+
