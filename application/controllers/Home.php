@@ -12,9 +12,15 @@ class Home extends CI_Controller{
 		$datos['articulos']=$this->articulo_model->getAll();
 		
 		//Datos de Usuario
-		$this->load->model('usuario_model');
+		/*if(isset($_SESSION['usuario'])){
+			$this->load->model('usuario_model');
+			$datos['usuario'] = $this->usuario_model->getusuarioPorId($_SESSION['usuario']['id']);
+		}*/
 		
-		enmarcar($this, 'home/vista',$datos);
+		$this->load->model('usuario_model');
+		$datos['usuario'] = ($_SESSION['usuario']) ? $this->usuario_model->getusuarioPorId($_SESSION['usuario']['id']) : null;
+		
+		enmarcar($this,'home/vista',$datos);
 	}
 	
 	
