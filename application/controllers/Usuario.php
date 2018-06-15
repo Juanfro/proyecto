@@ -29,7 +29,7 @@ class Usuario extends CI_Controller {
 			// $_SESSION['usuario']['nombre'] = $usuario->nombre;
 			// $_SESSION['usuario']['apellido'] = $usuario->apellido;
 			// header('Location:' . base_url() . 'usuario/loginOk');
-			enmarcar($this, 'usuario/loginOk');
+			enmarcar($this, 'home/vista');
 		} else {
 			enmarcar($this, 'usuario/loginError');
 		}
@@ -123,7 +123,7 @@ class Usuario extends CI_Controller {
 		
 		$this->load->model('usuario_model');
 		$this->usuario_model->modificar($id_usuario, $nombre, $apellido, $alias, $pwd, $rol, $email, $edad);
-		$this->listar();
+		enmarcar($this, 'home/vista');
 	}
 
 	public function borrar() {
