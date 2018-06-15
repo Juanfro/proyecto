@@ -50,13 +50,12 @@ class Listalibros_model extends CI_Model{
 	
 	public function modificar($nombre, $ids_autores, $id_lista) {
 		$lista = R::load('listalibros', $id_lista);
+		$lista->sharedLibroList =[];
+		R::store($lista);
 	
 		$lista->nombre = $nombre;
 	
-		if($lista->id !=0){
-			R::trash($lista);
-		}
-	
+		
 		// Autores en la lista
 		foreach ($ids_autores as $id_autor) {
 			$libro = R::load('libro', $id_autor);
