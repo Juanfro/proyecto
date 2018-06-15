@@ -80,8 +80,10 @@ function validarEdad(){
 	var edad = (document.getElementById('edad').value);
 	
 	if(!isNaN(edad) && patronEdad.test(edad) && parseInt(edad)==edad && edad>0){
-		document.getElementById('pasaEdad').innerHTML = "Edad Correcta"
+		document.getElementById('pasaEdad').innerHTML = "Edad Correcta";
+		document.getElementById('botonEnviar').disabled= false;	
 	}else{
-		document.getElementById('pasaEdad').innerHTML = "La edad tiene que ser un número entero positivo."
+		document.getElementById('pasaEdad').innerHTML = "La edad tiene que ser un número entero positivo.";
+		document.getElementById('botonEnviar').disabled= true;		
 	}
 }

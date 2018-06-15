@@ -6,9 +6,9 @@ class usuario_model extends CI_Model
     public function create_usuario($nombre, $apellido, $alias, $pwd, $rol, $email, $edad){
         $usuario = R::findOne('usuario', 'alias=?', [$alias]);
         
-        /*if(intval($edad) !== $edad){
+        if(intval($edad) != $edad){
         	throw new Exception('Edad no Valida');
-        }*/
+        }
        
         if ($usuario == null) { // Comprobar que no existe un usuario con le mismo Alias
             
@@ -20,7 +20,7 @@ class usuario_model extends CI_Model
             $usuario->password =password_hash($pwd, PASSWORD_DEFAULT);
             $usuario->rol = $rol;
             $usuario->email = $email;
-            $usuario->edad = $edad;
+            $usuario->edad = intval($edad);
             
             //Blog Personal
             /*$blog = R::dispense('blog');
@@ -77,12 +77,16 @@ class usuario_model extends CI_Model
     	$ok= false;
     	
     	$usuario= R::findOne('usuario','alias  = ?',[$nombre]);
-        $has =$usuario->password;
+    	
+    	if($usuario){
+    		$has =$usuario->password;
         
-    	if ($usuario != null && ($pwd != null) ){
-    		if (password_verify($pwd, $has)){
-    		$ok=true;}    		
-    	}    		
+	    	if ($usuario != null && ($pwd != null) ){
+	    		if (password_verify($pwd, $has)){
+	    		$ok=true;}    		
+	    	} 
+    	}
+           		
     	
     	return $ok;
     }

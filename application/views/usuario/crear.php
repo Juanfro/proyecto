@@ -17,7 +17,7 @@
 			<br>
 
 			<label for="contrasena">Contraseña</label>
-			<input type="text" name="contrasena" id="contrasena" required="required"></input><br>
+			<input type="password" name="contrasena" id="contrasena" required="required"></input><br>
 			<br>
 
 			<?php if(isset($_SESSION['usuario']['rol']) && $_SESSION['usuario']['rol']=='administrador'):?>
@@ -40,7 +40,7 @@
 			<input type="text" name="edad" id="edad" onkeyup="validarEdad()"></input><br>
 			<div id="pasaEdad"></div>
 			
-			<br> <input type="submit" value="registrar usuario">
+			<br> <button type="submit" id="botonEnviar" value="registrar usuario">Registrar Usuario</button>
 		</fieldset>
 	</form>
 

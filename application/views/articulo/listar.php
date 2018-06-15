@@ -9,6 +9,8 @@
 		<button class="glyphicon glyphicon-plus pointer" type="submit"></button>
 	</form>
 	<br>
+	
+	<pre><?= print_r($usuario->sharedAutorList)?></pre>
 
 	<table class="table table-bordered sortable">
 		<thead>
@@ -26,12 +28,18 @@
 		
 		<tbody>			
 			<?php foreach ($articulos as $articulo): ?>
-				<tr>
+			
+				<pre><?= print_r($articulo->sharedAutorList) ?></pre>
+				<pre><?= print_r($articulo->sharedLibroList) ?></pre>
+			
+				<tr <?= (array_intersect($articulo->sharedAutorList, $usuario->sharedAutorList) || array_intersect($articulo->sharedLibroList, $usuario->sharedLibroList) ) ? 'class="seguido"' : 'class="no-seguido"'?>>
 					<!-- Titulo -->
 					<td>
 						<a href="<?= base_url()?>Articulo/mostrar/<?=$articulo->id?>" class="jcorgFilterTextChild"> 
 							<?=$articulo->titulo ?>
 						</a>
+						
+						
 					</td>
 					
 					<!-- Contenido -->

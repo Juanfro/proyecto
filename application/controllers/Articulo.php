@@ -70,7 +70,11 @@ class Articulo extends CI_Controller {
 	//Listar Todos Los Artículos
 	public function listar() {
 		$this->load->model('articulo_model');
+		
 		$datos['articulos'] = $this->articulo_model->getAll();
+		
+		$this->load->model('usuario_model');
+		$datos['usuario'] = $this->usuario_model->getusuarioPorId($_SESSION['usuario']['id']);
 		
 		enmarcar($this, 'articulo/listar', $datos);
 	}
