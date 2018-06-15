@@ -2,7 +2,7 @@
 	<div class="header col-md-12">
 		<div class="col-md-12">
 			<div class="col-md-6">
-				<img class="imagen" src="<?= base_url()?>assets/img/listalibros.png" alt="koala">
+				<img class="imagen" src="<?= base_url()?>assets/img/listalibros.png" alt="lista libros">
 			</div>
 			<div class="col-md-4" id="informacion">
 				<label for="lista">Nombre Lista : </label>

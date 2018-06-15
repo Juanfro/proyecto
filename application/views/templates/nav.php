@@ -125,9 +125,9 @@
 						<li>					  
 							<a href="<?=base_url()?>Usuario/perfil/<?=$_SESSION['usuario']['id']?>">Ir a mi perfil</a>
 							
-							<?php if(isset($_SESSION['usuario'])):?>
+							<!--<?php if(isset($_SESSION['usuario'])):?>
 								<a href="<?=base_url()?>Usuario/modificar/<?=$_SESSION['usuario']['id']?>">Editar mi perfil</a>
-							<?php endif;?>
+							<?php endif;?>-->
 							
 							<a href="<?=base_url()?>Usuario/cerrarsesion">Cerrar Sesión</a>
 						

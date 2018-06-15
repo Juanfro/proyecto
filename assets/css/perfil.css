@@ -18,6 +18,13 @@
     margin-bottom: 130px;
    
 }
+.icon-address-card:before{
+	padding:13px;
+    font-size: 50px;
+}
+.modificar{
+	float:right;
+}
 
 #informacion{
 	
@@ -61,6 +68,7 @@
 header{
 	height:141px;
 	
+	
 }
 .sinopsis{
 	background-color: #F0CEED;
@@ -80,4 +88,6 @@ header{
 	background-color:#bdc3c7 ;
 	
 }
-
+.navbar-inverse{
+	border-radius:25px;
+}

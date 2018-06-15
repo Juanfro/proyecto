@@ -44,16 +44,16 @@
      <link href="<?= base_url()?>assets/css/footer.css" rel="stylesheet"></link>
 	
 	<!-- fontello -->
-	<link href="<?= base_url()?>assets/css/fontello/css/animation.css" rel="stylesheet"></link>
-	<link href="<?= base_url()?>assets/css/fontello/css/fontello-codes.css" rel="stylesheet"></link>
-	<link href="<?= base_url()?>assets/css/fontello/css/fontello-embedded.css" rel="stylesheet"></link>
-	<link href="<?= base_url()?>assets/css/fontello/css/fontello.css" rel="stylesheet"></link>
+	<link href="<?= base_url()?>assets/fontello/css/animation.css" rel="stylesheet"></link>
+	<link href="<?= base_url()?>assets/fontello/css/fontello-codes.css" rel="stylesheet"></link>
+	<link href="<?= base_url()?>assets/fontello/css/fontello-embedded.css" rel="stylesheet"></link>
+	<link href="<?= base_url()?>assets/fontello/css/fontello.css" rel="stylesheet"></link>
 	
-	<link href="<?= base_url()?>assets/css/fontello/css/fontello.min.css" rel="stylesheet"></link>
-    <link href="<?= base_url()?>assets/css/fontello/font/fontello.eot" ></link>
-    <link href="<?= base_url()?>assets/css/fontello/font/fontello.ttf" ></link>
-    <link href="<?= base_url()?>assets/css/fontello/font/fontello.wolff" ></link>
-	<link href="<?= base_url()?>assets/css/fontello/font/fontello.wolff2" ></link>
+	<link href="<?= base_url()?>assets/fontello/css/fontello.min.css" rel="stylesheet"></link>
+    <link href="<?= base_url()?>assets/fontello/font/fontello.eot" ></link>
+    <link href="<?= base_url()?>assets/fontello/font/fontello.ttf" ></link>
+    <link href="<?= base_url()?>assets/fontello/font/fontello.wolff" ></link>
+	<link href="<?= base_url()?>assets/fontello/font/fontello.wolff2" ></link>
 		
 	<title>Liber locus</title>
 
