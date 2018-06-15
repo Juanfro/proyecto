@@ -17,7 +17,7 @@
 			<br>
 
 			<label for="contrasena">Contraseña</label>
-			<input type="text" name="contrasena" id="contrasena" required="required"></input><br>
+			<input type="password" name="contrasena" id="contrasena" required="required"></input><br>
 			<br>
 
 			<?php if(isset($_SESSION['usuario']['rol']) && $_SESSION['usuario']['rol']=='administrador'):?>
