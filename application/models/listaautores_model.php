@@ -42,9 +42,6 @@ class Listaautores_model extends CI_Model {
 		
 		$lista->nombre = $nombre;
 		
-		if($lista->id !=0){
-			R::trash($lista);
-		}
 		
 		// Autores en la lista
 		foreach ($ids_autores as $id_autor) {

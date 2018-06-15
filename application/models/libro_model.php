@@ -5,15 +5,16 @@ class libro_model extends CI_model{
 	private function existeLibro($titulo){
 		return R::findOne('libro','titulo=?',[$titulo]) !=null ? true : false;
 	}
-	public function crear($isbn,$titulo, $ids_autor, $ids_genero,$idioma,$npalabras,$sinopsis,$edadminima){
+	public function crear($titulo,$isbn, $ids_autor, $ids_genero,$idioma,$npalabras,$sinopsis,$edadminima){
 		$status=0;
 		if(!$this->existeLibro($titulo)){
 	
 		//Datos
 
 		$libro=R::dispense('libro');
-		$libro->isbn=$isbn;
+		
 		$libro->titulo=$titulo;
+		$libro->isbn=$isbn;
 		//$libro->autor=$ids_autor; TODO  Cómo listar El autor en libros?
 		$libro->idioma=$idioma;
 		$libro->npalabras=$npalabras;
