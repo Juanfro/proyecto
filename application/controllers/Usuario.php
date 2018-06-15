@@ -29,7 +29,9 @@ class Usuario extends CI_Controller {
 			// $_SESSION['usuario']['nombre'] = $usuario->nombre;
 			// $_SESSION['usuario']['apellido'] = $usuario->apellido;
 			// header('Location:' . base_url() . 'usuario/loginOk');
-			enmarcar($this, 'home/vista');
+			//enmarcar($this, 'home/vista');
+			
+			header('Location:' . base_url());
 		} else {
 			enmarcar($this, 'usuario/loginError');
 		}

@@ -37,9 +37,7 @@
 					<td>
 						<a href="<?= base_url()?>Articulo/mostrar/<?=$articulo->id?>" class="jcorgFilterTextChild"> 
 							<?=$articulo->titulo ?>
-						</a>
-						
-						
+						</a>						
 					</td>
 					
 					<!-- Contenido -->
