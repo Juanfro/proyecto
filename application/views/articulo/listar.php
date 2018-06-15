@@ -10,7 +10,7 @@
 	</form>
 	<br>
 	
-	<pre><?= print_r($usuario->sharedAutorList)?></pre>
+	<!-- <pre><?= print_r($usuario->sharedAutorList)?></pre>-->
 
 	<table class="table table-bordered sortable">
 		<thead>
@@ -29,10 +29,10 @@
 		<tbody>			
 			<?php foreach ($articulos as $articulo): ?>
 			
-				<pre><?= print_r($articulo->sharedAutorList) ?></pre>
-				<pre><?= print_r($articulo->sharedLibroList) ?></pre>
+				<!-- <pre><?= print_r($articulo->sharedAutorList) ?></pre> -->
+				<!--  <pre><?= print_r($articulo->sharedLibroList) ?></pre> -->
 			
-				<tr <?= (array_intersect($articulo->sharedAutorList, $usuario->sharedAutorList) || array_intersect($articulo->sharedLibroList, $usuario->sharedLibroList) ) ? 'class="seguido"' : 'class="no-seguido"'?>>
+				<tr <?= ( isset($_SESSION['usuario']) && (array_intersect($articulo->sharedAutorList, $usuario->sharedAutorList) || array_intersect($articulo->sharedLibroList, $usuario->sharedLibroList) ) )  ? 'class="seguido"' : 'class="no-seguido"'?>>
 					<!-- Titulo -->
 					<td>
 						<a href="<?= base_url()?>Articulo/mostrar/<?=$articulo->id?>" class="jcorgFilterTextChild"> 

@@ -73,9 +73,10 @@ class Articulo extends CI_Controller {
 		
 		$datos['articulos'] = $this->articulo_model->getAll();
 		
-		$this->load->model('usuario_model');
-		$datos['usuario'] = $this->usuario_model->getusuarioPorId($_SESSION['usuario']['id']);
-		
+		if(isset($_SESSION['usuario'])){
+			$this->load->model('usuario_model');
+			$datos['usuario'] = $this->usuario_model->getusuarioPorId($_SESSION['usuario']['id']);
+		}
 		enmarcar($this, 'articulo/listar', $datos);
 	}
 	
