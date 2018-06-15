@@ -10,9 +10,14 @@
 			
 				<label for="titulo">titulo :</label><br> 
 				 	<span><?= $libro->titulo?></span><br><br>
+				 	
+				 <label for="Autores">Autores :</label><br> 
+				 <?php foreach ($libro->sharedAutorList as $autor): ?>
+						<?= "<span>". $autor->nombre ."</span></br> "; ?> 
+					<?php endforeach; ?>
+				 	
 			  </div>
-			
-						
+			   
 				<?php if(isset($_SESSION['usuario'])):?>
 					<div class="col-md-4 valorar">
 						<form action="<?= base_url()?>valoracion/crear" method="post">
