@@ -77,12 +77,16 @@ class usuario_model extends CI_Model
     	$ok= false;
     	
     	$usuario= R::findOne('usuario','alias  = ?',[$nombre]);
-        $has =$usuario->password;
+    	
+    	if($usuario){
+    		$has =$usuario->password;
         
-    	if ($usuario != null && ($pwd != null) ){
-    		if (password_verify($pwd, $has)){
-    		$ok=true;}    		
-    	}    		
+	    	if ($usuario != null && ($pwd != null) ){
+	    		if (password_verify($pwd, $has)){
+	    		$ok=true;}    		
+	    	} 
+    	}
+           		
     	
     	return $ok;
     }
