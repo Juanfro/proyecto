@@ -40,7 +40,7 @@
 			<input type="text" name="edad" id="edad" onkeyup="validarEdad()"></input><br>
 			<div id="pasaEdad"></div>
 			
-			<br> <input type="submit" value="registrar usuario">
+			<br> <button type="submit" id="botonEnviar" value="registrar usuario">Registrar Usuario</button>
 		</fieldset>
 	</form>
 
