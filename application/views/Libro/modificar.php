@@ -62,9 +62,7 @@
 			<input type="text" name="npalabras" id="npalabras" value="<?=$libro->npalabras ?>"></input><br> <br>
 
 			<label for="sinopsis">Sinopsis</label>
-			<textarea name="sinopsis" id="sinopsis" value="<?=$libro->sinopsis ?>"></textarea><br> <br>
-
-			
+			<textarea name="sinopsis" id="sinopsis" value="<?=$libro->sinopsis ?>"></textarea><br> <br>			
 
 			<label for="edadminima">Edad Minima Recomendada</label>
 			<input type="text" name="edadminima" id="edadminima" value=<?=$libro->edadminima ?>></input><br> <br> 
