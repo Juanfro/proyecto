@@ -49,7 +49,7 @@
 	<link href="<?= base_url()?>assets/fontello/css/fontello-embedded.css" rel="stylesheet"></link>
 	<link href="<?= base_url()?>assets/fontello/css/fontello.css" rel="stylesheet"></link>
 	
-	<link href="<?= base_url()?>assets/fontello/css/fontello.min.css" rel="stylesheet"></link>
+	
     <link href="<?= base_url()?>assets/fontello/font/fontello.eot" ></link>
     <link href="<?= base_url()?>assets/fontello/font/fontello.ttf" ></link>
     <link href="<?= base_url()?>assets/fontello/font/fontello.wolff" ></link>

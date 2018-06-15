@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="margin-bottom:70px ">
 	<form class="form" id="idForm" action="<?=base_url()?>articulo/crearPost" method="post">
 		<fieldset>
 			<legend>

@@ -99,3 +99,11 @@ header{
     border-radius:42px;
    
 }
+#contarticulo{
+	 background-color: #893d8b48;
+    height: auto;
+    width:auto;
+    padding: 20px;
+    margin-top: 42px;
+    border-radius:42px;
+}

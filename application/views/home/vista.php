@@ -11,7 +11,7 @@
 			 
 				   while ($articulo = $articulos->next()) {
 				  
-				  echo "<div class=' articulo col-md-5  expandable >";
+				  echo "<div class='col-md-3 expandable' id='contarticulo'>";
 				   	echo $articulo->contenido;
 				   echo "</div>";   
 				   }?>
