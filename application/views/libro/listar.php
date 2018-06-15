@@ -16,7 +16,7 @@
 			<tr class="jcorgFilterTextParent">
 				<th>ISBN</th>
 				<th>Título</th>
-				<th>autor</th>
+				<th>Autor</th>
 				<th>Idioma</th>
 				<th>Genero</th>
 				<th>nº palabras</th>
@@ -64,7 +64,11 @@
 
 				<td><?=$libro->npalabras ?></td>
 
-				<td><?=$libro->sinopsis ?></td>
+				<td>
+				<div class="expandable">
+				<?=$libro->sinopsis ?>
+				</div>
+				</td>
 				
 				<td><?=$libro->edadminima ?></td>
 				<td>
@@ -83,8 +87,20 @@
 							if ($idvlibro == $id_libro) {
 								
 								$nota = $valoraciones->nota;
+								$ides = [];
+								$suma= 0;
+								if($nota==""){}
+								else{
+								 array_push($ides, $nota);
+									for($x=0;$x<count($ides);$x++){
+										$suma += $ides[$x];
+										echo $suma;
+									}
+									
+									
+								}
 								
-								echo "nota " . $nota . " contenido " . $valoraciones->contenido;
+								//echo "nota " . $nota . " contenido " . $valoraciones->nota;
 							}
 						}
 					?>

@@ -1,6 +1,6 @@
 <div class="container">
-	<section class="articulo">
-		<article class="col-md-12">
+	<section class="articulo col-md-12">
+		<article>
 			<h1><?= $articulo->titulo?></h1>
 			<div class="content">
 				<?=$articulo->contenido?>
