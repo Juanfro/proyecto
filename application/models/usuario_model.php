@@ -51,9 +51,10 @@ class usuario_model extends CI_Model
     	$usuario = R::load('usuario', $id_usuario);
     	$usuario->nombre = $nombre;
     	$usuario->apellido = $apellido;
-    	$usuario->contrasena = $pwd;
+    	$usuario->alias=$alias;
+    	$usuario->password = password_hash($pwd, PASSWORD_DEFAULT);
     	$usuario->rol = $rol;
-    	$usuario->emaiol = $nombre;
+    	$usuario->email = $nombre;
     	$usuario->edad = $edad;
     	
     	R::store($usuario);
