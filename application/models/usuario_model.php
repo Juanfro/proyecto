@@ -6,9 +6,17 @@ class usuario_model extends CI_Model
     public function create_usuario($nombre, $apellido, $alias, $pwd, $rol, $email, $edad){
         $usuario = R::findOne('usuario', 'alias=?', [$alias]);
         
+        //Validación Edad
         if(intval($edad) != $edad){
         	throw new Exception('Edad no Valida');
         }
+        
+        //Validacion Email
+        
+       	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+       		throw new Exception('Email no Válido');
+       	}
+       		
        
         if ($usuario == null) { // Comprobar que no existe un usuario con le mismo Alias
             
