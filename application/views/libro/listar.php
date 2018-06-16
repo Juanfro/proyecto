@@ -88,17 +88,16 @@
 								
 								$nota = $valoraciones->nota;
 								$ides = [];
-								$suma= 0;
-								if($nota==""){}
+								
+								if($nota==NULL){}
 								else{
 								 array_push($ides, $nota);
-									for($x=0;$x<count($ides);$x++){
-										$suma += $ides[$x];
-										echo $suma;
+								
+								echo array_sum($ides);
 									}
 									
 									
-								}
+								
 								
 								//echo "nota " . $nota . " contenido " . $valoraciones->nota;
 							}
