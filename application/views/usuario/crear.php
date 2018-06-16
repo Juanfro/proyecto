@@ -33,7 +33,7 @@
 			<?php endif;?>
 
 			<label for="email">Email</label>
-			<input type="text" name="email" id="email" required="required"></input><br>
+			<input type="email" name="email" id="email" required="required"></input><br>
 			<br>
 
 			<label for="edad">Edad</label>
