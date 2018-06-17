@@ -17,19 +17,10 @@
 	  <tbody>
 		<?php foreach ($usuario as $usuarios): ?>
 		<tr>
-			 <td>
-			 
-			 
-			 
-			 <a href="<?= base_url()?>Usuario/perfil/<?=$_SESSION['usuario']['id'] ?>">
-			 
-			 
-			 
-			 
-			 
-			 <a href="<?= base_url()?>Usuario/perfil/<?=$usuarios->id ?>">
-			 <?=$usuarios->nombre ?>
-			 </a>
+			 <td>			 
+				 <a href="<?= base_url()?>Usuario/perfil/<?=$usuarios->id ?>">
+				 <?=$usuarios->nombre ?>
+				 </a>
 			 </td>
 			 <td><?=$usuarios->apellido?></td>
 			 <td><?=$usuarios->alias ?></td>
@@ -40,7 +31,7 @@
 			 <td>
 			   <form action="<?=base_url()?>Usuario/modificar" method ="post">
 			     <input type="hidden" name="id_usuario" value="<?=$usuarios->id?>"/>
-			 <!-- envia el tipo de rol que tiene -->
+			 	<!-- envia el tipo de rol que tiene -->
 			     <input type="hidden" name="id_rol" value="<?=$usuarios->rol?>"/>
 			    <button class=" glyphicon glyphicon-edit" type="submit"/>
 			   </form>
