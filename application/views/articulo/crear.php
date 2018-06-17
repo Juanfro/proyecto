@@ -1,5 +1,5 @@
 <div class="container" style="margin-bottom:70px ">
-	<form class="form-horizontal" " id="idForm" action="<?=base_url()?>articulo/crearPost" method="post">
+	<form class="form-horizontal"  id="idForm" action="<?=base_url()?>articulo/crearPost" method="post">
 		<fieldset>
 			<legend>
 				<label for="idArticulo"> Artículo</label>
@@ -7,7 +7,7 @@
 			<div class="form-group">
 				<label  class="control-label col-sm-2" for="titulo">Titulo</label>
 				<div class="col-sm-4">
-		 			<input  class="form-control " type="text" name="titulo" id="titulo" required="required"></input>
+		 			<input  class="form-control" type="text" name="titulo" id="titulo" required="required"></input>
 				</div>
 			</div>
 			<div class="form-group">	
@@ -25,7 +25,6 @@
 	 					<?php endforeach;?>
 		        	</select>
 		        </div>
-		        	
 			</div>
 			<div class="form-group">		    
 				<label  class="control-label col-sm-2" for="libros[]">Libros mencionados</label>
