@@ -1,7 +1,11 @@
 
 .icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-rss:before { content: '\f09e'; } /* '' */
+.icon-gplus:before { content: '\f0d5'; } /* '' */
 .icon-plus-squared:before { content: '\f0fe'; } /* '' */
+.icon-youtube:before { content: '\f167'; } /* '' */
 .icon-instagram:before { content: '\f16d'; } /* '' */
 .icon-plus-squared-alt:before { content: '\f196'; } /* '' */
 .icon-address-card:before { content: '\f2bb'; } /* '' */
 .icon-address-card-o:before { content: '\f2bc'; } /* '' */
+.icon-pinterest:before { content: '\f312'; } /* '' */
