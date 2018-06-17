@@ -142,6 +142,21 @@ nav.navbar-inverse, footer
 	{
 		border: 5px solid yellow;
 	}
+	
+	/* start Comentarios*/
+	.comentario
+	{
+	    background-color: #656529cc;
+	    color: white;
+	    
+	    border-radius:1em;
+	}
+	
+	.comentario-contenido, .comentario-contenido+p
+	{
+		padding:1em;
+	}
+	/* end Comentarios*/
 
 /* end Contenido*/
 

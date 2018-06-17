@@ -25,9 +25,15 @@ class Comentario_model extends CI_model{
 
 	public  function getAll(){
 		return R::findAll('comentario');
-
-
 	}
+	
+	/*public function getAllByDate($id_articulo){
+		//return  R::findAll('comentario', 'articulo=? ORDER BY fecha DESC'. [$id_articulo]);
+		//return R::getAll('select * FROM comentario WHERE articulo=' . $id_articulo . ' ORDER BY fecha DESC;');	
+		
+		return R::findCollection('comentario', 'ORDER BY fecha DESC ');		
+	}*/
+	
 	public function getComentarioPorId($id_comentario){
 		return R::load('comentario', $id_comentario);
 	}
