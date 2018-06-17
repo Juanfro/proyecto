@@ -1,5 +1,5 @@
 <div class="container">
-	<form class="form" id="idForm" action="<?=base_url()?>ListaAutores/crearPost" method="post">
+	<form class="form-horizontal" id="idForm" action="<?=base_url()?>ListaAutores/crearPost" method="post">
 		<fieldset>
 			<legend>
 				<label for="idlistautores"> Lista de Autores</label>

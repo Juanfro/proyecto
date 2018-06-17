@@ -2,7 +2,7 @@
 	<form class="form-horizontal" id="idForm" action="<?=base_url()?>Autor/crearpost" method="post">
 		<fieldset>
 			<legend>
-				<label class="control-label col-sm-4" for="idAutor"> Datos del Autor</label>
+				<label for="idAutor"> Datos del Autor</label>
 			</legend>
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="nombre">Nombre</label>
@@ -32,10 +32,10 @@
 			<div class="form-group">	
 				<label class="control-label col-sm-2" for="pais">País</label>
 				<div class="col-sm-10">
-					<select id="pais" name="pais">
-						<option class="form-control col-sm-10"  value="">Elige un pais</option>
+					<select  class="form-control" id="pais" name="pais">
+						<option   value="">Elige un pais</option>
 						<?php foreach($body['paises'] as $pais):?>
-						<option  class="form-control col-sm-10" value="<?= $pais['id']?>"> <?= $pais['nombre']?> </option>
+						<option  value="<?= $pais['id']?>"> <?= $pais['nombre']?> </option>
 						<?php endforeach;?>
 					</select>
 			   	</div>
