@@ -525,10 +525,35 @@ Papaar papaar por la gloria de mi madre caballo blanco caballo negroorl de la pr
 	}
 	
 	public function creaListaLibros(){
+		$this->load->model('listaLibros_model');
 		
+		//($nombre, $ids_libros, $id_usuario,$descripcion)
+		$this->listaLibros_model->crear('ListaLibros1', [1,2,3,4,5], 1, 'Esta Es la lista de libros numero 1');
+		$this->listaLibros_model->crear('ListaLibros2', [1,2,3,4,5], 2, 'Esta Es la lista de libros numero 2');
+		$this->listaLibros_model->crear('ListaLibros3', [1,2,3,4,5], 3, 'Esta Es la lista de libros numero 3');
+		$this->listaLibros_model->crear('ListaLibros4', [1,2,3,4,5], 4, 'Esta Es la lista de libros numero 4');
+		$this->listaLibros_model->crear('ListaLibros5', [1,2,3,4,5], 5, 'Esta Es la lista de libros numero 5');
+		$this->listaLibros_model->crear('ListaLibros6', [1,2,3,4,5], 6, 'Esta Es la lista de libros numero 6');
+		$this->listaLibros_model->crear('ListaLibros7', [1,2,3,4,5], 7, 'Esta Es la lista de libros numero 7');
+		$this->listaLibros_model->crear('ListaLibros8', [1,2,3,4,5], 1, 'Esta Es la lista de libros numero 1');
+		$this->listaLibros_model->crear('ListaLibros9', [1,2,3,4,5], 2, 'Esta Es la lista de libros numero 2');
+		$this->listaLibros_model->crear('ListaLibros10', [1,2,3,4,5], 3, 'Esta Es la lista de libros numero 3');
 	}
 	
 	public function creaListaAutores(){
+		$this->load->model('listaautores_model');
+		
+		//($nombre, $ids_autores, $id_usuario,$descripcion)
+		$this->listaautores_model->crear('Listaautores1', [1,2,3,4,5], 1, 'Esta Es la lista de autores numero 1');
+		$this->listaautores_model->crear('Listaautores2', [6,7,8,9,10], 2, 'Esta Es la lista de autores numero 2');
+		$this->listaautores_model->crear('Listaautores3', [1,3,4,5,7], 3, 'Esta Es la lista de autores numero 3');
+		$this->listaautores_model->crear('Listaautores4', [2,4,6,8,10], 4, 'Esta Es la lista de autores numero 4');
+		$this->listaautores_model->crear('Listaautores5', [1,2,3,4,5], 5, 'Esta Es la lista de autores numero 5');
+		$this->listaautores_model->crear('Listaautores6', [3,6,9,10,11], 6, 'Esta Es la lista de autores numero 6');
+		$this->listaautores_model->crear('Listaautores7', [1,2,3,4,5], 7, 'Esta Es la lista de autores numero 7');
+		$this->listaautores_model->crear('Listaautores8', [1,2,3,4,5], 1, 'Esta Es la lista de autores numero 8');
+		$this->listaautores_model->crear('Listaautores9', [1,2,3,4,5], 2, 'Esta Es la lista de autores numero 9');
+		$this->listaautores_model->crear('Listaautores10', [1,2,3,4,5], 3, 'Esta Es la lista de autores numero 10');
 		
 	}
     
