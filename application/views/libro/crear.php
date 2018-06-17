@@ -3,7 +3,7 @@
 		<fieldset>
 			<legend>
 				<!-- ya con  fieldset -->
-				<label for="idlibro"> Introducir los datos del Libro</label>
+				<label for="idlibro">Datos del Libro</label>
 			</legend>
 			<div class="form-group">
 				<label  class="control-label col-sm-2" for="isbn">ISBN</label>

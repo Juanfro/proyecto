@@ -1,30 +1,46 @@
 <div class="container">
-	<form class="form" id="idForm" action="<?=base_url()?>Autor/crearpost" method="post">
+	<form class="form-horizontal" id="idForm" action="<?=base_url()?>Autor/crearpost" method="post">
 		<fieldset>
 			<legend>
-				<label for="idAutor"> Introducir los datos del Autor</label>
+				<label class="control-label col-sm-4" for="idAutor"> Datos del Autor</label>
 			</legend>
-			<label for="nombre">Nombre</label>
-			<input type="text" name="nombre" id="nombre"></input><br>
-			<br>
-			<label for="pseudonimo">Pseudonimo</label>
-			<input type="text" name="pseudonimo" id="pseudonimo"></input><br><br>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="nombre">Nombre</label>
+				<div class="col-sm-4">
+					<input  class="form-control" type="text" name="nombre" id="nombre"></input>
+				</div>
+			</div>
+			<div class="form-group">		
+				<label class="control-label col-sm-2" for="pseudonimo">Pseudonimo</label>
+				<div class="col-sm-4">
+					<input  class="form-control" type="text" name="pseudonimo" id="pseudonimo"></input>
+			    </div>
+			 </div>
 			
-			<label for="biografia">Biografia</label>
-			<textarea name="biografia" id="biografia"></textarea><br><br>
-			
-			<label for="anodenacimiento">Año de Nacimiento</label>
-			<input type="text" name="anodenacimiento" id="anodenacimiento"></input><br><br>
-			
-			<label for="pais">País</label>
-			<select id="pais" name="pais">
-				<option value="">Elige un pais</option>
-				<?php foreach($body['paises'] as $pais):?>
-					<option value="<?= $pais['id']?>"> <?= $pais['nombre']?> </option>
-				<?php endforeach;?>
-			</select>
-			<br><br>
-			<br> <input type="submit" value="registrar Autor">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="biografia">Biografia</label>
+				<div class="col-sm-10">
+					<textarea  class="form-control col-sm-10 " rows="5" cols="10" name="biografia" id="biografia"></textarea>
+				</div>	
+			</div>
+			<div class="form-group">
+				<label  class="control-label col-sm-2" for="anodenacimiento">Año de Nacimiento</label>
+				<div class="col-sm-4">
+					<input  class="form-control" type="text" name="anodenacimiento" id="anodenacimiento"></input>
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="control-label col-sm-2" for="pais">País</label>
+				<div class="col-sm-10">
+					<select id="pais" name="pais">
+						<option class="form-control col-sm-10"  value="">Elige un pais</option>
+						<?php foreach($body['paises'] as $pais):?>
+						<option  class="form-control col-sm-10" value="<?= $pais['id']?>"> <?= $pais['nombre']?> </option>
+						<?php endforeach;?>
+					</select>
+			   	</div>
+			</div>   
+			 <input  class="btn" type="submit" value="Registrar Autor">
 			
 			<!-- Fecha nacimiento, Imagen -->
 		</fieldset>
