@@ -4,14 +4,12 @@ class Listaautores_model extends CI_Model {
 
 	public function crear($nombre, $ids_autores, $id_usuario,$descripcion) {
 		$lista = R::dispense('listaautor');
+		
 		// Usuario Creador de la lista
-		$usuario = R::findOne('usuario', 'id =?', [
-			$id_usuario
-		]);
+		$usuario = R::findOne('usuario', 'id =?', [$id_usuario]);
 		$lista->usuario = $usuario;
 		
-		// Datos
-		
+		// Datos		
 		$lista->nombre = $nombre; // Titulo de la lista
 		$lista->descripcion=$descripcion;
 		                        

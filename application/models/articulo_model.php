@@ -21,6 +21,8 @@
 			}
 		}
 		
+		R::store($articulo);
+		
 		//Libros Mencionados
 		if ($id_libros!=null){
 			foreach ($id_libros as $id_libro){

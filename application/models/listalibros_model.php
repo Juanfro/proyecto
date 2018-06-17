@@ -12,7 +12,7 @@ class Listalibros_model extends CI_Model{
 		//Datos
 		$lista->nombre = $nombre;	//Nombre de la lista
 		$lista->descripcion=$descripcion;
-		//Libros en la lista
+		//Autores en la lista
 		foreach($ids_libros as $id_libro){
 			$libro = R::load('libro', $id_libro);
 			$lista->sharedLibroList[] = $libro;
