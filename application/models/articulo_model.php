@@ -27,8 +27,7 @@
 				$libro = R::load('libro', $id_libro);
 				$articulo->sharedLibroList[] = $libro;
 			}
-		}
-		
+		}		
          
 		R::store($articulo);
 		         

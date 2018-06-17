@@ -18,6 +18,15 @@
 		<?php foreach ($usuario as $usuarios): ?>
 		<tr>
 			 <td>
+			 
+			 
+			 
+			 <a href="<?= base_url()?>Usuario/perfil/<?=$_SESSION['usuario']['id'] ?>">
+			 
+			 
+			 
+			 
+			 
 			 <a href="<?= base_url()?>Usuario/perfil/<?=$usuarios->id ?>">
 			 <?=$usuarios->nombre ?>
 			 </a>
