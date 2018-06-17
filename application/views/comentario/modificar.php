@@ -4,15 +4,15 @@
 			<legend>
 				<label for="idContenido">  Modificar Contenido</label>
 			</legend>
-			
-			
-			
-			<label for="contenido">Contenido</label> 
-			<textarea name="contenido" id="contenido" placeholder="<?= $comentario->contenido?>"></textarea><br><br>				
-			
+			<div class="form-group">
+				<label  class="control-label col-sm-2" for="contenido">Contenido</label> 
+				<div class="col-sm-10">
+					<textarea class="form-control col-sm-10 " rows="5" cols="10" name="contenido" id="contenido" placeholder="<?= $comentario->contenido?>"></textarea><br><br>				
+				</div>
+			</div>	
 			<input type="hidden" name="id_comentario" value="<?= $comentario->id?>">
 		    			
-		    <input type="submit" value="modificar Comentario">
+		    <input class="btn" type="submit" value="modificar Comentario">
 		</fieldset>
 		
 	</form>

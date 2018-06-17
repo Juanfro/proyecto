@@ -4,7 +4,7 @@
 	  <label for='idfiltro'>Filtro</label>
  <input  id='idfiltro' type="text" name='filtro' value=''>
  <input type="submit" value="Filtrar Usuario">	
- </form> 
+ </form> <br><br>
  
  
 
