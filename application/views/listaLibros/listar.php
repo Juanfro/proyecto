@@ -1,19 +1,17 @@
 <div class="container">
 	<!-- FILTRO -->
-	<form action="" method="post">
-		<label for='idfiltro'>Filtro</label>
-		<input id='idfiltro' type="text" name='filtro' value=''>
-		
-	</form>
+	<input type="text" id="myInput" onkeyup="myFunction()" 
+	placeholder="Nombre lista" title="Nombre lista">
+	
 	<!-- End FILTRO -->
 	
 	<form action="<?= base_url()?>ListaLibros/crear" method="post">
 		<button class="glyphicon glyphicon-plus pointer" type="submit"></button>
 	</form>
 		
-	<table class="table table-bordered sortable">
+	<table class="table table-bordered" id="myTable">
 		<thead>
-			<tr  class="jcorgFilterTextParent">
+			<tr>
 				<th>Nombre</th>
 				<th>Libros</th>
 				<th>Autor</th>		
@@ -33,7 +31,7 @@
 				<tr>
 					<!-- Nombre -->
 					<td>
-						<a href="<?= base_url()?>ListaLibros/perfil/<?=$lista->id?>" class="jcorgFilterTextChild">
+						<a href="<?= base_url()?>ListaLibros/perfil/<?=$lista->id?>" >
 							<?= $lista->nombre?>
 						</a>
 					</td>

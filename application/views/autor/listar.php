@@ -24,10 +24,10 @@
 			<?php endif;?>
 		</tr>
 	</thead>
-	<tbody class="jcorgFilterTextParent">
+	<tbody>
 		<?php foreach ($autores as $autor): ?>
-			<tr  >
-				<td>
+			<tr>
+				<td class="jcorgFilterTextParent">
 					<a href="<?= base_url()?>Autor/perfil/<?=$autor->id ?>" class="jcorgFilterTextChild" > 
 						<?=$autor->nombre ?>
 					</a>

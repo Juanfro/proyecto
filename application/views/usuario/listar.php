@@ -1,14 +1,14 @@
 <div class="container">
 
 <form action="<?=base_url()?>usuario/listarPost" method ="post">
-	  <label for='idfiltro'>filtro</label>
+	  <label for='idfiltro'>Filtro</label>
  <input  id='idfiltro' type="text" name='filtro' value=''>
- <input type="submit" value="filtrar usuario">	
+ <input type="submit" value="Filtrar Usuario">	
  </form> 
  
  
 
- <table class=" table table-bordered sortable">
+ <table class=" table table-bordered" id="myTable">
  	<thead>
 	   <tr><th>Nombre</th><th>Apellido</th><th>Alias</th><th>Rol</th><th>Email</th>
 

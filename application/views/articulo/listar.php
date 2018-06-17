@@ -1,9 +1,8 @@
 <div class="container">
 
-	<form method="post">
-		<label for='idfiltro'>Filtro</label>
-		<input id='idfiltro' type="text" name='filtro' value=''>
-	</form>
+	<input type="text" id="myInput" onkeyup="myFunction()" 
+	placeholder="titulo" title="Type in a name">
+	
 	<br>
 	<form action="<?= base_url()?>Articulo/crear" method="post">
 		<button class="glyphicon glyphicon-plus pointer" type="submit"></button>
@@ -12,9 +11,9 @@
 	
 	<!-- <pre><?= print_r($usuario->sharedAutorList)?></pre>-->
 
-	<table class="table table-bordered sortable">
+	<table class="table table-bordered" id="myTable">
 		<thead>
-			<tr class="jcorgFilterTextParent">
+			<tr >
 				<th>Titulo</th>
 				<th>Contenido</th>
 				<th>autor</th>
@@ -26,7 +25,7 @@
 			</tr>
 		</thead>
 		
-		<tbody>			
+		<tbody >			
 			<?php foreach ($articulos as $articulo): ?>
 			
 				<!-- <pre><?= print_r($articulo->sharedAutorList) ?></pre> -->
@@ -34,7 +33,7 @@
 			
 				<tr <?= ( isset($_SESSION['usuario']) && (array_intersect($articulo->sharedAutorList, $usuario->sharedAutorList) || array_intersect($articulo->sharedLibroList, $usuario->sharedLibroList) ) )  ? 'class="seguido"' : 'class="no-seguido"'?>>
 					<!-- Titulo -->
-					<td>
+					<td class="jcorgFilterTextParent">
 						<a href="<?= base_url()?>Articulo/mostrar/<?=$articulo->id?>" class="jcorgFilterTextChild"> 
 							<?=$articulo->titulo ?>
 						</a>						

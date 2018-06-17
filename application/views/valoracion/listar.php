@@ -2,7 +2,7 @@
 <div class="container">
 
 
-<table class="table table-bordered">
+<table class="table table-bordered" id="myTable">
 <tr><th>Nota</th><th>Contenido</th><th>Modificar</th><th>Borrar</th><th>Vista</th></tr>
 <?php foreach ($valoracion as $valoraciones): ?>
 			<tr>

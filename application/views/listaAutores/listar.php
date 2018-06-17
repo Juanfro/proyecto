@@ -1,17 +1,15 @@
 <div class="container">
 	<!-- FILTRO -->
-	<form action="<?=base_url()?>ListaAutores/listar" method="post">
-		<label for='idfiltro'>filtro</label>
-		<input id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'> 
-		
-	</form>
+	<input type="text" id="myInput" onkeyup="myFunction()" 
+	placeholder="Nombre lista" title="Type in a name">
+	
 	<br/>
 	<!-- End FILTRO -->
 	<form action="<?= base_url()?>ListaAutores/crear" method="post">
 		<button class="glyphicon glyphicon-plus pointer" type="submit"></button>
 	</form>
 	<br/>
-	<table class=" table table-bordered sortable">
+	<table class=" table table-bordered" id="myTable">
 		<thead>
 			<tr class="jcorgFilterTextParent">
 				<th>Nombre</th>
