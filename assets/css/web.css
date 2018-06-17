@@ -128,15 +128,21 @@ nav.navbar-inverse, footer
 	
 /* end Nav y footer*/
 
-
-
 /* start Contenido*/
 
-/*nav+div
-{
-	width:100%;
-	background-color: green;
-}*/
+	.contenido-articulo
+	{
+		background-color: green;
+		margin:1em;
+		border-radius: 0.7em;
+	    border: 5px solid black;
+	}
+	
+	.contenido-articulo.seguido
+	{
+		border: 5px solid yellow;
+	}
+
 /* end Contenido*/
 
 /*start Resaltado Artículos*/
