@@ -66,10 +66,11 @@ class Libro extends CI_Controller {
 		$datos['libros'] = $this->libro_model->getAll($filtro);
 		$datos['filtro'] = $filtro;
 		
+		$this->load->model('valoracion_model');
+		$datos['valoraciones'] =$this->valoracion_model->getAll();
+		
 		enmarcar($this, 'libro/listar', $datos);
-	}
-	
-	
+	}	
 
 	public function modificar() {
 		$this->load->model('libro_model');

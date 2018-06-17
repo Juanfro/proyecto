@@ -14,15 +14,16 @@
 	<table class=" table table-bordered sortable">
 		<thead>
 			<tr class="jcorgFilterTextParent">
-				<th>ISBN</th>
+				
 				<th>Título</th>
+				<th>ISBN</th>
 				<th>Autor</th>
 				<th>Idioma</th>
 				<th>Genero</th>
-				<th>nº palabras</th>
+				<th>nº páginas</th>
 				<th>Sinopsis</th>
 				
-				<th>Edad Minima</th>
+				<th>Edad Recomendada</th>
 				<th>Valoracion</th>				
 				<?php if(isset ($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador' || $_SESSION['usuario']['rol'] == 'editor')):?>
 					<th>Editar</th>
@@ -40,72 +41,106 @@
 		<tbody>
 		<?php foreach ($libros as $libro): ?>
 			<tr >
-				<td><?=$libro->isbn ?></td>
-				<td >
-				<a href="<?= base_url()?>libro/perfil/<?=$libro->id ?>" class="jcorgFilterTextChild"> 
-				<?=$libro->titulo?>
-				</a>
-					
+				<!-- Titulo -->
+				<td>
+					<a href="<?= base_url()?>libro/perfil/<?=$libro->id ?>" class="jcorgFilterTextChild"> 
+					<?=$libro->titulo?>
+					</a>					
 				</td>
 				
-
+				<!-- ISBN -->
+				<td><?=$libro->isbn ?></td>				
+				
+				<!-- Autor -->
 				<td class="jcorgFilterTextChild">
 					<?php foreach ($libro->sharedAutorList as $autor): ?>
 						<?= $autor->nombre ."</br> "; ?> 
 					<?php endforeach; ?> 
 				</td>
-
+				
+				<!-- idioma -->
 				<td><?=$libro->idioma ?></td>
+				
+				<!-- Género -->
 				<td class="jcorgFilterTextChild">
 				<?php foreach ($libro->sharedGeneroList as $genero): ?>
 			      	<?= $genero->nombre ."</br> "; ?> 			   
 			   	<?php endforeach; ?>
 				</td>
 
+				<!-- Numero Páginas -->
 				<td><?=$libro->npalabras ?></td>
 
+				<!-- Sinopsis -->
 				<td>
-				<div class="expandable">
-				<?=$libro->sinopsis ?>
-				</div>
-				</td>
+					<div class="expandable">
+					<?=$libro->sinopsis ?>
+					</div>
+				</td>				
 				
+				<!-- Edad Recomendada -->				
 				<td><?=$libro->edadminima ?></td>
+				
+				<!-- Valoración -->
 				<td>
-					<?php
-						$id_libro = $libro->id;
-						/*
-						 * $valoracion=R::findOne('valoracion','id=?',[$id_libro]);
-						 * echo " nota: ",$valoracion->id." contenido: ".$valoracion->contenido;
-						 */
+				
+				
+					<!--<?php
+						//$id_libro = $libro->id;
+						/*$valoracion=R::findOne('valoracion','id=?',[$id_libro]);						  
+						  echo " nota: ",$valoracion->id." contenido: ".$valoracion->contenido;*/					
 						
-						$valoracion = R::findCollection('valoracion', 'ORDER BY nota ASC ');
+						/*$valoracion = R::findCollection('valoracion', 'ORDER BY nota ASC ');
 						while ($valoraciones = $valoracion->next()) {
-							$idvlibro = $valoraciones->libro_id;
-							
+							$idvlibro = $valoraciones->libro_id;*/							
 							/* echo "longitud de valoraciones ".$longvaloracion; */
-							if ($idvlibro == $id_libro) {
-								
+							/*if ($idvlibro == $id_libro) {								
 								$nota = $valoraciones->nota;
-								$ides = [];
-								
+								$ides = [];								
 								if($nota==NULL){}
 								else{
 								 array_push($ides, $nota);
 								
 								echo array_sum($ides);
 									}
-									
-									
-								
-								
 								//echo "nota " . $nota . " contenido " . $valoraciones->nota;
 							}
 						}
+					*/?>-->
+					<?php 
+						$suma=0;
+						$cantidad=0;
 					?>
+					
+					
+					<?php foreach ($valoraciones as $valoracion):?>
+					<!-- 
+					ValoracionLibro
+					<pre><?=print_r($valoracion->libro->id, true)?></pre>
+					LibroID
+					<pre><?=print_r($libro->id)?></pre>
+					ValoracionNota
+					<pre><?=print_r($valoracion->nota)?></pre>
+					 -->
+					
+						<?php if(($valoracion->libro->id == $libro->id) && $valoracion->nota){
+							$suma += $valoracion->nota;
+							$cantidad++;							
+						}
+						?>
+						
+						
+					<?php endforeach;?>
+					
+					<?php if($cantidad!=0):?>
+					
+						<?= $suma/$cantidad?>
+					
+					<?php endif;?>
 				 
 			 	</td>
 			 	
+			 	<!-- Modificar -->			 	
 			 	<?php if(isset ($_SESSION['usuario']) && ($_SESSION['usuario']['rol'] == 'administrador' || $_SESSION['usuario']['rol'] == 'editor')):?>
 				 	<!-- Modificar -->
 				 	<td>
