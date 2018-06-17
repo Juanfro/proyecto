@@ -14,7 +14,7 @@
 	<link rel="icon" type="image/x-icon" href="<?=base_url()?>assets/img/favicon/favicon.ico">
 		
 	<!-- para ordenar -->
-	<script src="https://kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+	<script src="<?= base_url()?>assets/js/filtrar.js"></script>
 	
     <!-- wichiwichi2 -->
      

@@ -1,17 +1,16 @@
 <div class="container">
 
-	<form action="<?=base_url()?>Autor/listarfiltro" method="post">
-		<label for='idfiltro'>Filtro</label>
-		<input id='idfiltro' type="text" name='filtro' value='<?=$filtro?>'>
-	</form>
+	<input type="text" id="myInput" onkeyup="myFunction()" 
+	placeholder="Nombre Autor" title="Type in a name">
+	
 	<br>
 	<form action="<?= base_url()?>Autor/crear" method="post">
 		<button class="glyphicon glyphicon-plus pointer" type="submit"></button>
 	</form>	
 	<br>
-	<table class="table table-bordered sortable">
+	<table class="table table-bordered" id="myTable">
 	<thead>
-		<tr class="jcorgFilterTextParent">
+		<tr>
 			<th>Nombre</th>
 			<th>Pseudonimo</th>
 			<th>Pais</th>		
@@ -25,7 +24,7 @@
 			<?php endif;?>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody class="jcorgFilterTextParent">
 		<?php foreach ($autores as $autor): ?>
 			<tr  >
 				<td>
