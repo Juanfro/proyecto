@@ -1,7 +1,7 @@
 <div class='container vista-home'>
 	<!-- <div class="contenidos col-md-12"> -->	
 					<!-- limite de articulos mostrados -->			
-		<?php $articulos = R::findCollection('articulo','ORDER BY fecha DESC LIMIT 4');?>
+		<?php $articulos = R::findCollection('articulo','ORDER BY fecha DESC LIMIT 10');?>
 		
 		<!-- <div class="container"> -->
 		

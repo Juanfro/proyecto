@@ -87,7 +87,11 @@ class Articulo extends CI_Controller {
 		
 		$id_articulo = $id;
 		
-		$datos['articulo'] = $this->articulo_model->getArticuloPorId($id_articulo);
+		$datos['articulo'] = $this->articulo_model->getArticuloPorId($id_articulo);		
+		
+		//Comentarios
+		//$this->load->model('comentario_model');
+		//$datos['comentarios'] =$this->comentario_model->getAllByDate($id);		
 		
 		enmarcar($this, 'articulo/mostrar', $datos);
 	}
