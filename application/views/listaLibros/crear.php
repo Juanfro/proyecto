@@ -1,24 +1,32 @@
 <div class="container">
-	<form class="form" id="idForm" action="<?=base_url()?>ListaLibros/crearPost" method="post">
+	<form class="form-horizontal" id="idForm" action="<?=base_url()?>ListaLibros/crearPost" method="post">
 		<fieldset>
 			<legend>
 				<label for="idlistalibros"> Lista de libros</label>
 			</legend>
-			
-			<label for="nombre">Nombre</label> 
-			<input type="text" name="nombre" id="nombre"></input><br><br>
-				
-				<label for="libros">Libros</label><br><br>
-				<select multiple="multiple" name="libros[]" id="libros">								
-					<?php foreach ($libros as $libro): ?>
-						<option value="<?=$libro->id ?>"><?=$libro->titulo ?></option>
-				 	<?php endforeach;?>
-				</select>
-				<br><br>
-				<label>Descripción</label>
-					<textarea name="descripcion" id="descripcion" rows="4" cols="12" ></textarea>
-			    <br>
-			<input type="submit" value="registrar lista de libros">
+			<div class="form-group">
+				<label  class="control-label col-sm-2" for="nombre">Nombre</label> 
+				<div class="col-sm-4">
+					<input class="form-control" type="text" name="nombre" id="nombre"></input>
+				</div>
+			</div>	
+			<div class="form-group">	
+				<label  class="control-label col-sm-2" for="libros">Libros</label>
+				<div class="col-sm-10">
+					<select multiple  name="libros[]" id="libros">								
+						<?php foreach ($libros as $libro): ?>
+						<option class="form-control col-sm-10"  value="<?=$libro->id ?>"><?=$libro->titulo ?></option>
+				 		<?php endforeach;?>
+					</select>
+				</div>
+			</div>		
+			<div class="form-group">	
+				<label class="control-label col-sm-2" >Descripción</label>
+				<div class="col-sm-10">	
+					<textarea  class="form-control col-sm-10 " rows="5" cols="10" name="descripcion" id="descripcion"  ></textarea>
+			    </div>
+			</div>    
+			<input  class="btn" type="submit" value="Registrar Lista de Libros">
 		</fieldset>
 	</form>
 	
