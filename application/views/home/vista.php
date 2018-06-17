@@ -1,6 +1,6 @@
 <div class='container vista-home'>
 
-	<div class="header col-md-12">
+	<div class=" col-md-12">
 	<!-- <pre><?//=print_r($articulos)?></pre> -->
 	
 	
