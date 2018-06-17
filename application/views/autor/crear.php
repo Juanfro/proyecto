@@ -31,8 +31,8 @@
 			</div>
 			<div class="form-group">	
 				<label class="control-label col-sm-2" for="pais">País</label>
-				<div class="col-sm-10">
-					<select  class="form-control" id="pais" name="pais">
+				<div class="col-sm-4">
+					<select  class="form-control col-sm-4" id="pais" name="pais">
 						<option   value="">Elige un pais</option>
 						<?php foreach($body['paises'] as $pais):?>
 						<option  value="<?= $pais['id']?>"> <?= $pais['nombre']?> </option>
